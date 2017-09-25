@@ -1,0 +1,14 @@
+{
+  "name": "drupal/planet_drupal",
+  "type": "drupal-module",
+  "description": "Planet Drupal common code.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/planet_drupal",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/planet_drupal",
+    "source": "http://cgit.drupalcode.org/planet_drupal"
+  },
+  "require": { }
+}

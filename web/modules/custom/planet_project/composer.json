@@ -1,0 +1,14 @@
+{
+  "name": "drupal/planet_project",
+  "type": "drupal-module",
+  "description": "Planet Drupal projects related code.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/planet_project",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/planet_project",
+    "source": "http://cgit.drupalcode.org/planet_project"
+  },
+  "require": { }
+}

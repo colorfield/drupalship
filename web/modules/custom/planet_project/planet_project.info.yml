@@ -1,0 +1,5 @@
+name: Planet Project
+type: module
+description: Planet Drupal projects related code.
+core: 8.x
+package: Planet Drupal

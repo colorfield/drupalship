@@ -1,0 +1,8 @@
+
+planet_drupal.onboard_controller_index:
+  path: 'onboard'
+  defaults:
+    _controller: '\Drupal\planet_drupal\Controller\OnboardController::index'
+    _title: 'Onboard'
+  requirements:
+    _permission: 'access content'

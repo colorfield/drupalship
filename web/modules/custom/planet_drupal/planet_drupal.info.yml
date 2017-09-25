@@ -1,0 +1,5 @@
+name: Planet Drupal
+type: module
+description: Planet Drupal common code.
+core: 8.x
+package: Planet Drupal

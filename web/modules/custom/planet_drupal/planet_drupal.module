@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains planet_drupal.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function planet_drupal_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the planet_drupal module.
+    case 'help.page.planet_drupal':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Planet Drupal common code.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function planet_drupal_theme() {
+  return [
+    'onboard' => [
+      'render element' => 'children',
+    ],
+  ];
+}
