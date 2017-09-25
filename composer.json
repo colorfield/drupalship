@@ -45,6 +45,7 @@
         "drupal/core": "~8.4",
         "drupal/eck": "^1.0@alpha",
         "drupal/inline_entity_form": "^1.0@beta",
+        "drupal/paragraphs": "^1.2",
         "drupal/tweme": "^4.1",
         "drush/drush": "~9.0",
         "webflo/drupal-finder": "^1.0.0",
