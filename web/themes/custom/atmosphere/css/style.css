@@ -5,6 +5,12 @@
   font-family: 'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;
 }
 
+#block-atmosphere-page-title h1 {
+  background: rgba(4, 121, 142);
+  color: #fff;
+  padding: 0.4rem;
+}
+
 .jumbotron {
   /*background-image: url("../images/earth-space.jpg");*/
   background-color: rgba(4, 121, 142);
@@ -14,7 +20,7 @@
 
 /* @todo media queries  */
 .jumbotron .container {
-  background: url("../images/drupal-8-white.png") left center no-repeat;
+  background: url("../images/spaceship.svg") left center no-repeat;
 }
 
 .jumbotron a {
@@ -58,3 +64,6 @@ main .card {
 
 /* Custom styling */
 
+.main-intro {
+  background: rgba(4, 121, 142, 0.10);
+}
