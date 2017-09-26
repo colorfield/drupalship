@@ -5,15 +5,20 @@
   font-family: 'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;
 }
 
+.lead {
+  font-weight: 300;
+}
+
 #block-atmosphere-page-title h1 {
-  background: rgba(4, 121, 142);
+  background: rgba(4, 121, 142, 1);
   color: #fff;
   padding: 0.4rem;
+  text-align: center;
 }
 
 .jumbotron {
   /*background-image: url("../images/earth-space.jpg");*/
-  background-color: rgba(4, 121, 142);
+  background-color: rgba(4, 121, 142, 1);
   color: #fff;
   border-radius: 0;
 }
@@ -27,6 +32,14 @@
   color: #fff;
   font-weight: 400;
   text-decoration: underline;
+}
+
+.jumbotron h1, .jumbotron p {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron h2 {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 a.btn, .badge a {
@@ -62,8 +75,32 @@ main .card {
   margin: 0.8rem;
 }
 
+.alert {
+  margin-bottom: 0;
+}
+
+.card-footer {
+
+}
+
 /* Custom styling */
 
 .main-intro {
   background: rgba(4, 121, 142, 0.10);
+}
+
+.facts img {
+  max-width: 130px;
+}
+
+.facts .p-2 {
+  margin: 0.4rem;
+}
+
+main h2, h4.card-title {
+  color: rgba(4, 121, 142, 0.8);
+}
+
+main h3 {
+  color: #5a5a5a;
 }

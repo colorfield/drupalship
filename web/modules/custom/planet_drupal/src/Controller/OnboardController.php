@@ -3,6 +3,8 @@
 namespace Drupal\planet_drupal\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\entity_tools\EntityService;
 
@@ -29,9 +31,7 @@ class OnboardController extends ControllerBase {
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('entity_tools.entity')
-    );
+    return new static($container->get('entity_tools.entity'));
   }
 
   /**
@@ -41,14 +41,17 @@ class OnboardController extends ControllerBase {
    *   Return Hello string.
    */
   public function index() {
-//    return [
-//      '#type' => 'markup',
-//      '#markup' => $this->t('Implement method: index')
-//    ];
-      $build['onboard_page'] = [
-        '#theme' => 'onboard',
-      ];
-      return $build;
+    $text = $this->t('Project roadmap');
+    $options = ['absolute' => TRUE];
+    $url = Url::fromRoute('entity.node.canonical', ['node' => 31], $options);
+    $link = Link::fromTextAndUrl($text, $url)->toString();
+    drupal_set_message($this->t('This site is a work in progress, view the @project_roadmap', ['@project_roadmap' => $link]), 'warning');
+    $build['onboard_page'] = [
+      '#theme' => 'onboard',
+    ];
+
+
+    return $build;
   }
 
 }
