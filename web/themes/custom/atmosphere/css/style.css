@@ -28,7 +28,11 @@
   background: url("../images/spaceship.svg") left center no-repeat;
 }
 
-.jumbotron a {
+.jumbotron .container .content {
+  max-width: 600px;
+}
+
+.jumbotron a, .card-footer a {
   color: #fff;
   font-weight: 400;
   text-decoration: underline;
@@ -75,12 +79,17 @@ main .card {
   margin: 0.8rem;
 }
 
+main.layout-content {
+  margin-top: 3rem;
+}
+
 .alert {
   margin-bottom: 0;
 }
 
 .card-footer {
-
+  background-color: #292b2c;
+  color: #fff; /* #f7f7f9 */
 }
 
 /* Custom styling */
@@ -98,7 +107,7 @@ main .card {
 }
 
 main h2, h4.card-title {
-  color: rgba(4, 121, 142, 0.8);
+  color: rgba(4, 121, 142, 0.9);
 }
 
 main h3 {
