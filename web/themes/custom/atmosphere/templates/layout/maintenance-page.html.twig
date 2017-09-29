@@ -65,14 +65,16 @@
 
     <div class="layout-content container">
       <section class="jumbotron text-center">
-        <div class="container">
-          {# @todo refactor all links to a single page, too many external links #}
-          <h1 class="jumbotron-heading">Fast onboarding to the planet Drupal!</h1>
-
-            {{ page.content }}
-
-            <a href="https://simplytest.me/project/drupal/8.4.x" class="btn btn-lg btn-primary"
-               title="Launch a Drupal website straight from the browser">Try Drupal 8.4</a>
+        <div class="container row">
+            <div class="col">
+              <img class="card-img-top" src="{{ base_path ~ directory }}/spaceship.svg">
+            </div>
+            <div class="col-md-8">
+              <h1 class="jumbotron-heading">Get ready to onboard for the Drupal 8 planet!</h1>
+              {{ page.content }}
+              <a href="https://simplytest.me/project/drupal/8.4.x" class="btn btn-lg btn-primary"
+                 title="Launch a Drupal website straight from the browser">Try Drupal 8.4</a>
+            </div>
         </div>
       </section>
     </div>{# /.layout-content #}
