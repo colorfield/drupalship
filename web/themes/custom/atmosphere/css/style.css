@@ -28,6 +28,10 @@
   background: url("../images/spaceship.svg") left center no-repeat;
 }
 
+.maintenance-page .jumbotron .container {
+  background: none;
+}
+
 .jumbotron .container .content {
   max-width: 600px;
 }
