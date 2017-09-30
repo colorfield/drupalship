@@ -54,6 +54,16 @@ a.btn, .badge a {
   text-decoration: none;
 }
 
+a.is-active {
+  color: #540032;
+}
+
+.navbar-nav a.is-active {
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: solid;
+}
+
 .layout-container {
   padding: 0;
 }
@@ -106,8 +116,8 @@ main.layout-content {
   max-width: 130px;
 }
 
-.facts .p-2 {
-  margin: 0.4rem;
+.facts .row {
+  margin-bottom: 2rem;
 }
 
 main h2, h4.card-title {

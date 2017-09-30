@@ -82,7 +82,7 @@ function atmosphere_preprocess_block(array &$variables) {
   $variables['is_card_menu'] = false;
   if(isset($variables['content']['#theme']) && $variables['content']['#theme'] == 'menu__build') {
     $cardMenus = [
-      'build', 'develop',
+      'build', 'develop', 'learn',
     ];
     $menuId = $variables['content']['#menu_name'];
     if(in_array($menuId, $cardMenus)) {
@@ -171,5 +171,5 @@ function atmosphere_preprocess_menu_local_task(array &$variables) {
 }
 
 function atmosphere_preprocess_region__primary_menu(&$variables) {
-  $variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-inverse bg-inverse';
+  $variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top';
 }
