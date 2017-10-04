@@ -3,5 +3,8 @@ global-styling:
   css:
     theme:
       css/style.css : {}
-  #js:
-  #  js/my_js.js : {}
+
+final-countdown:
+  version: 2.2.0
+  js:
+    js/jquery.countdown.min.js : {minified: true}

@@ -29,6 +29,9 @@ function planet_drupal_help($route_name, RouteMatchInterface $route_match) {
 function planet_drupal_theme() {
   return [
     'onboard' => [
+      'variables' => array(
+        'work_carousel_items' => null,
+      ),
       'render element' => 'children',
     ],
   ];

@@ -42,6 +42,7 @@
   text-decoration: underline;
 }
 
+
 .jumbotron h1, .jumbotron p {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 }
@@ -109,8 +110,13 @@ main.layout-content {
 /* Custom styling */
 
 .main-intro {
-  background: rgba(4, 121, 142, 0.10);
+  background: rgba(4, 121, 142, 1);
+  color: #fff;
 }
+
+  .main-intro a {
+    color: #fff;
+  }
 
 .facts img {
   max-width: 130px;
@@ -121,9 +127,21 @@ main.layout-content {
 }
 
 main h2, h4.card-title {
-  color: rgba(4, 121, 142, 0.9);
+  color: rgba(4, 121, 142, 1);
 }
 
 main h3 {
   color: #5a5a5a;
+}
+
+.articles h2 {
+  text-align: center;
+}
+
+#block-atmosphere-content h2 {
+  margin-top: 1em;
+}
+
+#block-atmosphere-content h3, h4 {
+  margin-top: 0.6em;
 }
