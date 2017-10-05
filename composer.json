@@ -45,6 +45,7 @@
         "drupal/console": "^1.0.1",
         "drupal/core": "~8.4",
         "drupal/eck": "^1.0@alpha",
+        "drupal/entity_embed": "^1.0@beta",
         "drupal/google_analytics": "^2.2",
         "drupal/honeypot": "^1.27",
         "drupal/inline_entity_form": "^1.0@beta",
@@ -53,6 +54,7 @@
         "drupal/pathauto": "^1.0",
         "drupal/slick": "^1.0",
         "drupal/tweme": "^4.1",
+        "drupal/url_embed": "^1.0@alpha",
         "drush/drush": "~9.0",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
