@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override to display a Work node for a Slide display mode.
+ * Theme override to display a node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -70,13 +70,8 @@
  *   in different view modes.
  */
 #}
+<article{{ attributes }}>
 
-{# @todo set attributes class="carousel-item active on the first one only" #}
-{# @todo review bootstrap carousel item #}
-
-{% set attributes = attributes.setAttribute('class', 'carousel-item') %}
-
-<div{{ attributes }}>
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
@@ -84,9 +79,23 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
+
+  {# @todo get updated date #}
+  {% set updated_date = node.getCreatedTime()|format_date('short') %}
+  <p class="text-muted">{% trans %}Updated on {{ updated_date }}{% endtrans %}</p>
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
   <div{{ content_attributes }}>
     {{ content }}
-    {# @todo add class to image from the content #}
-    <img class="d-block img-fluid" src="{{ base_path ~ directory }}/images/theme-sun.jpg" alt="First slide">
   </div>
-</div>
+
+</article>

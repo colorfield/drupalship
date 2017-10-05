@@ -36,6 +36,7 @@
   {# Label. If not displayed, we still provide it for screen readers. #}
   {%  if is_card_menu %}
     {% set title_attributes = title_attributes.addClass('card-title') %}
+    {# @todo apply class to ul #}
     {% set content_attributes = content_attributes.addClass('list-group') %}
     <div class="card-block">
     {%  endif %}

@@ -1,0 +1,229 @@
+{# @todo move content on the backend and use t function, currently using this template as a first prototype #}
+
+<section class="jumbotron text-center">
+  <div class="row container">
+    <div class="col-md-7 offset-md-5">
+      {# @todo refactor all links to a single page, too many external links #}
+      <h1 class="jumbotron-heading">Onboard for the Drupal 8 planet!</h1>
+      <h2>The journey starts here</h2>
+      <p>The main goal of this site is to facilitate the Drupal 8 onboarding process.
+        It reduces the documentation to selected contents and provides updates
+        on the most used Drupal projects, events and learning resources.</p>
+      <h4>Drupal core stable version <span class="badge badge-pill badge-success">
+          <a href="/node/36" title="New features introduced by 8.4.x">8.4.0</a></span></h4>
+      <p>launched on October 2017</p>
+      <p>
+        <a href="https://simplytest.me/project/drupal/8.4.x" class="btn btn-lg btn-primary"
+           data-toggle="tooltip" data-placement="top"
+           title="Launch a Drupal website straight from the browser">Try</a>
+        <a href="/node/4" class="btn btn-lg btn-secondary"
+           title="Kickstart a Drupal installation on your machine">Install</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="facts container text-center">
+  <h2>The Drupal community</h2>
+  <div class="row justify-content-center">
+    <div class="col"><img src="{{ base_path ~ directory }}/images/water.svg" alt="Contributors"/>
+      <h3>108,608 web engineers</h3> actively contributing
+    </div>
+    <div class="col"><img src="{{ base_path ~ directory }}/images/cosmonaut.svg" alt="Coresmonauts"/>
+      <h3>4,000+ core <a href="http://drupalcores.com/" title="List of Drupal core contributors">cosmonauts</a></h3>
+      preparing for the next launch
+    </div>
+    <div class="col"><img src="{{ base_path ~ directory }}/images/orbit.svg" alt="Orbit"/>
+      <h3>1,000,000+ websites</h3>currently in orbit
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <p>Wanna be part of it? <a href="/node/9" class="btn btn-secondary">Contribution 101</a></p>
+  </div>
+</section>
+
+<section class="container">
+    <div class="row">
+      <div class="card main-intro">
+        <div class="card-block">
+          <p class="lead">Drupal is an open source content management framework driving <a
+              href="https://www.drupal.org/project/usage/drupal">more than 1,000,000 websites</a> like the <a
+              href="https://www.whitehouse.gov/">White House</a>, the <a href="http://www.gouvernement.fr/">French
+              government</a>,
+            <a href="http://www.warnerbrosrecords.com/">Warner Bros. records</a>, the <a href="http://www.louvre.fr/">Louvre
+              museum</a>, <a href="https://www.lush.com/">Lush</a> or <a href="https://www.tesla.com/">Tesla motors</a>.
+            It is also adopted as the primary Content
+            Management System by the <a
+              href="https://joinup.ec.europa.eu/community/osor/case/ec-consolidates-hundreds-websites-new-drupal-7-europa-platform">European
+              Commission</a> and the <a href="https://agov.com.au/">Australian governement</a>.
+          <p class="lead">The first release was launched in 2001, it is now maintained by more than 100,000 enthusiast
+            contributors that are building it on top of <a href="/node/6">robust tools</a> and <a href="">PHP
+              standards</a>.
+          </p>
+          <p>
+            <a href="/node/5" class="btn btn-primary">When shall I use Drupal?</a> A brief comparison of other
+            solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {# Dev and build row - move articles to learn row? #}
+    <div class="row card-deck">
+
+      <div class="card">
+        <img class="card-img-top" src="{{ base_path ~ directory }}/images/modules-satelitte-soyuz.jpeg" alt="Modules">
+        <div class="card-block">
+          <h4 class="card-title">Popular modules</h4>
+          <p class="card-text">Modules are providing most of the time a single feature. They can work on their own or
+            collaborate with other modules.</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h5><a href="https://www.drupal.org/project/webform">Webform</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted">Make forms and survey, send notification e-mails, download results.</p></li>
+            <li class="list-group-item"><h5><a href="https://www.drupal.org/project/paragraphs">Paragraphs</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted">Do not use WYSIWYG anymore to allow content editors to work as in Medium.</p></li>
+            <li class="list-group-item"><h5><a href="https://www.drupal.org/project/graphql">GraphQL</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted">This module lets you craft and expose a GraphQL schema for Drupal 8.</p></li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <a href="/projects?field_project_type_target_id=1" class="card-link" title="Coming in the next weeks">More modules</a> {# build section #}
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" src="{{ base_path ~ directory }}/images/distribution-iss.jpg" alt="Distributions">
+        <div class="card-block">
+          <h4 class="card-title">Featured distributions</h4>
+          <p class="card-text">Distributions are a well tested assembly of projects dedicated to a specialized use
+            case.</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h5><a href="https://lightning.acquia.com/">Lightning</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted clear">A nice place to start if you want to improve the default authoring experience.</p></li>
+            <li class="list-group-item"><h5><a href="http://www.contentacms.org/">Contenta</a> and <a
+                  href="https://github.com/acquia/reservoir">Reservoir</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted">When you need a backend for a React, Ionic, Angular,... frontend. Both distributions
+                are based on the <a href="http://jsonapi.org/">JSON API standard</a>.
+              </p></li>
+            <li class="list-group-item"><h5><a href="https://drupalcommerce.org/">Commerce</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted">eCommerce framework designed to build flexible applications.</p></li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <a href="/projects?field_project_type_target_id=3" class="card-link" title="Coming in the next weeks">More
+            distributions</a> {# build section #}
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" src="{{ base_path ~ directory }}/images/theme-sun.jpg"
+             alt="Distributions">
+        <div class="card-block">
+          <h4 class="card-title">Popular themes</h4>
+          <p class="card-text">Themes allow you to change the look and feel of the frontend or the backend and can be used as is or via inheritence.</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h5><a href="https://www.drupal.org/project/bootstrap">Bootstrap</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted">Currently based on <a href="http://getbootstrap.com/">Bootstrap</a> 3. A lightweight
+                alternative for Bootsrap 4 is also provided by <a href="https://www.drupal.org/project/tweme">Tweme</a>.
+              </p></li>
+            <li class="list-group-item"><h5><a href="https://www.drupal.org/project/zurb_foundation">ZURB Foundation</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted">Official implementation of the <a href="https://foundation.zurb.com/">Zurb
+                  Foundation</a> framework.</p></li>
+            <li class="list-group-item"><h5><a href="https://www.drupal.org/project/adminimal_theme">Adminimal</a>
+                <span class="stars">99</span></h5>
+              <p class="text-muted">Provides a modern and minimalist administration theme.</p></li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <a href="/projects?field_project_type_target_id=2" class="card-link" title="Coming in the next weeks">More themes</a> {# build section #}
+        </div>
+      </div>
+
+    </div>
+</section>
+
+{# Works #}
+{# @todo wrap into a dedicated feature #}
+<section class="works container text-center">
+    <h2>Recent works</h2>
+    <p>A selection of works chosen on a design perspective. You can also check <a href="#">Drupal.org
+        showcases</a>.</p>
+    {# @todo carousel item should lead to the detail view of a work #}
+    <div id="carousel-works" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        {% set carousel_items_current_id = 0 %}
+        {% for item in work_carousel_items  %}
+          {# @todo add active class on first item only #}
+          {% if carousel_items_current_id == 0 %}
+            <li data-target="#carousel-works" data-slide-to="{{ carousel_items_current_id }}" class="active"></li>
+          {% else %}
+            <li data-target="#carousel-works" data-slide-to="{{ carousel_items_current_id }}"></li>
+          {% endif %}
+          {% set carousel_items_current_id = carousel_items_current_id + 1 %} {# @todo review inc #}
+        {% endfor %}
+      </ol>
+
+      {% set carousel_items_current_id = 0 %}
+      <div class="carousel-inner" role="listbox">
+        {% for item in work_carousel_items %}
+          {#
+          <div class="carousel-item active">
+            <img class="d-block img-fluid" src="{{ base_path ~ directory }}/images/theme-sun.jpg" alt="First slide">
+          </div>
+          #}
+          {% if carousel_items_current_id == 0 %}
+            {# @todo add active class on first item only #}
+            {#{% set item.attributes = item.attributes.addClass('active') %}#}
+          {% endif %}
+          {{ item }}
+          {% set carousel_items_current_id = carousel_items_current_id + 1 %} {# @todo review inc #}
+        {% endfor %}
+        {# todo iterate on work_slides and create template for work_slide #}
+      </div>
+      <a class="carousel-control-prev" href="#carousel-works" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-works" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+</section>
+
+<section class="articles">
+    <div class="container card-deck">
+      <div class="card-block">
+        <h2 class="card-title">Recent articles</h2> {# to be replaced by most recommanded articles #}
+        <p class="card-text">Articles are most of the time issued from <a href="http://www.theweeklydrop.com">the Weekly
+            Drop</a>, a newsletter dedicated to Drupal.</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><h5><a href="https://dri.es/who-sponsors-drupal-development-2017">What's new in
+                Drupal 8.4?</a></h5>
+            <p class="text-mute">Media in core, Big Pipe stable release, and much more</p></li>
+          <li class="list-group-item"><h5><a href="https://dri.es/who-sponsors-drupal-development-2017">Who Sponsors
+                Drupal Development? (2016-2017 Edition)</a></h5><span class="text-muted">by Dries Buytaert</span></li>
+          <li class="list-group-item"><h5><a
+                href="https://medium.com/@rachel_norfolk/on-measuring-contribution-780de6293740">On Measuring
+                Contribution</a></h5><p class="text-muted">by Rachel Lawson</p></li>
+          <li class="list-group-item"><h5><a
+                href="https://www.deeson.co.uk/labs/deeson-allocates-20-my-time-work-open-source-here%E2%80%99s-how-i-spend-it">Deeson
+                Allocates 20% of My Time to Work on Open Source: Here’s How I Spend It</a></h5><p class="text-muted">by Kristiaan Van den Eynde</p></li>
+        </ul>
+      </div>
+      <div class="card-block">
+        <a href="/articles" class="card-link" title="Coming in the next weeks">More articles</a> {# learn section #}
+      </div>
+    </div>
+</section>
+
+    {# Learn row or more probably learn C2A with a banner mentionning a patchwork of resources
+    Drupalize.me browser screenshot, Drupal Watchdog, Books, ... - Start learning Drupal #}

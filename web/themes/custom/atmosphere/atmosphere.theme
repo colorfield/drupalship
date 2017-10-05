@@ -80,7 +80,9 @@ function atmosphere_preprocess_block(array &$variables) {
   // @todo review if class exists or define other template suggestion to simplify
   // Add the card class to some menu blocks and let know the template if it is a card menu.
   $variables['is_card_menu'] = false;
+  // kint($variables);
   if(isset($variables['content']['#theme']) && $variables['content']['#theme'] == 'menu__build') {
+    // @fixme, only build is applied
     $cardMenus = [
       'build', 'develop', 'learn',
     ];
@@ -131,6 +133,29 @@ function atmosphere_theme_suggestions_views_view_alter(array &$suggestions, arra
  */
 function atmosphere_preprocess_form(array &$variables) {
   //$variables['attributes']['novalidate'] = 'novalidate';
+  if($variables['element']['#form_id'] = 'search_block_form') {
+    $variables['attributes']['class'][] = 'form-inline my-2 my-lg-0';
+  }
+}
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function atmosphere_preprocess_form_element(array &$variables) {
+  //kint($variables);
+  if($variables['element']['#id'] = 'edit-keys') {
+    $variables['element']['#attributes']['class'][] = 'form-control mr-sm-2';
+    $variables['element']['#attributes']['placeholder'] = t('Search');
+  }
+}
+
+/**
+ * Implements hook_preprocess_input().
+ */
+function atmosphere_preprocess_input__search(array &$variables) {
+  if($variables['attributes']['id'] = 'edit-keys') {
+    $variables['attributes']['class'][] = 'form-inline my-2 my-lg-0';
+  }
 }
 
 /**
