@@ -80,10 +80,8 @@
   {% endif %}
   {{ title_suffix }}
 
-  {# @todo get updated date #}
-  {% set updated_date = node.getCreatedTime()|format_date('short') %}
-  <p class="text-muted">{% trans %}Updated on {{ updated_date }}{% endtrans %}</p>
-
+  {% set changed_date = changed|format_date('short') %}
+  <p class="text-muted">{% trans %}Updated on {{ changed_date }}{% endtrans %}</p>
   {% if display_submitted %}
     <footer>
       {{ author_picture }}

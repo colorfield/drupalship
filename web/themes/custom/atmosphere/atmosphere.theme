@@ -53,6 +53,14 @@ function atmosphere_page_attachments_alter(array &$page) {
  */
 function atmosphere_preprocess_page(array &$variables) {
   //$variables['attributes']['class'][] = 'container';
+
+  // Provides the content last updated date
+  // @todo replace deprecated
+//  $query = db_select('node_field_data', 'nfd');
+//  $query->condition('status', 1);
+//  $query->addExpression("MAX(nfd.changed)");
+//  $lastUpdate = $query->execute()->fetchField();
+//  $variables['last_content_update'] = $lastUpdate;
 }
 
 /**
@@ -119,6 +127,12 @@ function atmosphere_theme_suggestions_fieldset_alter(array &$suggestions, array 
 function atmosphere_preprocess_node(array &$variables) {
   // Default to turning off byline/submitted.
   //$variables['display_submitted'] = FALSE;
+
+  // Provides the node changed time.
+  $node = $variables['node'];
+  if($node instanceof \Drupal\node\Entity\Node) {
+    $variables['changed'] = $node->getChangedTime();
+  }
 }
 
 /**
