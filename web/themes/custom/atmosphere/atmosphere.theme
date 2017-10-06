@@ -88,7 +88,6 @@ function atmosphere_preprocess_block(array &$variables) {
   // @todo review if class exists or define other template suggestion to simplify
   // Add the card class to some menu blocks and let know the template if it is a card menu.
   $variables['is_card_menu'] = false;
-  // kint($variables);
   if(isset($variables['content']['#theme']) && $variables['content']['#theme'] == 'menu__build') {
     // @fixme, only build is applied
     $cardMenus = [
@@ -96,7 +95,7 @@ function atmosphere_preprocess_block(array &$variables) {
     ];
     $menuId = $variables['content']['#menu_name'];
     if(in_array($menuId, $cardMenus)) {
-      $variables['attributes']['class'][] = 'card';
+      // $variables['attributes']['class'][] = 'card';
       $variables['is_card_menu'] = true;
     }
   }
@@ -156,7 +155,6 @@ function atmosphere_preprocess_form(array &$variables) {
  * Implements hook_preprocess_form_element().
  */
 function atmosphere_preprocess_form_element(array &$variables) {
-  //kint($variables);
   if($variables['element']['#id'] = 'edit-keys') {
     $variables['element']['#attributes']['class'][] = 'form-control mr-sm-2';
     $variables['element']['#attributes']['placeholder'] = t('Search');
@@ -211,4 +209,8 @@ function atmosphere_preprocess_menu_local_task(array &$variables) {
 
 function atmosphere_preprocess_region__primary_menu(&$variables) {
   $variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top';
+}
+
+function atmosphere_preprocess_region__sidebar_first(&$variables) {
+  $variables['attributes']['class'][] = 'card';
 }
