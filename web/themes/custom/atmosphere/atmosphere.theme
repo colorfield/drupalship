@@ -85,20 +85,7 @@ function atmosphere_theme_suggestions_node_alter(array &$suggestions, array $var
  * Implements hook_preprocess_HOOK() for Block document templates.
  */
 function atmosphere_preprocess_block(array &$variables) {
-  // @todo review if class exists or define other template suggestion to simplify
-  // Add the card class to some menu blocks and let know the template if it is a card menu.
-  $variables['is_card_menu'] = false;
-  if(isset($variables['content']['#theme']) && $variables['content']['#theme'] == 'menu__build') {
-    // @fixme, only build is applied
-    $cardMenus = [
-      'build', 'develop', 'learn',
-    ];
-    $menuId = $variables['content']['#menu_name'];
-    if(in_array($menuId, $cardMenus)) {
-      // $variables['attributes']['class'][] = 'card';
-      $variables['is_card_menu'] = true;
-    }
-  }
+
 }
 
 /**
@@ -212,5 +199,7 @@ function atmosphere_preprocess_region__primary_menu(&$variables) {
 }
 
 function atmosphere_preprocess_region__sidebar_first(&$variables) {
+  // @todo review the way of adding classes and markup on contextual menus to get Bootstrap cards
+  // see block--system-menu-block.html.twig and menu.html.twig
   $variables['attributes']['class'][] = 'card';
 }

@@ -32,14 +32,17 @@
  */
 #}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
+
+{# @todo review hardcoded menu names, in menu.html.twig as well #}
+{% set contextual_menus = ['block-develop', 'block-learn', 'block-build'] %}
+{% set is_contextual_menu = attributes.id|clean_id in contextual_menus %}
+
 <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
-  {%  if is_card_menu %}
+  {%  if is_contextual_menu %}
     {% set title_attributes = title_attributes.addClass('card-title') %}
-    {# @todo apply class to ul #}
-    {% set content_attributes = content_attributes.addClass('list-group') %}
     <div class="card-block">
-    {%  endif %}
+  {%  endif %}
       {% if not configuration.label_display %}
         {% set title_attributes = title_attributes.addClass('visually-hidden') %}
       {% endif %}
@@ -51,7 +54,7 @@
       {% block content %}
         {{ content }}
       {% endblock %}
-    {% if is_card_menu %}
+  {% if is_contextual_menu %}
     </div>
   {% endif %}
 </nav>
