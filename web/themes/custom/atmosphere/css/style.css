@@ -83,7 +83,8 @@ a.is-active {
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background-color: rgba(4, 121, 142, 0.9);
+  color: #fff;
 }
 
 .navbar .nav-item a {
@@ -134,8 +135,12 @@ main h3 {
   color: #5a5a5a;
 }
 
-.articles h2 {
-  text-align: center;
+.featured-articles .views-row h2 {
+   font-size: 1.25rem;
+ }
+
+.featured-articles header {
+  margin-bottom: 1rem;
 }
 
 #block-atmosphere-content h2 {

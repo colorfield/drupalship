@@ -152,78 +152,52 @@
 
 {# Works #}
 {# @todo wrap into a dedicated feature #}
-<section class="works container text-center">
-    <h2>Recent works</h2>
-    <p>A selection of works chosen on a design perspective. You can also check <a href="#">Drupal.org
-        showcases</a>.</p>
+{#<section class="works container text-center">#}
+    {#<h2>Recent works</h2>#}
+    {#<p>A selection of works chosen on a design perspective. You can also check <a href="#">Drupal.org#}
+        {#showcases</a>.</p>#}
     {# @todo carousel item should lead to the detail view of a work #}
-    <div id="carousel-works" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        {% set carousel_items_current_id = 0 %}
-        {% for item in work_carousel_items  %}
+    {#<div id="carousel-works" class="carousel slide" data-ride="carousel">#}
+      {#<ol class="carousel-indicators">#}
+        {#{% set carousel_items_current_id = 0 %}#}
+        {#{% for item in work_carousel_items  %}#}
           {# @todo add active class on first item only #}
-          {% if carousel_items_current_id == 0 %}
-            <li data-target="#carousel-works" data-slide-to="{{ carousel_items_current_id }}" class="active"></li>
-          {% else %}
-            <li data-target="#carousel-works" data-slide-to="{{ carousel_items_current_id }}"></li>
-          {% endif %}
-          {% set carousel_items_current_id = carousel_items_current_id + 1 %} {# @todo review inc #}
-        {% endfor %}
-      </ol>
+          {#{% if carousel_items_current_id == 0 %}#}
+            {#<li data-target="#carousel-works" data-slide-to="{{ carousel_items_current_id }}" class="active"></li>#}
+          {#{% else %}#}
+            {#<li data-target="#carousel-works" data-slide-to="{{ carousel_items_current_id }}"></li>#}
+          {#{% endif %}#}
+          {#{% set carousel_items_current_id = carousel_items_current_id + 1 %} #}{# @todo review inc #}
+        {#{% endfor %}#}
+      {#</ol>#}
 
-      {% set carousel_items_current_id = 0 %}
-      <div class="carousel-inner" role="listbox">
-        {% for item in work_carousel_items %}
-          {#
-          <div class="carousel-item active">
-            <img class="d-block img-fluid" src="{{ base_path ~ directory }}/images/theme-sun.jpg" alt="First slide">
-          </div>
-          #}
-          {% if carousel_items_current_id == 0 %}
+      {#{% set carousel_items_current_id = 0 %}#}
+      {#<div class="carousel-inner" role="listbox">#}
+        {#{% for item in work_carousel_items %}#}
+          {##}
+          {#<div class="carousel-item active">#}
+            {#<img class="d-block img-fluid" src="{{ base_path ~ directory }}/images/theme-sun.jpg" alt="First slide">#}
+          {#</div>#}
+          {##}
+          {#{% if carousel_items_current_id == 0 %}#}
             {# @todo add active class on first item only #}
             {#{% set item.attributes = item.attributes.addClass('active') %}#}
-          {% endif %}
-          {{ item }}
-          {% set carousel_items_current_id = carousel_items_current_id + 1 %} {# @todo review inc #}
-        {% endfor %}
+          {#{% endif %}#}
+          {#{{ item }}#}
+          {#{% set carousel_items_current_id = carousel_items_current_id + 1 %} #}{# @todo review inc #}
+        {#{% endfor %}#}
         {# todo iterate on work_slides and create template for work_slide #}
-      </div>
-      <a class="carousel-control-prev" href="#carousel-works" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-works" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-</section>
-
-<section class="articles">
-    <div class="container card-deck">
-      <div class="card-block">
-        <h2 class="card-title">Recent articles</h2> {# to be replaced by most recommanded articles #}
-        <p class="card-text">Articles are most of the time issued from <a href="http://www.theweeklydrop.com">the Weekly
-            Drop</a>, a newsletter dedicated to Drupal.</p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><h5><a href="https://dri.es/who-sponsors-drupal-development-2017">What's new in
-                Drupal 8.4?</a></h5>
-            <p class="text-mute">Media in core, Big Pipe stable release, and much more</p></li>
-          <li class="list-group-item"><h5><a href="https://dri.es/who-sponsors-drupal-development-2017">Who Sponsors
-                Drupal Development? (2016-2017 Edition)</a></h5><span class="text-muted">by Dries Buytaert</span></li>
-          <li class="list-group-item"><h5><a
-                href="https://medium.com/@rachel_norfolk/on-measuring-contribution-780de6293740">On Measuring
-                Contribution</a></h5><p class="text-muted">by Rachel Lawson</p></li>
-          <li class="list-group-item"><h5><a
-                href="https://www.deeson.co.uk/labs/deeson-allocates-20-my-time-work-open-source-here%E2%80%99s-how-i-spend-it">Deeson
-                Allocates 20% of My Time to Work on Open Source: Here’s How I Spend It</a></h5><p class="text-muted">by Kristiaan Van den Eynde</p></li>
-        </ul>
-      </div>
-      <div class="card-block">
-        <a href="/articles" class="card-link" title="More featured articles">More articles</a> {# learn section #}
-      </div>
-    </div>
-</section>
+      {#</div>#}
+      {#<a class="carousel-control-prev" href="#carousel-works" role="button" data-slide="prev">#}
+        {#<span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+        {#<span class="sr-only">Previous</span>#}
+      {#</a>#}
+      {#<a class="carousel-control-next" href="#carousel-works" role="button" data-slide="next">#}
+        {#<span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+        {#<span class="sr-only">Next</span>#}
+      {#</a>#}
+    {#</div>#}
+{#</section>#}
 
 {# Learn row or more probably learn C2A with a banner mentionning a patchwork of resources
 Drupalize.me browser screenshot, Drupal Watchdog, Books, ... - Start learning Drupal #}
