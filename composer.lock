@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fa2ca8c6c06ee1f02906f7995ce6429",
+    "content-hash": "35fd09796ba595d0180de1d23b821c85",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2657,6 +2657,114 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_revisions"
             }
+        },
+        {
+            "name": "drupal/examples",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/examples",
+                "reference": "ee7a2335155ffecc6598cb61366abf3728d60d9a"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "require-dev": {
+                "drupal/simpletest_example": "*",
+                "drupal/stream_wrapper_example": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1506101643",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "Itangalo",
+                    "homepage": "https://www.drupal.org/user/153998"
+                },
+                {
+                    "name": "Mile23",
+                    "homepage": "https://www.drupal.org/user/116231"
+                },
+                {
+                    "name": "Torenware",
+                    "homepage": "https://www.drupal.org/user/18784"
+                },
+                {
+                    "name": "add1sun",
+                    "homepage": "https://www.drupal.org/user/65088"
+                },
+                {
+                    "name": "cyberswat",
+                    "homepage": "https://www.drupal.org/user/27802"
+                },
+                {
+                    "name": "ilo",
+                    "homepage": "https://www.drupal.org/user/118449"
+                },
+                {
+                    "name": "jhodgdon",
+                    "homepage": "https://www.drupal.org/user/155601"
+                },
+                {
+                    "name": "jn2",
+                    "homepage": "https://www.drupal.org/user/1001014"
+                },
+                {
+                    "name": "katbailey",
+                    "homepage": "https://www.drupal.org/user/172987"
+                },
+                {
+                    "name": "linclark",
+                    "homepage": "https://www.drupal.org/user/396253"
+                },
+                {
+                    "name": "marvil07",
+                    "homepage": "https://www.drupal.org/user/132175"
+                },
+                {
+                    "name": "mikl",
+                    "homepage": "https://www.drupal.org/user/58679"
+                },
+                {
+                    "name": "rfay",
+                    "homepage": "https://www.drupal.org/user/30906"
+                },
+                {
+                    "name": "socketwench",
+                    "homepage": "https://www.drupal.org/user/65793"
+                },
+                {
+                    "name": "yched",
+                    "homepage": "https://www.drupal.org/user/39567"
+                }
+            ],
+            "description": "The Examples for Developers project aims to provide high-quality, well-documented API examples for a broad range of Drupal core functionality.",
+            "homepage": "https://www.drupal.org/project/examples",
+            "support": {
+                "source": "http://cgit.drupalcode.org/examples",
+                "issues": "https://www.drupal.org/project/issues/examples",
+                "documentation": "https://api.drupal.org/api/examples"
+            },
+            "time": "2017-09-22 17:39:55"
         },
         {
             "name": "drupal/google_analytics",
@@ -9079,6 +9187,7 @@
         "drupal/backup_migrate": 10,
         "drupal/eck": 15,
         "drupal/entity_embed": 10,
+        "drupal/examples": 20,
         "drupal/inline_entity_form": 10,
         "drupal/url_embed": 15,
         "behat/mink-selenium2-driver": 20,

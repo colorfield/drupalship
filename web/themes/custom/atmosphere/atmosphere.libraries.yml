@@ -3,8 +3,10 @@ global-styling:
   css:
     theme:
       css/style.css : {}
+  js:
+    https://use.fontawesome.com/011cda1d97.js: { type: external, minified: true }
 
 final-countdown:
   version: 2.2.0
   js:
-    js/jquery.countdown.min.js : {minified: true}
+    js/jquery.countdown.min.js : { minified: true }
