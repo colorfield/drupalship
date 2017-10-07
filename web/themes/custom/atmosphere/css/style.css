@@ -1,5 +1,7 @@
 /* @todo refactoring needed after prototyping */
-/* Overrides */
+
+/* Overrides
+ ------------*/
 
 .body {
   font-family: 'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;
@@ -108,7 +110,12 @@ main.layout-content {
   color: #fff; /* #f7f7f9 */
 }
 
-/* Custom styling */
+table td {
+  padding-left: 1.25rem;
+}
+
+/* Custom styling
+ -----------------*/
 
 .main-intro {
   background: rgba(4, 121, 142, 1);
@@ -149,4 +156,27 @@ main h3 {
 
 #block-atmosphere-content h3, h4 {
   margin-top: 0.6em;
+}
+
+/* Contextual region */
+
+.contextual-region .card-block ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.contextual-region .list-group-item .is-active {
+  font-weight: bold;
+}
+
+.contextual-region .list-group-item li .is-active {
+  font-weight: normal;
+}
+
+.contextual-region .card-block {
+  padding: 0;
+}
+
+.contextual-region .card-block .card-title {
+  padding: 1rem 1.25rem 0 1.25rem;
 }
