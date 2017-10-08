@@ -47,6 +47,7 @@
         "drupal/eck": "^1.0@alpha",
         "drupal/entity_embed": "^1.0@beta",
         "drupal/examples": "1.x-dev",
+        "drupal/field_group": "^1.0@RC",
         "drupal/google_analytics": "^2.2",
         "drupal/honeypot": "^1.27",
         "drupal/inline_entity_form": "^1.0@beta",
