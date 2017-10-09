@@ -1,0 +1,178 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the stratosphere theme.
+ */
+
+use Drupal\Core\Template\AttributeArray;
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function stratosphere_preprocess_html(array &$variables) {
+  /*
+  // Remove container class defined by Tweme
+  $classAttributeArray = $variables['attributes']['class'];
+  if($classAttributeArray instanceof AttributeArray) {
+    $classValue = $classAttributeArray->value();
+    unset($classValue['container']);
+    if(($key = array_search('container', $classValue)) !== false) {
+      unset($classValue[$key]);
+    }
+    $classAttributeArray = new AttributeArray('class', $classValue);
+    $variables['attributes']['class'] = $classAttributeArray;
+  }
+  */
+
+  /* Add class to html tag */
+  //$variables['html_attributes']->addClass('no-js');
+
+  // Don't display the site name twice on the front page (and potentially others)
+  /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
+    $variables['head_title'] = $variables['head_title_array']['name'];
+  }*/
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function stratosphere_page_attachments_alter(array &$page) {
+  // Tell IE to use latest rendering engine (not to use compatibility mode).
+  /*$ie_edge = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+    'http-equiv' => 'X-UA-Compatible',
+    'content' => 'IE=edge',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
+}
+
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+function stratosphere_preprocess_page(array &$variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function stratosphere_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_node_alter().
+ */
+function stratosphere_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  /*$node = $variables['elements']['#node'];
+
+  if ($variables['elements']['#view_mode'] == "full") {
+
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for Block document templates.
+ */
+function stratosphere_preprocess_block(array &$variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function stratosphere_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  /*$element = $variables['element'];
+  $suggestions[] = 'field__' . $element['#view_mode'];
+  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function stratosphere_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+  /*$element = $variables['element'];
+  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
+    $suggestions[] = 'fieldset__form_composite';
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function stratosphere_preprocess_node(array &$variables) {
+  // Default to turning off byline/submitted.
+  //$variables['display_submitted'] = FALSE;
+
+  // Provides the node changed time.
+  $node = $variables['node'];
+  if($node instanceof \Drupal\node\Entity\Node) {
+    $variables['changed'] = $node->getChangedTime();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function stratosphere_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_form().
+ */
+function stratosphere_preprocess_form(array &$variables) {
+  //$variables['attributes']['novalidate'] = 'novalidate';
+}
+
+/**
+ * Implements hook_preprocess_select().
+ */
+function stratosphere_preprocess_select(array &$variables) {
+  //$variables['attributes']['class'][] = 'select-chosen';
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function stratosphere_preprocess_field(array &$variables, $hook) {
+  /*switch ($variables['element']['#field_name']) {
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_details().
+ */
+function stratosphere_preprocess_details(array &$variables) {
+  /*$variables['attributes']['class'][] = 'details';
+  $variables['summary_attributes']['class'] = 'summary';*/
+}
+
+/**
+ * Implements hook_theme_suggestions_details_alter().
+ */
+function stratosphere_theme_suggestions_details_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task().
+ */
+function stratosphere_preprocess_menu_local_task(array &$variables) {
+  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+}
+
+function atmosphere_preprocess_region__sidebar_first(&$variables) {
+  // @todo review the way of adding classes and markup on contextual menus to get Bootstrap cards
+  // see block--system-menu-block.html.twig and menu.html.twig
+  $variables['attributes']['class'][] = 'card';
+}
+
+function stratosphere_preprocess_region__primary_menu(&$variables) {
+  //$variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top collapsible';
+  $variables['attributes']['class'][] = 'navbar navbar-expand-md fixed-top navbar-inverse bg-inverse';
+}

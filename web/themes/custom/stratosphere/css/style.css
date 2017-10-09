@@ -1,0 +1,209 @@
+/* @todo refactoring needed after this fast prototyping / design in browser */
+
+/* Overrides
+ ------------*/
+
+.body {
+  font-family: 'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;
+}
+
+.lead {
+  font-weight: 300;
+}
+
+.btn-outline-success {
+  color: #fff;
+  border-color: #fff;
+}
+
+#block-atmosphere-page-title h1 {
+  background: rgba(4, 121, 142, 1);
+  color: #fff;
+  padding: 0.4rem;
+  text-align: center;
+}
+
+.jumbotron {
+  /*background-image: url("../images/earth-space.jpg");*/
+  background-color: rgba(4, 121, 142, 1);
+  color: #fff;
+  border-radius: 0;
+}
+
+/* @todo media queries  */
+.jumbotron .container {
+  background: url("../images/spaceship.svg") left center no-repeat;
+}
+
+.maintenance-page .jumbotron .container {
+  background: none;
+}
+
+.jumbotron .container .content {
+  max-width: 600px;
+}
+
+.jumbotron a, .card-footer a {
+  color: #fff;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+
+.jumbotron h1, .jumbotron p {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron h2 {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+a.btn, .badge a {
+  text-decoration: none;
+}
+
+a.is-active {
+  color: #540032;
+}
+
+.list-group-item li a.is-active {
+  color: #0275d8;
+}
+
+.navbar-nav a.is-active {
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: solid;
+}
+
+.layout-container {
+  padding: 0;
+}
+
+.layout-content {
+  margin-top: 0;
+}
+
+.mb-3 {
+  margin-bottom: 0 !important;
+}
+
+.btn-primary {
+  background-color: #540032; /* 2e112d */
+  border: 1px solid #fff;
+}
+
+.btn-secondary {
+  background-color: rgba(4, 121, 142, 0.9);
+  color: #fff;
+}
+
+.navbar .nav-item a {
+  text-transform: capitalize;
+}
+
+main .card {
+  margin: 0.8rem;
+}
+
+main.layout-content {
+  margin-top: 3rem;
+}
+
+.alert {
+  margin-bottom: 0;
+}
+
+.card-footer {
+  background-color: #292b2c;
+  color: #fff; /* #f7f7f9 */
+}
+
+td {
+  padding: 1.25rem;
+}
+
+th {
+  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+}
+
+th a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Custom styling
+ -----------------*/
+
+.main-intro {
+  background: rgba(4, 121, 142, 1);
+  color: #fff;
+}
+
+  .main-intro a {
+    color: #fff;
+  }
+
+.facts img {
+  max-width: 130px;
+}
+
+.facts .row {
+  margin-bottom: 2rem;
+}
+
+main h2, h4.card-title {
+  color: rgba(4, 121, 142, 1);
+}
+
+main h3 {
+  color: #5a5a5a;
+}
+
+
+.featured-articles .card-title {
+  text-align: center;
+}
+
+.featured-articles .views-row h2 {
+   font-size: 1.25rem;
+ }
+
+.featured-articles header {
+  margin-bottom: 1rem;
+}
+
+#block-atmosphere-content h2 {
+  margin-top: 1em;
+}
+
+#block-atmosphere-content h3, h4 {
+  margin-top: 0.6em;
+}
+
+/* Contextual region */
+
+.contextual-region .card-block ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.contextual-region .list-group-item .is-active {
+  font-weight: bold;
+}
+
+.contextual-region .list-group-item li {
+  margin-top: 0.5rem;
+}
+
+.contextual-region .list-group-item li .is-active {
+  font-weight: normal;
+}
+
+.contextual-region .card-block {
+  padding: 0;
+}
+
+.contextual-region .card-block .card-title {
+  padding: 1rem 1.25rem 0 1.25rem;
+}
