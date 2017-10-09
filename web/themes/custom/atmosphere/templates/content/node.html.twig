@@ -96,8 +96,9 @@
   {% if node.bundle|clean_class == 'article' %}
     {% if display_submitted %}
       <div{{ author_attributes }}>
-        {# @todo author from author field #}
-        <p class="text-muted">{% trans %}Published on {{ date }}{% endtrans %}</p>
+        {# @todo author from field_author #}
+        {% set created_date = node.getCreatedTime()|format_date('short') %}
+        <p class="text-muted">{% trans %}Published on {{ created_date }}{% endtrans %}</p>
         {{ metadata }}
       </div>
     {% endif %}
