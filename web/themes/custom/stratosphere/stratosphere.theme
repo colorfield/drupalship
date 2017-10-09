@@ -11,7 +11,6 @@ use Drupal\Core\Template\AttributeArray;
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function stratosphere_preprocess_html(array &$variables) {
-  /*
   // Remove container class defined by Tweme
   $classAttributeArray = $variables['attributes']['class'];
   if($classAttributeArray instanceof AttributeArray) {
@@ -23,7 +22,6 @@ function stratosphere_preprocess_html(array &$variables) {
     $classAttributeArray = new AttributeArray('class', $classValue);
     $variables['attributes']['class'] = $classAttributeArray;
   }
-  */
 
   /* Add class to html tag */
   //$variables['html_attributes']->addClass('no-js');
@@ -166,13 +164,13 @@ function stratosphere_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
 
+function stratosphere_preprocess_region__primary_menu(&$variables) {
+  //$variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top collapsible';
+  $variables['attributes']['class'][] = 'navbar navbar-expand-md fixed-top navbar-inverse bg-inverse';
+}
+
 function atmosphere_preprocess_region__sidebar_first(&$variables) {
   // @todo review the way of adding classes and markup on contextual menus to get Bootstrap cards
   // see block--system-menu-block.html.twig and menu.html.twig
   $variables['attributes']['class'][] = 'card';
-}
-
-function stratosphere_preprocess_region__primary_menu(&$variables) {
-  //$variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top collapsible';
-  $variables['attributes']['class'][] = 'navbar navbar-expand-md fixed-top navbar-inverse bg-inverse';
 }

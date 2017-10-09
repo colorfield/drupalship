@@ -5,6 +5,5 @@ package: Other
 core: 8.x
 libraries:
   - stratosphere/global-styling
- 
-base theme: tweme
 
+base theme: tweme

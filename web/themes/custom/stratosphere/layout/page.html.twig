@@ -49,6 +49,7 @@
   </header>
 
   {{ page.primary_menu }}
+
   {{ page.secondary_menu }}
 
   {{ page.breadcrumb }}
@@ -57,26 +58,30 @@
 
   {{ page.help }}
 
-  <main role="main">
+  <main role="main" class="layout-content container">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+    <div class="row">
 
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
+      {% if page.sidebar_first %}
+        <aside class="col col-md-3" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
 
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
+      <div class="col">
+        {{ page.content }}
+      </div>
 
-  </main>
+      {% if page.sidebar_second %}
+        <aside class="col col-md-3">
+          {{ page.sidebar_second }}
+        </aside>
+      {% endif %}
+
+    </div>
+
+  </main>{# /.layout-content #}
 
   {% if page.footer %}
     <footer role="contentinfo">
