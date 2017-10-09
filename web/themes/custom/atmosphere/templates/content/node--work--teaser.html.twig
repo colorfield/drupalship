@@ -71,10 +71,21 @@
  */
 #}
 
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    'carousel-item',
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
 {# @todo set attributes class="carousel-item active on the first one only" #}
 {# @todo review bootstrap carousel item #}
-
-{% set attributes = attributes.setAttribute('class', 'carousel-item') %}
+{# @todo to be replaced by Slick #}
 
 <div{{ attributes }}>
   {{ title_prefix }}

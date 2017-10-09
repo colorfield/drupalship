@@ -82,7 +82,8 @@
   ]
 %}
 
-<article{{ attributes }}>
+<article{{ attributes.addClass(classes) }}>
+
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
@@ -91,18 +92,19 @@
   {% endif %}
   {{ title_suffix }}
 
-  {# @todo add author, semantic, refactor with node.html.twig #}
   {% if display_submitted %}
-    {% if display_submitted %}
-      <div{{ author_attributes }}>
-        {# @todo author from author field #}
-        <p class="text-muted">{% trans %}Published on {{ date }}{% endtrans %}</p>
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
         {{ metadata }}
       </div>
-    {% endif %}
+    </footer>
   {% endif %}
 
-  <div{{ content_attributes }}>
+  <div{{ content_attributes.addClass('node__content') }}>
+    {# @todo format stars #}
+    <i class="fa fa-star" aria-hidden="true"></i> <span class="stars">90</span>
     {{ content }}
   </div>
 

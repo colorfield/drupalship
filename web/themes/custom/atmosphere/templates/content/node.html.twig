@@ -70,7 +70,19 @@
  *   in different view modes.
  */
 #}
-<article{{ attributes }}>
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
   {% if not page %}
@@ -80,16 +92,18 @@
   {% endif %}
   {{ title_suffix }}
 
-  {% set changed_date = changed|format_date('short') %}
-  <p class="text-muted">{% trans %}Updated on {{ changed_date }}{% endtrans %}</p>
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
+  {# @todo footer semantic #}
+  {% if node.bundle|clean_class == 'article' %}
+    {% if display_submitted %}
       <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {# @todo author from author field #}
+        <p class="text-muted">{% trans %}Published on {{ date }}{% endtrans %}</p>
         {{ metadata }}
       </div>
-    </footer>
+    {% endif %}
+  {% else %}
+    {% set changed_date = changed|format_date('short') %}
+    <p class="text-muted">{% trans %}Updated on {{ changed_date }}{% endtrans %}</p>
   {% endif %}
 
   <div{{ content_attributes }}>

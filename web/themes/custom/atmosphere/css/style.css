@@ -1,4 +1,4 @@
-/* @todo refactoring needed after prototyping */
+/* @todo refactoring needed after this fast prototyping / design in browser */
 
 /* Overrides
  ------------*/
@@ -114,8 +114,17 @@ main.layout-content {
   color: #fff; /* #f7f7f9 */
 }
 
-table td {
-  padding-left: 1.25rem;
+td {
+  padding: 1.25rem;
+}
+
+th {
+  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+}
+
+th a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* Custom styling
@@ -144,6 +153,11 @@ main h2, h4.card-title {
 
 main h3 {
   color: #5a5a5a;
+}
+
+
+.featured-articles .card-title {
+  text-align: center;
 }
 
 .featured-articles .views-row h2 {
