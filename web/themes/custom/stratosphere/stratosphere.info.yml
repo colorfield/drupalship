@@ -1,7 +1,7 @@
 name: Stratosphere
 type: theme
 description: Drupal Ship theme, based on Tweme.
-package: Other
+package: Drupal Ship
 core: 8.x
 libraries:
   - stratosphere/global-styling

@@ -5,3 +5,4 @@ global-styling:
       css/style.css : {}
   js:
     https://use.fontawesome.com/011cda1d97.js: { type: external, minified: true }
+
