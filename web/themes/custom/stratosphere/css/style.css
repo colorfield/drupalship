@@ -36,6 +36,12 @@
   }
 }
 
+@media (max-width: 1204px) and (min-width: 535px) {
+  .card-img-top {
+    display: none;
+  }
+}
+
 .maintenance-page .jumbotron .container {
   background: none;
 }
@@ -133,6 +139,19 @@ th a {
   text-decoration: underline;
 }
 
+/* Comment form
+ -----------------*/
+
+/* @fixme see https://www.drupal.org/project/allowed_formats */
+#edit-comment-body-0-format{
+  display: none;
+}
+
+input[type=text], input[type=email] {
+  width: 98%;
+  padding: 1%;
+}
+
 /* Custom styling
  -----------------*/
 
@@ -175,7 +194,11 @@ main h3 {
 }
 
 #block-strastosphere-content h2 {
-  margin-top: 1em;
+  margin-top: 1rem;
+}
+
+.card h2 {
+  padding: 1rem 1rem 0.25rem 1rem;
 }
 
 #block-strastosphere-content h3, h4 {

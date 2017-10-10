@@ -11,18 +11,6 @@ use Drupal\Core\Template\AttributeArray;
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function stratosphere_preprocess_html(array &$variables) {
-  // Remove container class defined by Tweme
-  $classAttributeArray = $variables['attributes']['class'];
-  if($classAttributeArray instanceof AttributeArray) {
-    $classValue = $classAttributeArray->value();
-    unset($classValue['container']);
-    if(($key = array_search('container', $classValue)) !== false) {
-      unset($classValue[$key]);
-    }
-    $classAttributeArray = new AttributeArray('class', $classValue);
-    $variables['attributes']['class'] = $classAttributeArray;
-  }
-
   /* Add class to html tag */
   //$variables['html_attributes']->addClass('no-js');
 
