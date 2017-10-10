@@ -106,27 +106,36 @@ function stratosphere_preprocess_node(array &$variables) {
   // Default to turning off byline/submitted.
   //$variables['display_submitted'] = FALSE;
 
-  // Provides the node changed time.
   $node = $variables['node'];
   if($node instanceof \Drupal\node\Entity\Node) {
+    // Get the node changed time.
     $variables['changed'] = $node->getChangedTime();
 
-    // Get project machine name from the Drupal.org link
-    if($node->getType() === 'project' && $node->hasField('field_link')) {
-      $isDistribution = FALSE;
-      $termDistributionId = 3; // @todo lowercase compare from term name
-      if($node->hasField('field_project_type') )
-      foreach ($node->get('field_project_type')->getValue() as $term) {
-        if($term['target_id'] == $termDistributionId) {
-          $isDistribution = TRUE;
+    if($node->getType() === 'project') {
+      // Get the stars instead of content|without in template
+      if ($node->hasField('field_stars')) {
+        if(isset($node->get('field_stars')->getValue()[0]['value'])) {
+          $variables['stars'] = $node->get('field_stars')->getValue()[0]['value'];
         }
       }
 
-      if(!$isDistribution) {
-        foreach($node->get('field_link')->getValue() as $link) {
-          if(strpos($link['uri'], 'https://www.drupal.org/project') !== false) {
-            $items = explode('/', $link['uri']);
-            $variables['project_machine_name'] = end($items);
+      // Get project machine name from the Drupal.org link
+      if ($node->hasField('field_link')) {
+        $isDistribution = FALSE;
+        $termDistributionId = 3; // @todo lowercase compare from term name
+        if ($node->hasField('field_project_type')) {
+          foreach ($node->get('field_project_type')->getValue() as $term) {
+            if ($term['target_id'] == $termDistributionId) {
+              $isDistribution = TRUE;
+            }
+          }
+        }
+        if (!$isDistribution) {
+          foreach ($node->get('field_link')->getValue() as $link) {
+            if (strpos($link['uri'], 'https://www.drupal.org/project') !== FALSE) {
+              $items = explode('/', $link['uri']);
+              $variables['project_machine_name'] = end($items);
+            }
           }
         }
       }

@@ -106,9 +106,10 @@
     {% if project_machine_name %}
       <h4><code>composer require drupal/{{ project_machine_name }}</code></h4>
     {% endif %}
-    {# @todo format stars #}
-    <i class="fa fa-star" aria-hidden="true"></i> <span class="stars">{{ content.field_stars }}</span>
-    {{ content|without('field_stars') }}
+    {% if stars %}
+      <i class="fa fa-star" aria-hidden="true"></i> <span class="stars">{{ stars }}</span>
+    {% endif %}
+    {{ content }}
   </div>
 
 </article>
