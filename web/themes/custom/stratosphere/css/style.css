@@ -30,9 +30,10 @@
   border-radius: 0;
 }
 
-/* @todo media queries  */
-.jumbotron .container {
-  background: url("../images/spaceship.svg") left center no-repeat;
+@media (min-width: 1000px) {
+  .jumbotron .container {
+    background: url("../images/spaceship.svg") left center no-repeat;
+  }
 }
 
 .maintenance-page .jumbotron .container {

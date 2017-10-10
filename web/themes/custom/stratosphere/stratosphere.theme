@@ -77,7 +77,9 @@ function stratosphere_theme_suggestions_node_alter(array &$suggestions, array $v
  * Implements hook_preprocess_HOOK() for Block document templates.
  */
 function stratosphere_preprocess_block(array &$variables) {
-
+  if($variables['attributes']['id'] == 'block-stratosphere-branding') {
+    $variables['attributes']['class'][] = 'hidden-md-down';
+  }
 }
 
 /**
