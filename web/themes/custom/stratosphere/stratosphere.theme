@@ -111,12 +111,9 @@ function stratosphere_preprocess_node(array &$variables) {
   if($node instanceof \Drupal\node\Entity\Node) {
     $variables['changed'] = $node->getChangedTime();
 
-    // Get the project machine name
-    // @todo
-    //if($node->getType() === 'project') {
-    //  drupal_set_message('project');
-    //}
-    if(!empty($node->get('field_link')->getValue())) {
+    // Get project machine name from the Drupal.org link
+    // @todo if is not field_project_type distribution
+    if($node->getType() === 'project' && $node->hasField('field_link')) {
       foreach($node->get('field_link')->getValue() as $link) {
         if(strpos($link['uri'], 'https://www.drupal.org/project') !== false) {
           $items = explode('/', $link['uri']);

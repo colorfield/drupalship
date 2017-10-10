@@ -103,8 +103,6 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {# @todo if not distribution #}
-    {{ dump(content.field_project_type) }}
     {% if project_machine_name %}
       <h4><code>composer require drupal/{{ project_machine_name }}</code></h4>
     {% endif %}
