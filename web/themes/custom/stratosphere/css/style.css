@@ -113,6 +113,10 @@ main .card {
   margin: 0.8rem;
 }
 
+.updated-date {
+  margin-top: 0.8rem;
+}
+
 main.layout-content {
   margin-top: 3rem;
 }
