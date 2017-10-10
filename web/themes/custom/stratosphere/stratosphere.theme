@@ -110,6 +110,20 @@ function stratosphere_preprocess_node(array &$variables) {
   $node = $variables['node'];
   if($node instanceof \Drupal\node\Entity\Node) {
     $variables['changed'] = $node->getChangedTime();
+
+    // Get the project machine name
+    // @todo
+    //if($node->getType() === 'project') {
+    //  drupal_set_message('project');
+    //}
+    if(!empty($node->get('field_link')->getValue())) {
+      foreach($node->get('field_link')->getValue() as $link) {
+        if(strpos($link['uri'], 'https://www.drupal.org/project') !== false) {
+          $items = explode('/', $link['uri']);
+          $variables['project_machine_name'] = end($items);
+        }
+      }
+    }
   }
 }
 
@@ -166,10 +180,10 @@ function stratosphere_preprocess_menu_local_task(array &$variables) {
 
 function stratosphere_preprocess_region__primary_menu(&$variables) {
   //$variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top collapsible';
-  $variables['attributes']['class'][] = 'navbar navbar-expand-md fixed-top navbar-inverse bg-inverse';
+  $variables['attributes']['class'][] = 'navbar navbar-expand-md sticky-top navbar-inverse bg-inverse'; #fixed-top
 }
 
-function atmosphere_preprocess_region__sidebar_first(&$variables) {
+function stratosphere_preprocess_region__sidebar_first(&$variables) {
   // @todo review the way of adding classes and markup on contextual menus to get Bootstrap cards
   // see block--system-menu-block.html.twig and menu.html.twig
   $variables['attributes']['class'][] = 'card';
