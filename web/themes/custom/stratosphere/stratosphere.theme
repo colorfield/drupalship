@@ -53,12 +53,17 @@ function stratosphere_theme_suggestions_page_alter(array &$suggestions, array $v
 /**
  * Implements hook_theme_suggestions_node_alter().
  */
-function stratosphere_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-  /*$node = $variables['elements']['#node'];
-
-  if ($variables['elements']['#view_mode'] == "full") {
-
-  }*/
+function stratosphere_theme_suggestions_node_alter(array &$suggestions, array &$variables) {
+  $node = $variables['elements']['#node'];
+  if ($variables['elements']['#view_mode'] == "nano_teaser") {
+    // In case of existing external link do not pass by the local article
+    // that is here for metas and relations with other entities.
+    if($node instanceof \Drupal\node\Entity\Node && $node->hasField('field_link')) {
+      if(isset($node->get('field_link')->getValue()[0]['uri'])) {
+        $variables['external_url'] = $node->get('field_link')->getValue()[0]['uri'];
+      }
+    }
+  }
 }
 
 /**

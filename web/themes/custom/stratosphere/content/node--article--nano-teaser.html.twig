@@ -86,7 +86,11 @@
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      {% if external_url %}
+        <a href="{{ external_url }}" rel="bookmark">{{ label }}</a>
+      {% else %}
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      {% endif %}
     </h2>
   {% endif %}
   {{ title_suffix }}
