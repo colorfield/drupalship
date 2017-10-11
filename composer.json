@@ -56,6 +56,7 @@
         "drupal/paragraphs": "^1.2",
         "drupal/pathauto": "^1.0",
         "drupal/recaptcha": "^2.2",
+        "drupal/simple_sitemap": "^2.10",
         "drupal/slick": "^1.0",
         "drupal/tweme": "^4.1",
         "drupal/url_embed": "^1.0@alpha",
