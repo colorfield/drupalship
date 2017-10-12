@@ -143,6 +143,15 @@ th a {
   text-decoration: underline;
 }
 
+.node__content .stars {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.node__content .field-group-tabs-wrapper {
+  margin-top: 1rem;
+}
+
 /* Comment form
  -----------------*/
 
