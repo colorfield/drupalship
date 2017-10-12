@@ -152,6 +152,14 @@ th a {
   margin-top: 1rem;
 }
 
+.views-exposed-form {
+  margin-bottom: 1rem;
+}
+
+.views-exposed-form .form-item {
+  margin-bottom: 0.5rem;
+}
+
 /* Comment form
  -----------------*/
 
