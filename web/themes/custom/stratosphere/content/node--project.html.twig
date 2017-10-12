@@ -104,7 +104,9 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
     {% if project_machine_name %}
-      <h4 class="composer"><code>composer require drupal/{{ project_machine_name }}</code></h4>
+      {% if is_distribution == false %}
+        <h4 class="composer"><code>composer require drupal/{{ project_machine_name }}</code></h4>
+      {% endif %}
       <h4 class="simplytest"><a href="https://simplytest.me/project/{{ project_machine_name }}">Test on simplytest.me</a></h4>
     {% endif %}
     {% if stars %}

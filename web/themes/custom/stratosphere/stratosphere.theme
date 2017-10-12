@@ -116,21 +116,19 @@ function stratosphere_preprocess_node(array &$variables) {
 
       // Get project machine name from the Drupal.org link
       if ($node->hasField('field_link')) {
-        $isDistribution = FALSE;
+        $variables['is_distribution'] = FALSE;
         $termDistributionId = 3; // @todo lowercase compare from term name
         if ($node->hasField('field_project_type')) {
           foreach ($node->get('field_project_type')->getValue() as $term) {
             if ($term['target_id'] == $termDistributionId) {
-              $isDistribution = TRUE;
+              $variables['is_distribution'] = TRUE;
             }
           }
         }
-        if (!$isDistribution) {
-          foreach ($node->get('field_link')->getValue() as $link) {
-            if (strpos($link['uri'], 'https://www.drupal.org/project') !== FALSE) {
-              $items = explode('/', $link['uri']);
-              $variables['project_machine_name'] = end($items);
-            }
+        foreach ($node->get('field_link')->getValue() as $link) {
+          if (strpos($link['uri'], 'https://www.drupal.org/project') !== FALSE) {
+            $items = explode('/', $link['uri']);
+            $variables['project_machine_name'] = end($items);
           }
         }
       }
