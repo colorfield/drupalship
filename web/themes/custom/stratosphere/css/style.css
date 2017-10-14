@@ -30,12 +30,6 @@
   border-radius: 0;
 }
 
-@media (min-width: 1000px) {
-  .jumbotron .container {
-    background: url("../images/spaceship.svg") left center no-repeat;
-  }
-}
-
 @media (max-width: 1204px) and (min-width: 535px) {
   .card-img-top {
     display: none;

@@ -1,24 +1,29 @@
 {# @todo move content on the backend and use trans, currently using this template as a first prototype #}
 
-<section class="jumbotron text-center">
-  <div class="row container">
-    <div class="col-md-7 offset-md-5">
-      <h1 class="jumbotron-heading">Onboard for the Drupal 8 planet!</h1>
-      <h2>The journey starts here</h2>
-      <p>The main goal of this site is to speed up the Drupal 8 onboarding process.
-        It reduces the documentation to selected contents and provides updates
-        on the most used Drupal projects, events and learning resources.</p>
-      <h4>Drupal core stable version <span class="badge badge-pill badge-success">
+<section class="jumbotron">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col">
+        <img class="card-img-top" src="{{ base_path ~ directory }}/images/spaceship.svg" />
+      </div>
+      <div class="col-md-8">
+        <h1 class="jumbotron-heading">Onboard for the Drupal 8 planet!</h1>
+        <h2>The journey starts here</h2>
+        <p>The main goal of this site is to speed up the Drupal 8 onboarding process.
+          It reduces the documentation to selected contents and provides updates
+          on the most used Drupal projects, events and learning resources.</p>
+        <h4>Drupal core stable version <span class="badge badge-pill badge-success">
           <a href="{{ path('entity.node.canonical', {'node': 36}) }}" title="New features introduced by 8.4.x">8.4.0</a></span></h4>
-      <p>launched on October 2017</p>
-      <p>
-        <a href="https://simplytest.me/project/drupal/8.4.x" class="btn btn-lg btn-primary"
-           data-toggle="tooltip" data-placement="top"
-           title="Launch a Drupal website straight from the browser">Try</a>
-        <a href="{{ path('entity.node.canonical', {'node': 4}) }}" class="btn btn-lg btn-secondary"
-           title="Kickstart a Drupal installation on your machine">Install</a>
-      </p>
-      <p>Or you may want to start <a href="{{ path('entity.node.canonical', {'node': 6}) }}">Drupal development</a></p>
+        <p>launched on October 2017</p>
+        <p>
+          <a href="https://simplytest.me/project/drupal/8.4.x" class="btn btn-lg btn-primary"
+             data-toggle="tooltip" data-placement="top"
+             title="Launch a Drupal website straight from the browser">Try</a>
+          <a href="{{ path('entity.node.canonical', {'node': 4}) }}" class="btn btn-lg btn-secondary"
+             title="Kickstart a Drupal installation on your machine">Install</a>
+        </p>
+        <p>Or you may want to start <a href="{{ path('entity.node.canonical', {'node': 6}) }}">Drupal development</a></p>
+      </div>
     </div>
   </div>
 </section>
