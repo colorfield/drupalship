@@ -3,6 +3,6 @@ planet_drupal.onboard_controller_index:
   path: 'onboard'
   defaults:
     _controller: '\Drupal\planet_drupal\Controller\OnboardController::index'
-    _title: 'Drupal 8 documentation for beginners'
+    _title: 'Getting started with Drupal 8'
   requirements:
     _permission: 'access content'
