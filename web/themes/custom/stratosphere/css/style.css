@@ -1,4 +1,4 @@
-/* @todo refactoring needed after this fast prototyping / design in browser */
+/* @todo refactoring needed after this fast prototyping / design in browser phase */
 
 /* Overrides
  ------------*/
@@ -152,6 +152,16 @@ th a {
 
 .views-exposed-form .form-item {
   margin-bottom: 0.5rem;
+}
+
+.field__label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.horizontal-tabs-panes {
+  padding: 0.75rem;
 }
 
 /* Comment form
