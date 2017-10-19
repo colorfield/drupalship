@@ -205,7 +205,6 @@ main h3 {
   color: #5a5a5a;
 }
 
-
 .featured-articles .card-title {
   text-align: center;
 }
@@ -255,4 +254,8 @@ main h3 {
 
 .contextual-region .card-block .card-title {
   padding: 1rem 1.25rem 0 1.25rem;
+}
+
+.webform-submission-form div label:first-child {
+  font-size: 1.5rem;
 }

@@ -63,6 +63,7 @@
         "drupal/slick": "^1.0",
         "drupal/tweme": "^4.1",
         "drupal/url_embed": "^1.0@alpha",
+        "drupal/webform": "^5.0@beta",
         "drush/drush": "~9.0",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
