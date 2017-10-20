@@ -42,6 +42,7 @@
         "drupal/backup_migrate": "^4.0@beta",
         "drupal/bootstrap_kit": "^4.2",
         "drupal/bricks": "^1.6",
+        "drupal/codesnippet": "^1.6",
         "drupal/console": "^1.0.1",
         "drupal/core": "~8.4",
         "drupal/eck": "^1.0@alpha",
