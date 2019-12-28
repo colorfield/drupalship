@@ -48,14 +48,14 @@ class OnboardController extends ControllerBase {
       $workCarouselItems[] = $this->entityService->getEntityView($node, 'teaser'); // @todo change by slide
     }
 
-    $text = $this->t('Drupal core - Critical - Remote Code Execution - SA-CORE-2018-004');
+    $text = $this->t('Drupal core - Highly critical - Remote Code Execution - SA-CORE-2019-003');
     $options = ['absolute' => TRUE];
     // @todo get from configuration
-    $url = Url::fromUri('https://www.drupal.org/sa-core-2018-004');
-    //$url = Url::fromRout('entity.node.canonical', ['node' => 31], $options);
-    //$link = Link::fromTextAndUrl($text, $url)->toString();
+    $url = Url::fromUri('https://www.drupal.org/sa-core-2019-003');
+    //$url = Url::fromRoute('entity.node.canonical', ['node' => 31], $options);
+    $link = Link::fromTextAndUrl($text, $url)->toString();
     //drupal_set_message($this->t('This site is a work in progress, view the @project_roadmap', ['@project_roadmap' => $link]), 'warning');
-    //drupal_set_message($this->t('Update your site. @link', ['@link' => $link]), 'warning');
+    //drupal_set_message($this->t('Update your site if you have web services enabled. @link', ['@link' => $link]), 'warning');
     $build['onboard_page'] = [
       '#theme' => 'onboard',
       '#work_carousel_items' => $workCarouselItems,
