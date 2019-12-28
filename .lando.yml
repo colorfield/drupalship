@@ -1,0 +1,4 @@
+name: drupalship
+recipe: drupal8
+config:
+  webroot: web
