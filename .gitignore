@@ -1,9 +1,10 @@
 .next
 node_modules
-
 yarn-error.log
 .pnpm-debug.log
 dist/
+# Theme styles
+packages/nextra-theme-*/style.css
 
 .vercel
 .idea/
