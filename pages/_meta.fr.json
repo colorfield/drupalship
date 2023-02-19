@@ -1,0 +1,30 @@
+{
+  "index": {
+    "title": "Drupalship",
+    "display": "hidden",
+    "type": "page",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "build": {
+    "title": "Build",
+    "type": "menu",
+    "items": [
+      {
+        "title": "Quand utiliser Drupal?",
+        "href": "/build/when-to-use-drupal"
+      },
+      {
+        "title": "Installation",
+        "href": "/build/installation"
+      }  
+    ]  
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/colorfield",
+    "newWindow": true
+  }
+}

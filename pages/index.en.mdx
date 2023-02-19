@@ -1,0 +1,274 @@
+---
+title: Drupalship
+description: The Hitchhiker's Guide to the Drupal Planet
+---
+
+import Link from 'next/link'
+import Image from 'next/image'
+import { Features, Feature } from '../components/features'
+import styles from './index.module.css'
+import spaceship from '../public/assets/illustrations/spaceship-2.svg'
+import water from '../public/assets/icons/water.svg'
+import cosmonaut from '../public/assets/icons/cosmonaut.svg'
+import orbit from '../public/assets/icons/orbit.svg'
+import drupalLogo from '../public/assets/images/docs/drupal-logo.png'
+
+<div className="home-content">
+
+  <style jsx>{`
+    .hero {
+      background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);  
+    }
+    .home-content {
+      margin-top: 0;
+    }
+    .home-content .content-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .drupal-description {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .drupal-description-wrapper {
+      display: flex;
+    }
+    @media (max-width: 800px) {
+      .drupal-description-wrapper {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 800px) {
+      .drupal-description-wrapper .call-to-action {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .drupal-logo{
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+      min-width: 420px;
+    }
+    @media (max-width: 1199px) {
+      .hero {
+        padding: 2rem;
+      }
+      .drupal-logo {
+        min-width: fit-content;
+      }
+    }
+    @media (min-width: 1200px) {
+      .hero {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+      .hero-left {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+      .hero-right {
+        grid-column: 2 / 4;
+        grid-row: 1 / 3;
+      }
+    }
+    @media (max-width: 800px) {
+      .hero-left {
+        display: none;
+      }
+    }
+    .content-container {
+      max-width: 90rem;
+      padding-left: max(env(safe-area-inset-left),1.5rem);
+      padding-right: max(env(safe-area-inset-right),1.5rem);
+      margin: 0 auto;
+    }
+    .community-container {
+      max-width: 90rem;
+      padding-top: 4rem;
+      padding-left: max(env(safe-area-inset-left),1.5rem);
+      padding-right: max(env(safe-area-inset-right),1.5rem);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .community-items {
+      display: flex;
+      justify-content: center;
+    }
+    @media (max-width: 800px) {
+      .community-items {
+        flex-direction: column;
+      }
+    }
+    .community-item {
+      margin: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .features-container {
+      margin: 8rem 0 0;
+      padding: 4rem 0;
+      background-color: #f3f4f6;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .projects-container {
+      text-align: center;
+      margin-top: 0;
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      border-bottom: 1px solid rgba(38,38,38,0.4);
+    }
+    .features-container .content-container {
+      margin-top: -8rem;
+    }
+    .features-container .drupal-description {
+      margin-top: 0;
+      display: flex;
+    }
+    :global(.dark) .features-container {
+      background-color: #000;
+      border-bottom: 1px solid rgb(38,38,38);
+    }
+    .headline {
+      display: inline-block;
+      font-size: 3.125rem;
+      font-size: min(4.375rem, max(8vw, 2.5rem));
+      font-weight: 700;
+      font-feature-settings: initial;
+      letter-spacing: -.12rem;
+      margin-left: -0.2rem;
+      margin-top: 3.4rem;
+      line-height: 1.1;
+      color: #000000;
+      /*background-image: linear-gradient(146deg,#000,#757a7d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;*/
+    }
+    .subHeadline {
+      display: inline-block;
+      font-size: 2.125rem;
+      font-size: min(2.375rem, max(8vw, 1.5rem));
+      font-weight: 700;
+      font-feature-settings: initial;
+      margin-left: -0.2rem;
+      margin-top: 1.4rem;
+      margin-bottom: 1.4rem;
+      line-height: 1.1;
+    }
+    .h3 {
+      display: inline-block;
+      font-size: 1.815rem;
+      font-weight: 500;
+      font-feature-settings: initial;
+      margin-top: 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+    :global(.dark) .headline {
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      font-size: min(1.3rem, max(3.5vw, 1.2rem));
+      font-feature-settings: initial;
+      line-height: 1.6;
+      padding-bottom: 1rem;
+    }
+    .nextjs-link {
+      color: currentColor;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .pl-2 {
+      padding-left: 0.8rem;
+    }
+    .pr-2 {
+      padding-right: 0.8rem;
+    }
+  `}</style>
+
+  <div className="content-container">
+    <div className="hero">
+      <div className="hero-left">
+        <Image src={spaceship} alt="Spaceship" loading="eager" width="400" />
+      </div>
+      <div className="hero-right">
+        <h1 className="headline">Onboarding <br className='sm:block hidden'/>for the Drupal 10 Planet!</h1>
+        <p className="subHeadline">Your journey starts here</p>
+        <p className="subtitle">Speed up the Drupal evaluation and onboarding process <br className='sm:block hidden'/>with selected documentation and most used Drupal projects.</p>
+        <p className="subtitle">
+          <Link className={styles.cta} href="/build/installation">Fast install<span>→</span></Link><span className="pr-2"></span>
+          <Link className={styles.ctaSecondaryHero} href="https://simplytest.me/configure?project=drupal" target="_blank">Try a demo<span>→</span></Link>
+        </p>
+        <p className="subtitle">Or you may want to <Link className={styles.heroUnderline} href="/develop/toolkit-for-drupal-developers">start Drupal development<span>→</span></Link></p>
+      </div> 
+    </div>
+  </div>
+  <div className="features-container">
+    <div className="content-container">
+      <div className="drupal-description">
+        <Feature index={1}>
+            <div className="drupal-description-wrapper">
+              <div className="drupal-logo">
+                <Image src={drupalLogo} alt="Drupal logo" loading="eager" width="380" />
+              </div>
+              <div>
+                <p className="subtitle">Drupal is an open source content management framework driving more than 1,000,000 websites like the [French government](https://www.gouvernement.fr/), Warner Bros. records, the Louvre museum, Lush or Tesla motors. It is also adopted as the primary Content Management System by the European Commission and the Australian governement.</p>
+                <br className='sm:block hidden'/>
+                <p className="subtitle">The first release was launched in 2001, it is now maintained by more than 100,000 enthusiast contributors that are building it on top of robust tools and PHP standards.</p>
+                <p className="call-to-action"><Link className={styles.ctaSecondary} href="/build/when-to-use-drupal">When shall I use Drupal?<span>→</span></Link><span className="pl-2">A brief comparison of other solutions</span></p>
+              </div>
+            </div>
+        </Feature>
+      </div>
+    </div>
+    <div className="community-container">
+      <h2 className="subHeadline">The Drupal community</h2>
+      <div className="community-items">
+        <div className="community-item">
+          <Image src={water} alt="Water" loading="eager" width="200" />
+          <h3 className="h3">100,000+ web engineers</h3>
+          <p className="subtitle">actively contributing</p>
+        </div>
+        <div className="community-item">
+          <Image src={cosmonaut} alt="Cosmonaut" loading="eager" width="200" />
+          <h3 className="h3">6,000+ core cosmonauts</h3>
+          <p className="subtitle">preparing for the next launch</p>
+        </div>
+        <div className="community-item">
+          <Image src={orbit} alt="Orbit" loading="eager" width="200" />
+          <h3 className="h3">1,000,000+ websites</h3>
+          <p className="subtitle">currently in orbit</p>
+        </div>
+      </div>  
+      <p className="subtitle"><span className="pr-2">Wanna be part of it?</span><Link className={styles.ctaSecondary} href="/contribute/contribute">Contribution 101<span>→</span></Link></p>
+    </div>
+  </div>  
+  <div className="projects-container">
+    <div className="content-container">
+      <h2 className="subHeadline">Drupal projects</h2>
+      <Features>
+        <Feature index={1} href="/build/projects#modules">
+          <h3>Modules</h3>
+          <p className="subtitle">Modules are providing most of the time a single feature. They can work on their own or collaborate with other ones.</p>
+        </Feature>
+        <Feature index={2} href="/build/projects#distributions">
+          <h3>Distributions</h3>
+          <p className="subtitle">Distributions are a well tested assembly of projects (modules, themes) dedicated to a specialized use case.</p>
+        </Feature>
+        <Feature index={3} href="/build/projects/#themes">
+          <h3>Themes</h3>
+          <p className="subtitle">Themes allows to change the look and feel of the frontend or backend and can be used as is or via inheritance.</p>
+        </Feature>
+      </Features>
+    </div> 
+  </div>      
+</div>

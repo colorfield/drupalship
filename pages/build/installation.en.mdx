@@ -1,0 +1,68 @@
+# Installation of Drupal core and contributed projects
+
+## Fast local installation
+
+This is perfect to evaluate and develop with Drupal locally.
+A 5 minutes tops installation. You should have PHP 8.1 and Composer installed.
+
+<div className="steps-container">
+
+### Require the project
+
+```bash
+composer create-project drupal/recommended-project my-site
+```
+
+### Install Drupal
+
+```bash
+cd my-site
+php web/core/scripts/drupal install standard
+```
+
+### Run it with the PHP built-in server
+
+```bash
+cd web
+php -S 127.0.0.1:8888
+```
+</div>
+
+* More details about requiring a specific version, using Drush and development modules
+[A minimal Drupal local development environment (part 1)](https://colorfield.dev/blog/minimal-drupal-9-local-development-environment)
+* Install another database than SQLite, multiple PHP versions, Solr, a mail catcher and review common pitfalls
+[A minimal Drupal local development environment (part 2)](https://colorfield.dev/blog/minimal-and-fast-drupal-environment-part-2)
+
+### Install contributed projects
+
+```bash
+composer require drupal/[project_name]
+```
+Then enable the project with Drush or the UI.
+
+#### Enable a project with the UI
+
+- Modules /admin/modules
+- Themes /admin/appearance
+
+#### Enable a project with Drush
+
+```bash
+composer require drush/drush
+drush en [project_name]
+```
+
+## Installation with DDEV and Lando
+
+To get the same setup as production.
+
+- [Lando](https://lando.dev/)
+- [DDEV](https://ddev.com/)
+
+[Use DDEV for local environments](https://architecture.lullabot.com/adr/20211207-ddev-locals/) - Lullabot
+
+### A note about Docker on macOS
+
+Docker for Mac is a great tool to run containers on your Mac. 
+However, it is slow. Make sure to read this article:
+[Docker on MacOS is slow and how to fix it](https://www.paolomainardi.com/posts/docker-performance-macos/)

@@ -1,0 +1,122 @@
+# Drupal projects
+
+There are galaxies of Drupal projects, here is a short list of stable modules an themes
+that can apply to most use cases + a few distributions.
+
+More projects can be discovered via the [Project Browser](https://www.drupal.org/project/project_browser) initiative.
+
+## Modules
+
+Modules are providing most of the time a single feature. They can work on their own or collaborate with other modules.
+
+### Developer Experience
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Devel](https://www.drupal.org/project/devel)                            | Automates or enhances most development tasks, exposes them as Drush commands and improves var dumping with libraries like Kint. |
+| [Module Builder](https://www.drupal.org/project/module_builder)          | A module which auto-generates a skeleton or "scaffolding" for a module, along with hints on how to fill them in. Useful for newbie developers to learn how Drupal code works, and seasoned developers who are too lazy to look up what arguments a function has to take. |
+| [Stage File Proxy](https://www.drupal.org/project/stage_file_proxy)      | Stage File Proxy is a general solution for getting production files on a development server on demand.             |
+| [Web Profiler](https://www.drupal.org/project/webprofiler)               | WebProfiler adds a toolbar at the bottom of every page and shows you all sorts of stats such as the amount of database queries loaded on the page, which services are used and much more. |
+| [Backup and Migrate](https://www.drupal.org/project/backup_migrate)       | Backup and Migrate is a module that allows you to backup and restore your Drupal site. |
+| [Config Ignore](https://www.drupal.org/project/config_ignore)            | Allows you to ignore certain configuration items from being imported. |
+| [Examples for developers](https://www.drupal.org/project/examples)       | This module provides examples for Block, Cache, Config and Content Entity, Cron, Database API, Email, Events, Form API, Field, Field Permission, File, Hooks, Javascript, Node Type, Page, Pager, PHPUnit, Plugin Type, Queue, Simple Test, Stream Wrapper, Table Sort, Testing, Tour. |
+| [Reroute Email](https://www.drupal.org/project/reroute_email)       | This module intercepts all outgoing emails from a Drupal site and reroutes them to a predefined configurable email address. |
+| [Event Condition Action](https://www.drupal.org/project/eca)            | This module allows you to create rules that are triggered by events. |
+
+### Editorial Experience
+
+#### Editorial solutions
+
+Layout
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| Layout Builder (core)                                                    | (...) |
+| Paragraphs (contributed)                                                 | (...) |
+| Gutenberg (contributed)                                                  | (...) |
+
+
+To (...)
+Workflows / Content Moderation (core)
+
+#### UI improvement
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Admin Toolbar](https://www.drupal.org/project/admin_toolbar)            | Dropdown menu to most administrative tasks and other common destinations. |
+| [Linkit](https://www.drupal.org/project/linkit)                          | Eeasier interface for internal and external linking with wysiwyg editors by using an autocomplete field. |
+
+#### Images
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Image Widget Crop](https://www.drupal.org/project/image_widget_crop)    | Crop your image directly when you edit your content. |
+| [Focal Point](https://www.drupal.org/project/focal_point)                | Set a focal point on an image and generate derivatives with the focal point as the center of the image. |
+| [Responsive Image](https://www.drupal.org/project/responsive_image)      | Image styles depending on the breakpoint. |
+
+### Web services
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| JSON:API (core)                  | Exposes entities and other resources with the JSON:API standard. |
+| [GraphQL](https://www.drupal.org/project/graphql) | Exposes entities and other resources as GraphQL data. |
+| RESTful Web Services (core) | Exposes entities and other resources as JSON data. |
+
+### Forms
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Webform](https://www.drupal.org/project/webform)                        | Powerful form creation with many use cases. |
+
+### Mail
+
+SwiftMailer is deprecated but still used widely. If you are starting a new project, favor SymfonyMailer.
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [SymfonyMailer](https://www.drupal.org/project/symfony_mailer)           | HTML support, attachments, embedded images, transport configuration (for transactional email / custom SMTP) and much more. |
+
+### Spam control
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Antibot](https://www.drupal.org/project/antibot)                 | (...) |
+| [Honeypot](https://www.drupal.org/project/honeypot)                      | (...) |
+| [reCAPTCHA](https://www.drupal.org/project/recaptcha_v3)                    | reCaptcha integration |
+| [Spamspan](https://www.drupal.org/project/spamspan)                      | (...) |
+
+### Search
+
+- Search API
+- Search API Solr
+- Search API Elasticsearch
+- Facets
+
+### SEO
+
+- Pathauto
+- Metatag
+
+## Themes
+
+Themes allow you to change the look and feel of the frontend or the backend and can be used as is or via inheritance.
+
+### Frontend
+
+- Olivero (core)
+
+### Backend
+
+- Gin
+
+![Gin Admin Theme](/assets/images/docs/gin-drupal-admin-theme.webp)
+
+## Distributions
+
+Distributions are a well tested assembly of projects (modules, themes) dedicated to a specialized use case.
+
+- Commerce
+- Lightning
+- Open Social
+- Thunder
+- GovCMS

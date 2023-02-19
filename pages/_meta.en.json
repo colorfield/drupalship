@@ -1,0 +1,70 @@
+{
+  "index": {
+    "title": "Drupalship",
+    "display": "hidden",
+    "type": "page",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "build": {
+    "title": "Build",
+    "type": "menu",
+    "items": [
+      {
+        "title": "When to use Drupal?",
+        "href": "/build/when-to-use-drupal"
+      },
+      {
+        "title": "Installation",
+        "href": "/build/installation"
+      },
+      {
+        "title": "Modules and themes",
+        "href": "/build/modules-themes-distributions"
+      }
+    ]  
+  },
+  "develop": {
+    "title": "Develop",
+    "type": "menu",
+    "items": [
+      {
+        "title": "Toolkit for developers",
+        "href": "/develop/toolkit-for-drupal-developers"
+      }
+    ]
+  },
+  "learn": {
+    "title": "Learn",
+    "type": "menu",
+    "items": [
+      {
+        "title": "Drupal",
+        "href": "/learn/drupal"
+      },
+      {
+        "title": "PHP",
+        "href": "/learn/php"
+      }
+    ]
+  },
+  "contribute": {
+    "title": "Contribute",
+    "type": "page",
+    "href": "/contribute/contribute",
+    "layout": "full"
+  },
+  "host": {
+    "title": "Host",
+    "type": "page",
+    "href": "/host/drupal-hosting-for-evaluation-and-production",
+    "layout": "full"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/colorfield",
+    "newWindow": true
+  }
+}
