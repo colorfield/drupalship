@@ -32,6 +32,10 @@
       {
         "title": "Toolkit for developers",
         "href": "/develop/toolkit-for-drupal-developers"
+      },
+      {
+        "title": "Apply a patch",
+        "href": "/develop/patch-a-drupal-project"
       }
     ]
   },
