@@ -46,7 +46,11 @@ const config: DocsThemeConfig = {
   //},
   //docsRepositoryBase: 'https://github.com/colorfield/drupalship',
   footer: {
-    text: 'Drupalship',
+    text: ( 
+      <>
+        Made with ❤️ in 🇨🇭 | &nbsp;<a href="https://twitter.com/colorfield" target="_blank" rel="noreferrer">Contact ↗</a>
+      </> 
+    ), 
   },
   // Disable i18n support for now
   // i18n: [

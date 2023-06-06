@@ -64,11 +64,5 @@
     "type": "page",
     "href": "/host/drupal-hosting-for-evaluation-and-production",
     "layout": "full"
-  },
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "https://twitter.com/colorfield",
-    "newWindow": true
   }
 }
