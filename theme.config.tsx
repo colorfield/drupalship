@@ -1,10 +1,13 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
 
+// @todo add svg logo
 const logo = (
-  <span>
-    <span>Drupalship</span>
+  <>
+    <span style={{ marginLeft: '.4em', fontWeight: 800 }}>
+      Drupalship
+    </span>
     <style jsx>{`
       span {
         padding: 0.5rem 0.5rem 0.5rem 0;
@@ -22,7 +25,7 @@ const logo = (
         transition: mask-position 1s ease, -webkit-mask-position 1s ease;
       }
     `}</style>
-  </span>
+  </>  
 )
 
 const config: DocsThemeConfig = {
@@ -48,7 +51,7 @@ const config: DocsThemeConfig = {
   footer: {
     text: ( 
       <>
-        Made with ❤️ in 🇨🇭 | &nbsp;<a href="https://twitter.com/colorfield" target="_blank" rel="noreferrer">Contact ↗</a>
+        Built with ❤️ in 🇨🇭 | &nbsp;<a href="https://twitter.com/colorfield" target="_blank" rel="noreferrer">Contact ↗</a>
       </> 
     ), 
   },
