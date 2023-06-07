@@ -32,7 +32,7 @@ export function Feature({
     >
       {children}
       {href ? (
-        <Link className={styles.link} href={href} target="_blank">
+        <Link className={styles.link} href={href}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
