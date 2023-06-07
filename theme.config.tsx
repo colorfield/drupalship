@@ -47,7 +47,7 @@ const config: DocsThemeConfig = {
   //chat: {
   //  link: 'https://discord.com',
   //},
-  docsRepositoryBase: 'https://github.com/colorfield/drupalship',
+  docsRepositoryBase: 'https://github.com/colorfield/drupalship/tree/main',
   footer: {
     text: ( 
       <>
