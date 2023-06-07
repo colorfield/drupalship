@@ -4,9 +4,9 @@ const withNextra = require('nextra')({
   staticImage: true,
   latex: true,
   flexsearch: {
-    codeblocks: false
+    codeblocks: true,
   },
-  defaultShowCopyCode: true
+  defaultShowCopyCode: true,
 })
 
 module.exports = withNextra({
