@@ -1,7 +1,7 @@
 # Drupal projects
 
 There are galaxies of Drupal projects, here is a short list of stable modules an themes
-that can apply to most use cases + a few distributions.
+that can apply to common use cases + a few distributions. Most modules can interact together.
 
 More projects can be discovered via the [Project Browser](https://www.drupal.org/project/project_browser) initiative.
 
@@ -27,17 +27,17 @@ Modules are providing most of the time a single feature. They can work on their 
 
 #### Editorial solutions
 
-Layout
+**Layout**
 
 | Name                                                                     | Description             |
 |--------------------------------------------------------------------------|-------------------------|
-| Layout Builder (core)                                                    | (...) |
-| Paragraphs (contributed)                                                 | (...) |
-| Gutenberg (contributed)                                                  | (...) |
+| [Layout Builder](https://www.drupal.org/docs/8/core/modules/layout-builder) (core) | Allows content editors and site builders to easily and quickly create visual layouts for content display |
+| [Paragraphs](https://www.drupal.org/project/paragraphs)                  | Instead of putting all their content in one WYSIWYG body field including images and videos, end-users can now choose on-the-fly between pre-defined Paragraph Types independent from one another |
+| [Gutenberg](https://www.drupal.org/project/gutenberg)                    | Brings the powerful admin features of Gutenberg Editor |
 
+**Workflows / Content Moderation (core)**
 
-To (...)
-Workflows / Content Moderation (core)
+> The [Content Moderation](https://www.drupal.org/docs/8/core/modules/content-moderation/overview) module allows you to expand on Drupal's "unpublished" and "published" states for content. It allows you to have a published version that is live, but have a separate working copy that is undergoing review before it is published. This is achieved by using Workflows to apply different states and transitions to entities as needed.
 
 #### UI improvement
 
@@ -80,26 +80,25 @@ SwiftMailer is deprecated but still used widely. If you are starting a new proje
 
 | Name                                                                     | Description             |
 |--------------------------------------------------------------------------|-------------------------|
-| [Antibot](https://www.drupal.org/project/antibot)                 | (...) |
-| [Honeypot](https://www.drupal.org/project/honeypot)                      | (...) |
-| [reCAPTCHA](https://www.drupal.org/project/recaptcha_v3)                    | reCaptcha integration |
-| [Spamspan](https://www.drupal.org/project/spamspan)                      | (...) |
+| [Antibot](https://www.drupal.org/project/antibot)                        | Lightweight module designed to eliminate robotic form submissions on your website in an innovative-fashion |
+| [Honeypot](https://www.drupal.org/project/honeypot)                      | Uses both the honeypot and timestamp methods of deterring spam bots from completing forms |
+| [reCAPTCHA](https://www.drupal.org/project/recaptcha_v3)                 | reCaptcha integration |
+| [Spamspan](https://www.drupal.org/project/spamspan)                      | Obfuscates email addresses to help prevent spambots from collecting them |
 
 ### Search
 
 | Name                                                                     | Description             |
 |--------------------------------------------------------------------------|-------------------------|
-| [Search API](https://www.drupal.org/project/search_api)                  | (...) |
-| [Search API Solr](https://www.drupal.org/project/search_api_solr)        | (...) |
-| [Search API Elasticsearch](https://www.drupal.org/project/search_api_elasticsearch) | (...) |
-| [Facets](https://www.drupal.org/project/facets)                          | (...) |
+| [Search API](https://www.drupal.org/project/search_api)                  | Provides a framework for easily creating searches on any entity known to Drupal, using any kind of search engine |
+| [Search API Solr](https://www.drupal.org/project/search_api_solr)        | This module provides a Apache Solr backend for the Search API module |
+| [Facets](https://www.drupal.org/project/facets)                          | Allows site builders to easily create and manage faceted search interfaces |
 
 ### SEO
 
 | Name                                                                     | Description             |
 |--------------------------------------------------------------------------|-------------------------|
-| [Metatag](https://www.drupal.org/project/metatag)                        | (...) |
-| [Pathauto](https://www.drupal.org/project/pathauto)                      | (...) |
+| [Metatag](https://www.drupal.org/project/metatag)                        | Automatically provide structured metadata, aka "meta tags", about a website |
+| [Pathauto](https://www.drupal.org/project/pathauto)                      | Automatically generates URL/path aliases for various kinds of content |
 
 ## Themes
 
@@ -107,13 +106,17 @@ Themes allow you to change the look and feel of the frontend or the backend and 
 
 ### Frontend
 
-- Olivero (core)
+**Olivero** (core) is the default frontend theme for Drupal. It is a modern theme with a focus on accessibility and usability.
 
 ### Backend
 
-- Gin
+**Claro** (core) is the default backend theme. It can be extended by the [Gin Admin Theme](https://www.drupal.org/project/gin).
 
 ![Gin Admin Theme](/assets/images/docs/gin-drupal-admin-theme.webp)
+
+> A radically new UI layout paired with goodies like a Darkmode will give your Drupal's Admin interface a facelift. The Gin theme also includes things which are currently out of scope for Claro and/or some customisations we're experimenting with for the future. Built on the foundation of Claro from one of the lead designers of Claro & Drupal Design System.
+
+[Search Drupal Themes](https://www.drupal.org/project/project_theme)
 
 ## Distributions
 
@@ -129,5 +132,3 @@ Here is a short list of various use cases.
 
 - [Strategic Initiatives: Distributions and Recipes](https://www.drupal.org/about/core/strategic-initiatives-distributions-and-recipes)
 - [Search Drupal Distributions](https://www.drupal.org/project/project_distribution)
-
-
