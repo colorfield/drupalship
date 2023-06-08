@@ -3,6 +3,7 @@ title: Drupalship
 description: The Guide du Voyageur Galactique pour la Planète Drupal
 ---
 
+import cn from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Features, Feature } from '../components/features'
@@ -17,7 +18,7 @@ import drupalLogo from '../public/assets/images/docs/drupal-logo.png'
 
   <style jsx>{`
     .hero {
-      background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);  
+      background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     }
     .home-content {
       margin-top: 0;
@@ -206,10 +207,10 @@ import drupalLogo from '../public/assets/images/docs/drupal-logo.png'
         <p className="subtitle">Accélérez le processus d'évaluation et de démarrage d'un projet<br className='sm:block hidden'/>en accédant à une documentation sélectionnée et aux projets Drupal les plus utilisés.</p>
         <p className="subtitle">
           <Link className={styles.cta} href="/build/installation">Installation rapide<span>→</span></Link><span className="pr-2"></span>
-          <Link className={styles.ctaSecondaryHero} href="https://simplytest.me/configure?project=drupal" target="_blank">Démo<span>→</span></Link>
+          <Link className={cn(styles.ctaSecondaryHero, styles.ctaSecondary)} href="https://simplytest.me/configure?project=drupal" target="_blank">Démo<span>→</span></Link>
         </p>
         <p className="subtitle">Ou peut-être préférez-vous <Link className={styles.heroUnderline} href="/develop/toolkit-for-drupal-developers">Démarrer le développement Drupal<span>→</span></Link></p>
-      </div> 
+      </div>
     </div>
   </div>
   <div className="features-container">
@@ -248,10 +249,10 @@ import drupalLogo from '../public/assets/images/docs/drupal-logo.png'
           <h3 className="h3">1,000,000+ sites web</h3>
           <p className="subtitle">actuellement en orbite</p>
         </div>
-      </div>  
+      </div>
       <p className="subtitle"><span className="pr-2">Comment contribuer ?</span><Link className={styles.ctaSecondary} href="/contribute/contribute-to-drupal">Suivez le guide<span>→</span></Link></p>
     </div>
-  </div>  
+  </div>
   <div className="projects-container">
     <div className="content-container">
       <h2 className="subHeadline">Projets Drupal</h2>
@@ -269,6 +270,6 @@ import drupalLogo from '../public/assets/images/docs/drupal-logo.png'
           <p className="subtitle">Les thèmes permettent de modifier l'aspect et le look & feel du frontend ou du backend et peuvent être utilisés tels quels ou par héritage.</p>
         </Feature>
       </Features>
-    </div> 
-  </div>      
+    </div>
+  </div>
 </div>
