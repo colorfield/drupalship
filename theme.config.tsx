@@ -55,6 +55,10 @@ const config: DocsThemeConfig = {
       </> 
     ), 
   },
+  search: {
+    // todo localize
+    placeholder: 'Search',
+  },
   i18n: [
     { locale: 'en', text: 'English' },
     { locale: 'fr', text: 'Français' },
