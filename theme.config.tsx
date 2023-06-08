@@ -55,11 +55,10 @@ const config: DocsThemeConfig = {
       </> 
     ), 
   },
-  // Disable i18n support for now
-  // i18n: [
-  //   { locale: 'en', text: 'English' },
-  //   { locale: 'fr', text: 'Français' },
-  // ],
+  i18n: [
+    { locale: 'en', text: 'English' },
+    { locale: 'fr', text: 'Français' },
+  ],
 }
 
 export default config

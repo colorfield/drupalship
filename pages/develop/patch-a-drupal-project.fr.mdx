@@ -1,0 +1,26 @@
+# Patch a Drupal project
+
+> Section en cours de traduction 🇫🇷
+
+Patches can be provided by the community to deliver a fix or a new feature to a Drupal project.
+The scope can be a core or contributed project patch.
+
+On a Drupal.org issue, there are 2 ways to get a patch
+1. Via a patch file, attached to the issue
+2. Via a git branch / Merge request on GitLab
+
+On the first case, you can just reference the patch file, locally or on Drupal.org via an absolute url.
+
+For the second case, you should always download it as the Merge Request might evolve, so the codebase change is not set 
+in stone. To download it locally, just append the .pathch extension to the Merge Request url.
+
+Example: 
+
+For [this issue](https://www.drupal.org/project/drupal/issues/3086883) we have
+- A patch file in the first comments, to demonstrate a POC, it could be referenced straight in your composer.json section https://www.drupal.org/files/issues/2023-03-12/3086883-13.patch.
+- A Merge request, you can download the patch from this URL https://git.drupalcode.org/project/drupal/-/merge_requests/3642.patch
+
+## Read more
+
+- [Working with patches](https://www.drupal.org/docs/develop/git/using-git-to-contribute-to-drupal/working-with-patches) - Drupal.org
+- [Patch a Drupal project](https://colorfield.dev/blog/patch-drupal-project) - Colorfield

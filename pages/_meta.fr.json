@@ -8,23 +8,61 @@
     }
   },
   "build": {
-    "title": "Build",
+    "title": "Construire",
     "type": "menu",
     "items": [
       {
-        "title": "Quand utiliser Drupal?",
+        "title": "Quand utiliser Drupal ?",
         "href": "/build/when-to-use-drupal"
       },
       {
         "title": "Installation",
         "href": "/build/installation"
-      }  
+      },
+      {
+        "title": "Modules et thèmes",
+        "href": "/build/modules-themes-distributions"
+      }
     ]  
   },
-  "contact": {
-    "title": "Contact ↗",
+  "develop": {
+    "title": "Développer",
+    "type": "menu",
+    "items": [
+      {
+        "title": "Outils pour développeurs",
+        "href": "/develop/toolkit-for-drupal-developers"
+      },
+      {
+        "title": "Appliquer un patch",
+        "href": "/develop/patch-a-drupal-project"
+      }
+    ]
+  },
+  "learn": {
+    "title": "Apprendre",
+    "type": "menu",
+    "items": [
+      {
+        "title": "Drupal",
+        "href": "/learn/drupal"
+      },
+      {
+        "title": "PHP",
+        "href": "/learn/php"
+      }
+    ]
+  },
+  "contribute": {
+    "title": "Contribuer",
     "type": "page",
-    "href": "https://twitter.com/colorfield",
-    "newWindow": true
+    "href": "/contribute/contributing-to-drupal",
+    "layout": "full"
+  },
+  "host": {
+    "title": "Héberger",
+    "type": "page",
+    "href": "/host/drupal-hosting-for-evaluation-and-production",
+    "layout": "full"
   }
 }

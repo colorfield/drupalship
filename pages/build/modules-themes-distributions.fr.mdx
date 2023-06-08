@@ -1,0 +1,136 @@
+# Drupal projects
+
+> Section en cours de traduction 🇫🇷
+
+There are galaxies of Drupal projects, here is a short list of stable modules an themes
+that can apply to common use cases + a few distributions. Most modules can interact together.
+
+More projects can be discovered via the [Project Browser](https://www.drupal.org/project/project_browser) initiative.
+
+## Modules
+
+Modules are providing most of the time a single feature. They can work on their own or collaborate with other modules.
+
+### Developer Experience
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Devel](https://www.drupal.org/project/devel)                            | Enhances most development tasks, exposes them as Drush commands and improves var dumping with libraries like Kint. |
+| [Module Builder](https://www.drupal.org/project/module_builder)          | Generates a skeleton or "scaffolding" for a module, along with hints on how to fill them in. Useful for newbie developers to learn how Drupal code works, and seasoned developers who are too lazy to look up what arguments a function has to take. |
+| [Stage File Proxy](https://www.drupal.org/project/stage_file_proxy)      | Get production files on a development server on demand instead of rsyncing everything.             |
+| [Web Profiler](https://www.drupal.org/project/webprofiler)               | Adds a toolbar at the bottom of every page and shows you all sorts of stats such as the amount of database queries loaded on the page, which services are used and much more. |
+| [Backup and Migrate](https://www.drupal.org/project/backup_migrate)      | Baackup and restore your Drupal site. |
+| [Config Ignore](https://www.drupal.org/project/config_ignore)            | Ignore certain configuration items from being imported. Typically when config should be regarded as content and not part of the repo. |
+| [Examples for developers](https://www.drupal.org/project/examples)       | Examples for Block, Cache, Config and Content Entity, Cron, Database API, Email, Events, Form API, Field, Field Permission, File, Hooks, Javascript, Node Type, Page, Pager, PHPUnit, Plugin Type, Queue, Simple Test, Stream Wrapper, Table Sort, Testing, Tour. |
+| [Reroute Email](https://www.drupal.org/project/reroute_email)            | Intercepts all outgoing emails from a Drupal site and reroutes them to a predefined configurable email address. |
+| [Event Condition Action](https://www.drupal.org/project/eca)             | Create rules that are triggered by events. |
+
+### Editorial Experience
+
+#### Editorial solutions
+
+**Layout**
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Layout Builder](https://www.drupal.org/docs/8/core/modules/layout-builder) (core) | Allows content editors and site builders to easily and quickly create visual layouts for content display |
+| [Paragraphs](https://www.drupal.org/project/paragraphs)                  | Instead of putting all their content in one WYSIWYG body field including images and videos, end-users can now choose on-the-fly between pre-defined Paragraph Types independent from one another |
+| [Gutenberg](https://www.drupal.org/project/gutenberg)                    | Brings the powerful admin features of Gutenberg Editor |
+
+**Workflows / Content Moderation (core)**
+
+> The [Content Moderation](https://www.drupal.org/docs/8/core/modules/content-moderation/overview) module allows you to expand on Drupal's "unpublished" and "published" states for content. It allows you to have a published version that is live, but have a separate working copy that is undergoing review before it is published. This is achieved by using Workflows to apply different states and transitions to entities as needed.
+
+#### UI improvement
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Admin Toolbar](https://www.drupal.org/project/admin_toolbar)            | Dropdown menu to most administrative tasks and other common destinations. |
+| [Linkit](https://www.drupal.org/project/linkit)                          | Eeasier interface for internal and external linking with wysiwyg editors by using an autocomplete field. |
+
+#### Images
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Image Widget Crop](https://www.drupal.org/project/image_widget_crop)    | Crop your image directly when you edit your content. |
+| [Focal Point](https://www.drupal.org/project/focal_point)                | Set a focal point on an image and generate derivatives with the focal point as the center of the image. |
+| [Responsive Image](https://www.drupal.org/project/responsive_image)      | Image styles depending on the breakpoint. |
+
+### Web services
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| JSON:API (core)                  | Exposes entities and other resources with the JSON:API standard. |
+| [GraphQL](https://www.drupal.org/project/graphql) | Exposes entities and other resources as GraphQL data. |
+| RESTful Web Services (core) | Exposes entities and other resources as JSON data. |
+
+### Forms
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Webform](https://www.drupal.org/project/webform)                        | Powerful form creation with many use cases. |
+
+### Mail
+
+SwiftMailer is deprecated but still used widely. If you are starting a new project, favor SymfonyMailer.
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [SymfonyMailer](https://www.drupal.org/project/symfony_mailer)           | HTML support, attachments, embedded images, transport configuration (for transactional email / custom SMTP) and much more. |
+
+### Spam control
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Antibot](https://www.drupal.org/project/antibot)                        | Lightweight module designed to eliminate robotic form submissions on your website in an innovative-fashion |
+| [Honeypot](https://www.drupal.org/project/honeypot)                      | Uses both the honeypot and timestamp methods of deterring spam bots from completing forms |
+| [reCAPTCHA](https://www.drupal.org/project/recaptcha_v3)                 | reCaptcha integration |
+| [Spamspan](https://www.drupal.org/project/spamspan)                      | Obfuscates email addresses to help prevent spambots from collecting them |
+
+### Search
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Search API](https://www.drupal.org/project/search_api)                  | Provides a framework for easily creating searches on any entity known to Drupal, using any kind of search engine |
+| [Search API Solr](https://www.drupal.org/project/search_api_solr)        | This module provides a Apache Solr backend for the Search API module |
+| [Facets](https://www.drupal.org/project/facets)                          | Allows site builders to easily create and manage faceted search interfaces |
+
+### SEO
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Metatag](https://www.drupal.org/project/metatag)                        | Automatically provide structured metadata, aka "meta tags", about a website |
+| [Pathauto](https://www.drupal.org/project/pathauto)                      | Automatically generates URL/path aliases for various kinds of content |
+
+## Themes
+
+Themes allow you to change the look and feel of the frontend or the backend and can be used as is or via inheritance.
+
+### Frontend
+
+**Olivero** (core) is the default frontend theme for Drupal. It is a modern theme with a focus on accessibility and usability.
+
+### Backend
+
+**Claro** (core) is the default backend theme. It can be extended by the [Gin Admin Theme](https://www.drupal.org/project/gin).
+
+![Gin Admin Theme](/assets/images/docs/gin-drupal-admin-theme.webp)
+
+> A radically new UI layout paired with goodies like a Darkmode will give your Drupal's Admin interface a facelift. The Gin theme also includes things which are currently out of scope for Claro and/or some customisations we're experimenting with for the future. Built on the foundation of Claro from one of the lead designers of Claro & Drupal Design System.
+
+[Search Drupal Themes](https://www.drupal.org/project/project_theme)
+
+## Distributions
+
+Distributions are a well tested assembly of projects (modules, themes) dedicated to a specialized use case.
+Here is a short list of various use cases.
+
+| Name                                                                     | Description             |
+|--------------------------------------------------------------------------|-------------------------|
+| [Thunder](https://www.drupal.org/project/thunder)                        | Distribution for professional publishing. |
+| [Varbase](https://www.drupal.org/project/varbase)                        | Comes with more than 100 features and enhancements to Drupal core. |
+| [Open Social](https://www.drupal.org/project/social)                     | Community Engagement Platform |
+| [Commerce](https://www.drupal.org/project/commerce)                      | eCommerce framework |
+
+- [Strategic Initiatives: Distributions and Recipes](https://www.drupal.org/about/core/strategic-initiatives-distributions-and-recipes)
+- [Search Drupal Distributions](https://www.drupal.org/project/project_distribution)
