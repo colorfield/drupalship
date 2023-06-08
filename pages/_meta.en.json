@@ -53,6 +53,12 @@
       }
     ]
   },
+  "meet": {
+    "title": "Meet",
+    "type": "page",
+    "href": "/meet/events",
+    "layout": "full"
+  },
   "contribute": {
     "title": "Contribute",
     "type": "page",
