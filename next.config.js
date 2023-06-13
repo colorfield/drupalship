@@ -13,5 +13,14 @@ module.exports = withNextra({
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'en'
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/host/drupal-hosting-for-evaluation-and-production',
+        destination: '/deploy/drupal-hosting-for-evaluation-and-production',
+        permanent: true,
+      },
+    ]
+  },
 })

@@ -65,10 +65,10 @@
     "href": "/contribute/contribute-to-drupal",
     "layout": "full"
   },
-  "host": {
-    "title": "Host",
+  "deploy": {
+    "title": "Deploy",
     "type": "page",
-    "href": "/host/drupal-hosting-for-evaluation-and-production",
+    "href": "/deploy/drupal-hosting-for-evaluation-and-production",
     "layout": "full"
   }
 }
