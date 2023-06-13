@@ -51,7 +51,7 @@ const config: DocsThemeConfig = {
   footer: {
     text: ( 
       <>
-        Built with ❤️ in 🇨🇭 | &nbsp;<a href="https://twitter.com/colorfield" target="_blank" rel="noreferrer">Contact ↗</a>
+        <a href="https://twitter.com/drupalship" target="_blank" rel="noreferrer">Contact ↗</a>
       </> 
     ), 
   },
