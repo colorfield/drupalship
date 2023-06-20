@@ -1,0 +1,86 @@
+# Common site building tasks
+
+## Translate
+
+Translation occurs at several levels. In Drupal 10, all translation modules are already in core and just have to be enabled.
+Start by enabling the **Language** module, then add at least another language.
+
+*   Content entity translation: enable the **Content Translation** module.
+*   Configuration entity translation (everything that lives in the YAML files) : enable the **Configuration Translation** module.
+*   User interface translation (everything that is defined by the `t` function): enable the Interface Translation module.
+
+The most probable use case is that you want to enable these 4 modules for a fully multilingual website.
+
+A really valuable serie of blog posts is the translation tidbits serie from [Gábor Hojtsy](https://www.drupal.org/u/g%C3%A1bor-hojtsy).  
+In a serie of [20 posts](http://hojtsy.hu/blog/2013-jun-11/drupal-8-multilingual-tidbits-1-language-first), he covers everything that you should know about the translation system
+
+Here is the key link to configure your website: **/admin/config/regiona**l.
+
+## Get clean URLs based on patterns
+
+Use the **[Pathauto](/project/module/pathauto)** module.
+
+## Redirect URLs
+
+To fix 404 or to handle automatic URL renaming, use the **[Redirect](/project/module/redirect)** module.
+
+## Choose between decimal or float
+
+![Choosing between float or decimal](/sites/default/files/inline-images/float-or-decimal.png)
+
+When adding a new field, you could have to answer this question for numbers.  
+This is pretty well explained in this article [Decimal, Float or Integer in Drupal Fields?](https://www.ostraining.com/blog/drupal/decimal-float-or-integer-in-drupal-fields/)
+
+As a summary:
+
+> Float is definitely the most confusing of the number fields.  
+> **Here's our simple rule: if you don't know what a floating point number is, you don't need to use the Float field.**
+
+So, in most cases, just use Decimal.
+
+## Access control
+
+### Per entity access
+
+The **[Content Access](https://www.drupal.org/project/content_access)** (still in development for Drupal 8) covers content access per content type with default values and the possibility to override them per content.
+
+Also, have a look at the [ACL](https://www.drupal.org/project/acl) and [Group](https://www.drupal.org/project/group) modules.
+
+### Per field access
+
+The **[Field Permissions](https://www.drupal.org/project/field_permissions)** module
+
+[Comparison and Overview of Access Control modules](https://www.drupal.org/node/270000)
+
+### Private file system
+
+This can be used for file and image fields and should be done prior to any content insertion for this field.
+
+1.  Edit the sites/default/settings.php file, then uncomment and set this value, preferably outside of the docroot:  
+    `$settings['file_private_path'] = '/path/to/site/private-files';`
+2.  Cache rebuild  
+    `drush cr`
+3.  Go to Configuration > Media > File System (/admin/config/media/file-system) and check the "Private local files served by Drupal." radio at the bottom of the page.  
+    ![Drupal private file system](/assets/images/docs/default-download-method.png)
+4.  Configure your field(s) per entity type (Node, User, ...) to use the private file system.  
+    ![Drupal entity field private image](/assets/images/docs/drupal-entity-private-image.png)
+
+## Share configuration between environments
+
+See also the [development](/develop/toolkit-for-drupal-developers) section about configuration management.
+
+## Send mails reliably
+
+The easiest configuration is to use a transactional email solution like [Mailgun](https://www.mailgun.com/) (10,000 emails free every month), [Sendgrid](https://sendgrid.com/) or [Mandrill](https://www.mandrill.com/).  
+
+## Spam prevention
+
+*   If your website is not based on user registration, uncheck the _Configuration > Account settings > Who can register accounts?_
+*   Review if comments are open (they are by default on the Article content type).
+*   [Honeypot](/project/module/honeypot)
+*   [reCAPTCHA](/project/module/recaptcha) ([Mollom will be deprecated](https://www.mollom.com/eol) in April 2018).
+
+## Get backups
+
+Use the Drupal Backup and Migrate module if your hosting provider does not cover this case.  
+It allows to make backups manually or on schedule.

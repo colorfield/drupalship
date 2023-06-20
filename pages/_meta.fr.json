@@ -20,8 +20,24 @@
         "href": "/build/installation"
       },
       {
+        "title": "Concepts",
+        "href": "/build/concepts"
+      },
+      {
         "title": "Modules et thèmes",
         "href": "/build/modules-themes-distributions"
+      },
+      {
+        "title": "Structurer le contenu",
+        "href": "/build/content-model"
+      },
+      {
+        "title": "Normaliser le nommage",
+        "href": "/build/normalize-naming"
+      },
+      {
+        "title": "Tâches courantes de site building",
+        "href": "/build/common-site-building-tasks"
       }
     ]  
   },

@@ -1,5 +1,9 @@
 {
   "when-to-use-drupal": "Quand utiliser Drupal?",
   "installation": "Installation du core Drupal et de projets contribués",
-  "modules-themes-distributions": "Modules, thèmes et distributions"
+  "concepts": "Concepts propres à Drupal",
+  "modules-themes-distributions": "Modules, thèmes et distributions",
+  "content-model": "Structurer le contenu",
+  "normalize-naming": "Normaliser vos conventions de nommage",
+  "common-site-building-tasks": "Tâches courantes de site building"
 }

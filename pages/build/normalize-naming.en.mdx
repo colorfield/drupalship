@@ -1,0 +1,52 @@
+# Normalize your naming conventions
+
+This is not Drupal specific, but it applies specifically to Drupal due to the freedom that it allows.
+
+Drupal provides _label_ and _machine name_ (e.g. for content types _Article_ and _article_, _Basic Page_ and _page_).
+
+Normalizing the way you are name content types, fields, vocabularies, roles, image styles, clean urls... have several benefits:
+
+*   Improve reusability
+*   Improve readability
+*   Facilitate project onboarding for other collaborators
+
+Here are some rules that can be easily adopted. It should be regarded as a first idea: read the rule then build your own.
+
+## Fields
+
+Fields are everywhere: content types, vocabularies, users, blocks, ... so let's start with that.
+
+*   No entity type prefix, field names should remain short and could be used by another entity type (e.g. for a flag, do not use document\_status, but status).  
+*   No plural, following the same rule than SQL tables (btw fields _are_ SQL tables). Multiplicity can change over time (e.g. not field\_files but field\_file).  
+*   For entity reference, simply use the machine name of the reference (e.g. document\_type).  
+*   For fields that are specialized by a module (e.g. Telephone or Link), use the name of the module machine name (telephone, link).
+
+## Content types
+
+Avoid to be too generic... or too specific.  
+Being too generic will give a vague idea and could lead to hesitation from the author.  
+Being too specific will lead to too many content types.
+
+Provide a description for your content type first, the name will come by itself.  
+  
+_Example: Event_
+
+## Roles
+
+Roles should be defined from the use case of the website. Having personas will help here.
+
+A community of authoring users could be defined by
+
+*   Editor: person that can review and publish content
+*   Author: person that can write content and send it to the editor
+
+A real estate website could be defined by
+
+*   Promoter: project manager of a building that can edit properties content.
+*   Agency: sales representative that can edit sales status for properties.
+
+_This section needs to be completed_
+
+*   _Image styles_
+*   _Clean URLs_
+*   _File directories from File or Image fields._

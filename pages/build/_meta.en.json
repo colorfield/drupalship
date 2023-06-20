@@ -1,5 +1,9 @@
 {
   "when-to-use-drupal": "When to use Drupal?",
   "installation": "Installation of Drupal core and contributed projects",
-  "modules-themes-distributions": "Modules, themes and distributions"
+  "concepts": "Drupal concepts",
+  "modules-themes-distributions": "Modules, themes and distributions",
+  "content-model": "Content modelling",
+  "normalize-naming": "Normalize your naming conventions",
+  "common-site-building-tasks": "Common site building tasks"
 }
