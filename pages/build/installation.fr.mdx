@@ -24,6 +24,8 @@ There are 2 scripts: `install` and `quick-start`.
 `quick-start` is a wrapper around `install` with some default shortcuts like running a local PHP server, opening the browser and logging you in as an admin.
 We will show both options here, as it's good to know what's happening under the hood.
 
+#### Standard installation
+
 Installation with SQLite database and the standard profile.
 This is perfect to test a vanilla Drupal installation and install a few modules to review.
 Also this setup is the ideal candidate to debug a Drupal project issue in isolation and contribute.
@@ -31,6 +33,8 @@ Also this setup is the ideal candidate to debug a Drupal project issue in isolat
 ```bash
 php web/core/scripts/drupal install standard
 ```
+
+#### Installation with translated demo content
 
 Installation with the the Demo Umami profile.
 It comes with some demo content, translations and a few other modules enabled. Use this if you want to evaluate Drupal features.
@@ -40,6 +44,8 @@ php web/core/scripts/drupal quick-start demo_umami
 ```
 
 ### Run it with the PHP built-in server
+
+You can skip this if you used the `quick-start` script.
 
 ```bash
 cd web
