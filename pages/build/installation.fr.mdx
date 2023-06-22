@@ -7,8 +7,6 @@
 This is perfect to evaluate and develop with Drupal locally.
 A 5 minutes tops installation. You should have PHP 8.1 and Composer installed.
 
-<div className="steps-container">
-
 ### Require the project
 
 ```bash
@@ -19,7 +17,26 @@ composer create-project drupal/recommended-project my-site
 
 ```bash
 cd my-site
+```
+
+There are 2 scripts: `install` and `quick-start`.
+
+`quick-start` is a wrapper around `install` with some default shortcuts like running a local PHP server, opening the browser and logging you in as an admin.
+We will show both options here, as it's good to know what's happening under the hood.
+
+Installation with SQLite database and the standard profile.
+This is perfect to test a vanilla Drupal installation and install a few modules to review.
+Also this setup is the ideal candidate to debug a Drupal project issue in isolation and contribute.
+
+```bash
 php web/core/scripts/drupal install standard
+```
+
+Installation with the the Demo Umami profile.
+It comes with some demo content, translations and a few other modules enabled. Use this if you want to evaluate Drupal features.
+
+```bash
+php web/core/scripts/drupal quick-start demo_umami
 ```
 
 ### Run it with the PHP built-in server
@@ -28,7 +45,6 @@ php web/core/scripts/drupal install standard
 cd web
 php -S 127.0.0.1:8888
 ```
-</div>
 
 * More details about requiring a specific version, using Drush and development modules
 [A minimal Drupal local development environment (part 1)](https://colorfield.dev/blog/minimal-drupal-9-local-development-environment)

@@ -58,8 +58,7 @@ This can be used for file and image fields and should be done prior to any conte
 
 1.  Edit the sites/default/settings.php file, then uncomment and set this value, preferably outside of the docroot:  
     `$settings['file_private_path'] = '/path/to/site/private-files';`
-2.  Cache rebuild  
-    `drush cr`
+2.  Cache rebuild `drush cr`
 3.  Go to Configuration > Media > File System (/admin/config/media/file-system) and check the "Private local files served by Drupal." radio at the bottom of the page.  
     ![Drupal private file system](/assets/images/docs/default-download-method.png)
 4.  Configure your field(s) per entity type (Node, User, ...) to use the private file system.  
