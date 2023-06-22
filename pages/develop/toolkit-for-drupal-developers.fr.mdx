@@ -35,7 +35,13 @@ It is free and has a lot of plugins, that still need to be configured to get a s
 
 ## Drush CLI
 
-Drush is a command line shell interface for Drupal.
+Drush is a command line shell interface for Drupal. To require it in your project, use Composer.
+It is advised to require it per project and not globally, so you can use different versions of Drush for different projects.
+
+```bash
+composer require drush/drush
+```
+
 To dig your way out of the list of commands, use grep: `drupal list | grep service`
 Drush can be extended with your own commands, so contributed modules are often providing specific commands.
 

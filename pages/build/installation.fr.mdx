@@ -37,7 +37,7 @@ php web/core/scripts/drupal install standard
 #### Installation with translated demo content
 
 Installation with the the Demo Umami profile.
-It comes with some demo content, translations and a few other modules enabled. Use this if you want to evaluate Drupal features.
+It comes with some demo content, translations and a few other modules enabled. Use this if you want to evaluate a more complete set of Drupal features.
 
 ```bash
 php web/core/scripts/drupal quick-start demo_umami
@@ -62,7 +62,7 @@ php -S 127.0.0.1:8888
 ```bash
 composer require drupal/[project_name]
 ```
-Then enable the project with Drush or the UI.
+Then enable the project with [Drush](/develop/toolkit-for-drupal-developers#drush-cli) or the UI.
 
 #### Enable a project with the UI
 
@@ -72,7 +72,6 @@ Then enable the project with Drush or the UI.
 #### Enable a project with Drush
 
 ```bash
-composer require drush/drush
 drush en [project_name]
 ```
 
