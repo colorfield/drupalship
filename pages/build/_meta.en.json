@@ -3,8 +3,6 @@
   "installation": "Installation of Drupal core and contributed projects",
   "concepts": "Drupal concepts",
   "modules-themes-distributions": "Modules, themes and distributions",
-  "common-site-building-tasks": "Common site building tasks",
-  "content-model": "Content modelling",
-  "normalize-naming": "Normalize your naming conventions",
-  "security-updates": "Security updates"
+  "site-building": "Common site building tasks",
+  "ai": "AI"
 }

@@ -28,20 +28,12 @@
         "href": "/build/modules-themes-distributions"
       },
       {
-        "title": "Common site building tasks",
-        "href": "/build/common-site-building-tasks"
+        "title": "Site building",
+        "href": "/build/site-building"
       },
       {
-        "title": "Content Model",
-        "href": "/build/content-model"
-      },
-      {
-        "title": "Normalize naming",
-        "href": "/build/normalize-naming"
-      },
-      {
-        "title": "Security updates",
-        "href": "/build/security-updates"
+        "title": "AI",
+        "href": "/build/ai"
       }
     ]  
   },

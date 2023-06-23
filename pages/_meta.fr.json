@@ -28,20 +28,12 @@
         "href": "/build/modules-themes-distributions"
       },
       {
-        "title": "Tâches courantes de site building",
-        "href": "/build/common-site-building-tasks"
+        "title": "Site building",
+        "href": "/build/site-building"
       },
       {
-        "title": "Structurer le contenu",
-        "href": "/build/content-model"
-      },
-      {
-        "title": "Normaliser le nommage",
-        "href": "/build/normalize-naming"
-      },
-      {
-        "title": "Mises à jour de sécurité",
-        "href": "/build/security-updates"
+        "title": "AI",
+        "href": "/build/ai"
       }
     ]  
   },

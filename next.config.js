@@ -21,6 +21,26 @@ module.exports = withNextra({
         destination: '/deploy/drupal-hosting-for-evaluation-and-production',
         permanent: true,
       },
+      {
+        source: '/build/common-site-building-tasks',
+        destination: '/build/site-building/configuration',
+        permanent: true,
+      },
+      {
+        source: '/build/content-model',
+        destination: '/build/site-building/content-model',
+        permanent: true,
+      },
+      {
+        source: '/build/normalize-naming',
+        destination: '/build/site-building/normalize-naming',
+        permanent: true,
+      },
+      {
+        source: '/build/security-updates',
+        destination: '/build/site-building/security-updates',
+        permanent: true,
+      },
     ]
   },
 })
