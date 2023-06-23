@@ -79,6 +79,12 @@
     "href": "/meet/events",
     "layout": "full"
   },
+  "work": {
+    "title": "Work",
+    "type": "page",
+    "href": "/work/work-with-drupal",
+    "layout": "full"
+  },
   "contribute": {
     "title": "Contribute",
     "type": "page",
