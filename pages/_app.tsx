@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import { init } from "@socialgouv/matomo-next";
 import type { AppProps } from 'next/app'
 import 'nextra-theme-docs/style.css'
