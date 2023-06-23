@@ -23,27 +23,35 @@ Storage (persistence) is the responsibility of entities that can be
 We will focus here on the content entity concept.  
 Note that content entities can have several display modes (e.g. full and teaser).
 
-#### Content type \[/admin/structure/types\] and node \[/admin/content\]
+#### Content type and node
+
+**\[/admin/structure/types\]** and **\[/admin/content\]**
 
 *   A node is the basic piece of content
 *   Nodes can be from several types (known as “content types”), describing the business model: _Article_, _Basic Page_ are coming out of the box, _Event_, _Session_, _Training_, _Organization_,  … are customized.
 *   Nodes can be created, edited and translated with the contributor role.
     
 
-#### Taxonomy vocabulary \[/admin/structure/taxonomy\] and term
+#### Taxonomy vocabulary and term
+
+**\[/admin/structure/taxonomy\]**
 
 *   Taxonomy vocabularies are used for content (node, user, ...) categorization
 *   Each vocabulary is composed of terms
 *   Terms can have an hierarchy and multiple parents
 
-#### User \[/admin/people\] and role \[/admin/people/roles\]
+#### User and roles
+
+**\[/admin/people\]** and **\[/admin/people/roles\]**
 
 *   Users are can access the Drupal backend, if they have the permission to do so
 *   Users are grouped by roles
 *   Roles can be cumulated
 *   Each role has a set of permissions  
 
-#### Blocks \[/admin/structure/block\]
+#### Blocks
+
+**\[/admin/structure/block\]**
 
 *   Blocks are used to handle page display exceptions
 *   They can appear on regions, defined by themes
@@ -61,7 +69,9 @@ Note that content entities can have several display modes (e.g. full and teaser)
 *   Fields can be synced among content translation or be defined as translatable
     
 
-#### Views \[/admin/structure/views\]
+#### Views
+
+**\[/admin/structure/views\]**
 
 Views are SQL query builders that are primarily focusing on one entity type.  
 They can use filters that are implicit or exposed to the user, relationships and much more...
@@ -76,7 +86,9 @@ Translation occurs at several levels
 
 [More information about translation](/build/common-site-building-tasks#translate)
 
-#### Menu \[/admin/structure/menu\]
+#### Menu
+
+**\[/admin/structure/menu\]**
 
 Menus are being used for frontend or backend navigation (e.g. _About_ in the footer, _Main navigation_, _User account menu, ..._).
 
@@ -97,7 +109,9 @@ Menus are being used for frontend or backend navigation (e.g. _About_ in the foo
 *   Inline images should be avoided as much as possible (no automatic crop / resize), prefer image fields.
 *   Menu item creation shortcut : menu title can be overridden (shortened version). Menu item description and sort is only available via the Menu interface (“Structure > Menus”).
 
-#### Content list (backend view) \[/admin/content\]
+#### Content list (backend view)
+
+**\[/admin/content\]**
 
 *   Can be filtered (published status, content type, title, language)
 *   Can be sorted by column (title, type, ...)
