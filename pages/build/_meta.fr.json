@@ -3,7 +3,8 @@
   "installation": "Installation du core Drupal et de projets contribués",
   "concepts": "Concepts propres à Drupal",
   "modules-themes-distributions": "Modules, thèmes et distributions",
+  "common-site-building-tasks": "Tâches courantes de site building",
   "content-model": "Structurer le contenu",
   "normalize-naming": "Normaliser vos conventions de nommage",
-  "common-site-building-tasks": "Tâches courantes de site building"
+  "security-updates": "Mise à jour de sécurité"
 }

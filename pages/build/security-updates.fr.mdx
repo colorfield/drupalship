@@ -1,0 +1,42 @@
+# Security updates
+
+The [security team](https://www.drupal.org/drupal-security-team/general-information) provides _weekly_ security annoucements, most of the time on Thursday.  
+Just remind about this if you plan some maintenance.  
+The scope of these annoucements is the Drupal core and contributed projects (modules, themes, distributions).
+
+Security annoucements are described as follow
+
+*   level : [Security risk levels defined](https://www.drupal.org/drupal-security-team/security-risk-levels-defined)
+*   description
+
+[Security advisories page](https://www.drupal.org/security)
+
+## How to get notified?
+
+The core module _Update Manager_ is installed by default and sends notification by mail + on your website when needed, based on your core version and projects installed.
+
+If you disable these notifications, make sure to get updates:
+
+*   Follow [Drupal Security on Twitter](https://twitter.com/drupalsecurity)
+*   Subscribe to security newsletter while creating or editing your [Drupal account](https://www.drupal.org/user/register)
+
+## Do I really need to update each time?
+
+Well, just read about the [Drupageddon exploit](https://www.drupal.org/drupalsa05FAQ), a few hours after its annoucement, websites that didn't apply the patch were hacked.
+
+Honestly, SQL injection (the security issue in this case) is really rare and [25/25 security risk](https://www.drupal.org/SA-CORE-2014-005) as well.
+But it is still a good idea to keep your website up-to-date, even if it is not for security updates. Here are a few arguments for you, your client or manager:
+
+*   A site that gets regular updates does not need a complete refactoring, it evolves naturally and follows the APIs updates.
+*   The client should not have to agree on security updates, it is also part of a normal process of software maintenance.
+*   It should be included by default in the contract with your client.
+*   Drupal comes with automated testing, so even if it will never replace a manual test, it still reduces the load of having to test manually the website after each update.
+*   For custom code, you should write unit tests that speeds up testing after update.
+
+In all cases
+
+*   When security annoucements are public, review the security risk and carefully read the description to evaluate if you have to apply it immediately or if you can plan scheduled maintenance with your client.
+*   If you cannot update, for any reason, apply at least a patch.
+*   Prepare a backup of your files, code and database (but this should already be the case with an automated solution).
+
+Some [hosting companies dedicated to Drupal](/deploy/drupal-hosting-for-evaluation-and-production) are also providing extra security services, but the security update should still be done.
