@@ -2,7 +2,7 @@
 
 ## The big picture
 
-### Of code and (wo)mens
+**Of code and (wo)mens**
 
 Drupal is based on a **[core](https://www.drupal.org/project/drupal)** that provides the kernel and its own modules and themes.
 The core is maintained by a dedicated crew. It provides a starting point that can be extended by other projects maintained by the community, 
@@ -13,26 +13,22 @@ The core is maintained by a dedicated crew. It provides a starting point that ca
 Full documentation is available on the [Drupal User Guide](https://www.drupal.org/docs/user_guide/en/index.html).  
 Here is a summary of the concepts for site builders.
 
-### Structural information and storage
+### Storage and entity types
 
 Storage (persistence) is the responsibility of entities that can be
 
 *   **Content entity** : stored on the database, used by any Drupal user.
 *   **Configuration entity** : stored on configuration files, mostly used by the developer and the site builder.
 
-We will focus here on the content entity concept.  
-Note that content entities can have several display modes (e.g. full and teaser).
-
-#### Content type and node
+### Content type and node
 
 **\[/admin/structure/types\]** and **\[/admin/content\]**
 
 *   A node is the basic piece of content
 *   Nodes can be from several types (known as “content types”), describing the business model: _Article_, _Basic Page_ are coming out of the box, _Event_, _Session_, _Training_, _Organization_,  … are customized.
 *   Nodes can be created, edited and translated with the contributor role.
-    
 
-#### Taxonomy vocabulary and term
+### Taxonomy vocabulary and term
 
 **\[/admin/structure/taxonomy\]**
 
@@ -40,7 +36,7 @@ Note that content entities can have several display modes (e.g. full and teaser)
 *   Each vocabulary is composed of terms
 *   Terms can have an hierarchy and multiple parents
 
-#### User and roles
+### User and roles
 
 **\[/admin/people\]** and **\[/admin/people/roles\]**
 
@@ -49,7 +45,7 @@ Note that content entities can have several display modes (e.g. full and teaser)
 *   Roles can be cumulated
 *   Each role has a set of permissions  
 
-#### Blocks
+### Blocks
 
 **\[/admin/structure/block\]**
 
@@ -57,7 +53,7 @@ Note that content entities can have several display modes (e.g. full and teaser)
 *   They can appear on regions, defined by themes
 *   Their display can be based on conditions (by path inclusion or exclusion, by role, …)
 
-#### Field
+### Field
 
 *   Fields can specialize content types, taxonomy vocabularies, users and blocks.
 *   Fields can be shared among the same entity type (you can share the field Image with Basic Page and Article), allows one single instance on the same content type (you cannot create two image fields with the same machine name on the same content type, but you can create a field\_image and a field\_logo).
@@ -67,16 +63,21 @@ Note that content entities can have several display modes (e.g. full and teaser)
 *   Fields can be used to reference any another entity (the _Article_ content type can reference a _Article Type_ vocabulary).
 *   Fields can be defined as sub structure with some modules (e.g. _Field Collection_ or _Paragraphs_) that can also have cardinality. Note that Field Collection is probably on its way to be deprecated.
 *   Fields can be synced among content translation or be defined as translatable
-    
 
-#### Views
+### Views
 
 **\[/admin/structure/views\]**
 
 Views are SQL query builders that are primarily focusing on one entity type.  
 They can use filters that are implicit or exposed to the user, relationships and much more...
 
-#### Translation
+### Menu
+
+**\[/admin/structure/menu\]**
+
+Menus are being used for frontend or backend navigation (e.g. _About_ in the footer, _Main navigation_, _User account menu, ..._).
+
+### Translation
 
 Translation occurs at several levels
 
@@ -85,37 +86,6 @@ Translation occurs at several levels
 *   User interface translation : system global, like button labels or pagination
 
 [More information about translation](/build/common-site-building-tasks#translate)
-
-#### Menu
-
-**\[/admin/structure/menu\]**
-
-Menus are being used for frontend or backend navigation (e.g. _About_ in the footer, _Main navigation_, _User account menu, ..._).
-
-### Content edition
-
-#### Edition modes
-
-*   Available once logged in as admin
-*   Content edition: frontend and backend views
-*   Content creation: backend view only
-*   Backend view provides filtering
-
-#### Single node edit
-
-*   HTML editor : use “Paste from Word” feature to avoid HTML issues
-*   HTML (bold, italic, headings, ...) is interpreted with the frontend guidelines (no user defined styles)
-*   Automatic summary (for lists) is by default, can be overridden by a custom summary for the body field or other fields defined with this feature
-*   Inline images should be avoided as much as possible (no automatic crop / resize), prefer image fields.
-*   Menu item creation shortcut : menu title can be overridden (shortened version). Menu item description and sort is only available via the Menu interface (“Structure > Menus”).
-
-#### Content list (backend view)
-
-**\[/admin/content\]**
-
-*   Can be filtered (published status, content type, title, language)
-*   Can be sorted by column (title, type, ...)
-*   Bulk actions are available (delete, unpublish, …)
 
 ## A note about naming conventions
 
