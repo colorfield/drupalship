@@ -51,7 +51,10 @@ const config: DocsThemeConfig = {
   footer: {
     text: ( 
       <>
-        <a href="https://twitter.com/drupalship" target="_blank" rel="noreferrer">Contact ↗</a>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="https://twitter.com/drupalship" target="_blank" rel="noreferrer">Contact ↗</a></li>
+        </ul>
       </> 
     ), 
   },

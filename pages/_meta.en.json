@@ -7,6 +7,9 @@
       "layout": "raw"
     }
   },
+  "about": {
+    "display": "hidden"
+  },
   "build": {
     "title": "Build",
     "type": "menu",
