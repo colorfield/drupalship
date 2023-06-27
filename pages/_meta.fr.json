@@ -91,5 +91,11 @@
     "type": "page",
     "href": "/deploy/drupal-hosting-for-evaluation-and-production",
     "layout": "full"
+  },
+  "drupal-core-updates": {
+    "title": "✨",
+    "type": "page",
+    "href": "/drupal-core-updates",
+    "layout": "full"
   }
 }
