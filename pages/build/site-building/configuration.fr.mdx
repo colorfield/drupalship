@@ -1,84 +1,84 @@
-# Configure Drupal
+# Configurer Drupal
 
-## Translate
+## Traduire
 
-Translation occurs at several levels. In Drupal 10, all translation modules are already in core and just have to be enabled.
-Start by enabling the **Language** module, then add at least another language.
+La traduction intervient à plusieurs niveaux. Dans Drupal 10, tous les modules de traduction sont déjà en core et doivent juste être activés.
+Commencez par activer le module **Langue**, puis ajoutez au moins une autre langue.
 
-*   Content entity translation: enable the **Content Translation** module.
-*   Configuration entity translation (everything that lives in the YAML files) : enable the **Configuration Translation** module.
-*   User interface translation (everything that is defined by the `t` function): enable the Interface Translation module.
+*   Traduction des entités de contenu : activez le module **Traduction de contenu**.
+*   Traduction des entités de configuration (tout ce qui vit dans les fichiers YAML) : activez le module **Traduction de la configuration**.
+*   Traduction de l'interface utilisateur (tout ce qui est défini par la fonction `t`) : activez le module de traduction de l'interface.
 
-The most probable use case is that you want to enable these 4 modules for a fully multilingual website.
+Le cas d'utilisation le plus probable est que vous voulez activer ces 4 modules pour un site web entièrement multilingue.
 
-A really valuable serie of blog posts is the translation tidbits serie from [Gábor Hojtsy](https://www.drupal.org/u/g%C3%A1bor-hojtsy).  
-In a serie of [20 posts](http://hojtsy.hu/blog/2013-jun-11/drupal-8-multilingual-tidbits-1-language-first), he covers everything that you should know about the translation system
+Une série de billets de blog très précieuse est la série des astuces de traduction de [Gábor Hojtsy](https://www.drupal.org/u/g%C3%A1bor-hojtsy).  
+Dans une série de [20 articles](http://hojtsy.hu/blog/2013-jun-11/drupal-8-multilingual-tidbits-1-language-first), il couvre tout ce que vous devez savoir sur le système de traduction
 
-Here is the key link to configure your website: **/admin/config/regiona**l.
+Voici le lien clé pour configurer votre site web : **/admin/config/regional**.
 
-## Get clean URLs based on patterns
+## Obtenez des URL propres basées sur des modèles
 
-Use the **[Pathauto](/project/module/pathauto)** module.
+Utilisez le module **[Pathauto](/project/module/pathauto)**.
 
-## Redirect URLs
+## Redirigez les URL
 
-To fix 404 or to handle automatic URL renaming, use the **[Redirect](/project/module/redirect)** module.
+Pour corriger les 404 ou pour gérer le renommage automatique des URL, utilisez le module **[Redirect](/project/module/redirect)**.
 
-## Choose between decimal or float
+## Choisissez entre décimal ou flottant
 
-![Choosing between float or decimal](/sites/default/files/inline-images/float-or-decimal.png)
+![Choisir entre flottant ou décimal](/sites/default/files/inline-images/float-or-decimal.png)
 
-When adding a new field, you could have to answer this question for numbers.  
-This is pretty well explained in this article [Decimal, Float or Integer in Drupal Fields?](https://www.ostraining.com/blog/drupal/decimal-float-or-integer-in-drupal-fields/)
+Lors de l'ajout d'un nouveau champ, vous pourriez devoir répondre à cette question pour les numéros.  
+C'est assez bien expliqué dans cet article [Decimal, Float or Integer in Drupal Fields?](https://www.ostraining.com/blog/drupal/decimal-float-or-integer-in-drupal-fields/)
 
-As a summary:
+En résumé :
 
-> Float is definitely the most confusing of the number fields.  
-> **Here's our simple rule: if you don't know what a floating point number is, you don't need to use the Float field.**
+> Float est certainement le plus déroutant des champs numériques.  
+> **Voici notre règle simple : si vous ne savez pas ce qu'est un nombre à virgule flottante, vous n'avez pas besoin d'utiliser le champ Float.**
 
-So, in most cases, just use Decimal.
+Donc, dans la plupart des cas, utilisez simplement Decimal.
 
-## Access control
+## Contrôle d'accès
 
-### Per entity access
+### Accès par entité
 
-The **[Content Access](https://www.drupal.org/project/content_access)** (still in development for Drupal 8) covers content access per content type with default values and the possibility to override them per content.
+Le **[Content Access](https://www.drupal.org/project/content_access)** (toujours en développement pour Drupal 8) couvre l'accès au contenu par type de contenu avec des valeurs par défaut et la possibilité de les remplacer par contenu.
 
-Also, have a look at the [ACL](https://www.drupal.org/project/acl) and [Group](https://www.drupal.org/project/group) modules.
+Jetez également un œil aux modules [ACL](https://www.drupal.org/project/acl) et [Group](https://www.drupal.org/project/group).
 
-### Per field access
+### Accès par champ
 
-The **[Field Permissions](https://www.drupal.org/project/field_permissions)** module
+Le module **[Field Permissions](https://www.drupal.org/project/field_permissions)**
 
-[Comparison and Overview of Access Control modules](https://www.drupal.org/node/270000)
+[Comparaison et aperçu des modules de contrôle d'accès](https://www.drupal.org/node/270000)
 
-### Private file system
+### Système de fichiers privé
 
-This can be used for file and image fields and should be done prior to any content insertion for this field.
+Cela peut être utilisé pour les champs de fichiers et d'images et doit être fait avant toute insertion de contenu pour ce champ.
 
-1.  Edit the sites/default/settings.php file, then uncomment and set this value, preferably outside of the docroot:  
+1.  Modifiez le fichier sites/default/settings.php, puis décommentez et définissez cette valeur, de préférence en dehors de la racine du document :  
     `$settings['file_private_path'] = '/path/to/site/private-files';`
-2.  Cache rebuild `drush cr`
-3.  Go to Configuration > Media > File System (/admin/config/media/file-system) and check the "Private local files served by Drupal." radio at the bottom of the page.  
+2.  Reconstruire le cache `drush cr`
+3.  Allez dans Configuration > Media > File System (/admin/config/media/file-system) et cochez la radio "Private local files served by Drupal." en bas de la page.  
     ![Drupal private file system](/assets/images/docs/default-download-method.png)
-4.  Configure your field(s) per entity type (Node, User, ...) to use the private file system.  
+4.  Configurez votre(vos) champ(s) par type d'entité (Node, User, ...) pour utiliser le système de fichiers privé.  
     ![Drupal entity field private image](/assets/images/docs/drupal-entity-private-image.png)
 
-## Share configuration between environments
+## Partager la configuration entre les environnements
 
-See also the [development](/develop/toolkit-for-drupal-developers) section about configuration management.
+Voir également la section [développement](/develop/toolkit-for-drupal-developers) à propos de la gestion de la configuration.
 
-## Send mails reliably
+## Envoyer des mails de manière fiable
 
-The easiest configuration is to use a transactional email solution like [Mailgun](https://www.mailgun.com/) (10,000 emails free every month), [Sendgrid](https://sendgrid.com/) or [Mandrill](https://www.mandrill.com/).  
+La configuration la plus simple consiste à utiliser une solution de courrier électronique transactionnel comme [Mailgun](https://www.mailgun.com/) (10,000 emails gratuits chaque mois), [Sendgrid](https://sendgrid.com/) ou [Mandrill](https://www.mandrill.com/).  
 
-## Spam prevention
+## Prévention du spam
 
-*   If your website is not based on user registration, uncheck the _Configuration > Account settings > Who can register accounts?_
-*   Review if comments are open (they are by default on the Article content type).
-*   Install [Spam control modules](/build/modules-themes-distributions#spam-control)
+*   Si votre site web n'est pas basé sur l'inscription des utilisateurs, décochez _Configuration > Paramètres de compte > Qui peut s'inscrire ?_
+*   Vérifiez si les commentaires sont ouverts (ils le sont par défaut sur le type de contenu Article).
+*   Installez les [Modules de contrôle du spam](/build/modules-themes-distributions#spam-control)
 
-## Get backups
+## Sauvegardes
 
-Use the Drupal [Backup and Migrate](https://www.drupal.org/project/backup_migrate) module if your hosting provider does not cover this case.  
-It allows to run scheduled or manual backups
+Utilisez le module Drupal [Backup and Migrate](https://www.drupal.org/project/backup_migrate) si votre fournisseur d'hébergement ne couvre pas ce cas.  
+Il permet d'exécuter des sauvegardes programmées ou manuelles
