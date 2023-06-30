@@ -1,42 +1,42 @@
-# Security updates
+# Mises à jour de sécurité
 
-The [security team](https://www.drupal.org/drupal-security-team/general-information) provides _weekly_ security annoucements, most of the time on Thursday.  
-Just remind about this if you plan some maintenance.  
-The scope of these annoucements is the Drupal core and contributed projects (modules, themes, distributions).
+L'[équipe de sécurité](https://www.drupal.org/drupal-security-team/general-information) publie des annonces de sécurité _hebdomadaires_, la plupart du temps le jeudi.
+N'oubliez pas de le mentionner si vous prévoyez une maintenance.
+Ces annonces concernent le noyau Drupal et les projets contribués (modules, thèmes, distributions).
 
-Security annoucements are described as follow
+Les annonces de sécurité sont décrites comme suit :
 
-*   Level : [Security risk levels defined](https://www.drupal.org/drupal-security-team/security-risk-levels-defined)
+*   Niveau : [Définition des niveaux de risque de sécurité](https://www.drupal.org/drupal-security-team/security-risk-levels-defined)
 *   Description
 
-[Security advisories page](https://www.drupal.org/security)
+[Page des avis de sécurité](https://www.drupal.org/security)
 
-## How to get notified?
+## Comment être notifié(e) ?
 
-The core module _Update Manager_ is installed by default and sends notification by mail + on your website when needed, based on your core version and projects installed.
+Le module principal _Gestionnaire de mises à jour_ est installé par défaut et envoie des notifications par e-mail + sur votre site lorsque nécessaire, en fonction de votre version de base et des projets installés.
 
-If you disable these notifications, make sure to get updates:
+Si vous désactivez ces notifications, assurez-vous de recevoir les mises à jour :
 
-*   Follow [Drupal Security on Twitter](https://twitter.com/drupalsecurity)
-*   Subscribe to security newsletter while creating or editing your [Drupal account](https://www.drupal.org/user/register)
+*   Suivez [Drupal Security sur Twitter](https://twitter.com/drupalsecurity)
+*   Abonnez-vous à la newsletter de sécurité lors de la création ou de la modification de votre [compte Drupal](https://www.drupal.org/user/register)
 
-## Do I really need to update each time?
+## Dois-je vraiment mettre à jour à chaque fois ?
 
-Well, just read about the [Drupageddon exploit](https://www.drupal.org/drupalsa05FAQ), a few hours after its annoucement, websites that didn't apply the patch were hacked.
+Eh bien, lisez simplement sur [l'exploit Drupageddon](https://www.drupal.org/drupalsa05FAQ), quelques heures après son annonce, les sites qui n'ont pas appliqué le correctif ont été piratés.
 
-Honestly, SQL injection (the security issue in this case) is really rare and [25/25 security risk](https://www.drupal.org/SA-CORE-2014-005) as well.
-But it is still a good idea to keep your website up-to-date, even if it is not for security updates. Here are a few arguments for you, your client or manager:
+Honnêtement, l'injection SQL (le problème de sécurité dans ce cas) est très rare et aussi [un risque de sécurité sur 25](https://www.drupal.org/SA-CORE-2014-005).
+Mais il est toujours judicieux de garder votre site à jour, même s'il ne s'agit pas de mises à jour de sécurité. Voici quelques arguments pour vous, votre client ou votre responsable :
 
-*   A site that gets regular updates does not need a complete refactoring, it evolves naturally and follows the APIs updates.
-*   The client should not have to agree on security updates, it is also part of a normal process of software maintenance.
-*   It should be included by default in the contract with your client.
-*   Drupal comes with automated testing, so even if it will never replace a manual test, it still reduces the load of having to test manually the website after each update.
-*   For custom code, you should write unit tests that speeds up testing after update.
+*   Un site qui reçoit des mises à jour régulières n'a pas besoin d'une refonte complète, il évolue naturellement et suit les mises à jour des API.
+*   Le client ne devrait pas avoir à accepter les mises à jour de sécurité, cela fait également partie d'un processus normal de maintenance logicielle.
+*   Cela devrait être inclus par défaut dans le contrat avec votre client.
+*   Drupal est livré avec des tests automatisés, donc même s'ils ne remplacent jamais un test manuel, ils réduisent quand même la charge de devoir tester manuellement le site après chaque mise à jour.
+*   Pour le code personnalisé, vous devriez écrire des tests unitaires qui accélèrent les tests après la mise à jour.
 
-In all cases
+Dans tous les cas
 
-*   When security annoucements are public, review the security risk and carefully read the description to evaluate if you have to apply it immediately or if you can plan scheduled maintenance with your client.
-*   If you cannot update, for any reason, apply at least a patch.
-*   Prepare a backup of your files, code and database (but this should already be the case with an automated solution).
+*   Lorsque les annonces de sécurité sont publiques, examinez le risque de sécurité et lisez attentivement la description pour évaluer si vous devez l'appliquer immédiatement ou si vous pouvez planifier une maintenance planifiée avec votre client.
+*   Si vous ne pouvez pas mettre à jour, pour quelque raison que ce soit, appliquez au moins un correctif.
+*   Préparez une sauvegarde de vos fichiers, de votre code et de votre base de données (mais cela devrait déjà être le cas avec une solution automatisée).
 
-Some [hosting companies dedicated to Drupal](/deploy/drupal-hosting-for-evaluation-and-production) are also providing extra security services, but the security update should still be done.
+Certaines [entreprises d'hébergement dédiées à Drupal](/deploy/drupal-hosting-for-evaluation-and-production) fournissent également des services de sécurité supplémentaires, mais la mise à jour de sécurité doit toujours être effectuée.

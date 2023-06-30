@@ -1,52 +1,52 @@
-# Normalize your naming conventions
+# Normalisez vos conventions de nommage
 
-This is not Drupal specific, but it applies specifically to Drupal due to the freedom that it allows.
+Ceci n'est pas spécifique à Drupal, mais cela s'applique spécifiquement à Drupal en raison de la liberté qu'il autorise.
 
-Drupal provides _label_ and _machine name_ (e.g. for content types _Article_ and _article_, _Basic Page_ and _page_).
+Drupal fournit un _label_ et un _nom machine_ (par exemple, pour les types de contenu _Article_ et _article_, _Page de base_ et _page_).
 
-Normalizing the way you are name content types, fields, vocabularies, roles, image styles, clean urls... have several benefits:
+Normaliser la façon dont vous nommez les types de contenu, les champs, les vocabulaires, les rôles, les styles d'image, les URL propres... a plusieurs avantages :
 
-*   Improve reusability
-*   Improve readability
-*   Facilitate project onboarding for other collaborators
+*   Améliore la réutilisabilité
+*   Améliore la lisibilité
+*   Facilite l'intégration du projet pour d'autres collaborateurs
 
-Here are some rules that can be easily adopted. It should be regarded as a first idea: read the rule then build your own.
+Voici quelques règles qui peuvent être facilement adoptées. Il faut les considérer comme une première idée : lisez la règle puis construisez la vôtre.
 
-## Fields
+## Champs
 
-Fields are everywhere: content types, vocabularies, users, blocks, ... so let's start with that.
+Les champs sont partout : types de contenu, vocabulaires, utilisateurs, blocs, ... alors commençons par là.
 
-*   No entity type prefix, field names should remain short and could be used by another entity type (e.g. for a flag, do not use document\_status, but status).  
-*   No plural, following the same rule than SQL tables (btw fields _are_ SQL tables). Multiplicity can change over time (e.g. not field\_files but field\_file).  
-*   For entity reference, simply use the machine name of the reference (e.g. document\_type).  
-*   For fields that are specialized by a module (e.g. Telephone or Link), use the name of the module machine name (telephone, link).
+*   Pas de préfixe de type d'entité, les noms de champs doivent rester courts et pourraient être utilisés par un autre type d'entité (par exemple, pour un drapeau, n'utilisez pas document\_status, mais status).  
+*   Pas de pluriel, suivant la même règle que les tables SQL (d'ailleurs les champs _sont_ des tables SQL). La multiplicité peut changer avec le temps (par exemple, pas field\_files mais field\_file).  
+*   Pour la référence d'entité, utilisez simplement le nom machine de la référence (par exemple, document\_type).  
+*   Pour les champs qui sont spécialisés par un module (par exemple, Téléphone ou Lien), utilisez le nom du nom machine du module (telephone, lien).
 
-## Content types
+## Types de contenu
 
-Avoid to be too generic... or too specific.  
-Being too generic will give a vague idea and could lead to hesitation from the author.  
-Being too specific will lead to too many content types.
+Évitez d'être trop générique... ou trop spécifique.  
+Être trop générique donnera une idée vague et pourrait conduire à l'hésitation de l'auteur.  
+Être trop spécifique conduira à trop de types de contenu.
 
-Provide a description for your content type first, the name will come by itself.  
-  
-_Example: Event_
+Fournissez d'abord une description pour votre type de contenu, le nom viendra de lui-même.  
 
-## Roles
+_Exemple : Événement_
 
-Roles should be defined from the use case of the website. Having personas will help here.
+## Rôles
 
-A community of authoring users could be defined by
+Les rôles doivent être définis à partir du cas d'utilisation du site web. Avoir des personas aidera ici.
 
-*   Editor: person that can review and publish content
-*   Author: person that can write content and send it to the editor
+Une communauté d'utilisateurs auteurs pourrait être définie par
 
-A real estate website could be defined by
+*   Éditeur : personne pouvant relire et publier du contenu
+*   Auteur : personne pouvant rédiger du contenu et l'envoyer à l'éditeur
 
-*   Promoter: project manager of a building that can edit properties content.
-*   Agency: sales representative that can edit sales status for properties.
+Un site web immobilier pourrait être défini par
 
-_This section needs to be completed_
+*   Promoteur : chef de projet d'un bâtiment pouvant modifier le contenu des propriétés.
+*   Agence : représentant commercial pouvant modifier le statut des ventes pour les propriétés.
 
-*   _Image styles_
-*   _Clean URLs_
-*   _File directories from File or Image fields._
+_Cette section doit être complétée_
+
+*   _Styles d'image_
+*   _URLs propres_
+*   _Répertoires de fichiers pour les champs Fichier ou Image._
