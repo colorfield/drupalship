@@ -1,74 +1,74 @@
-# Content modelling
+# Modélisation de contenu
 
-## Start with an MVP
+## Commencez par un MVP
 
-![Minimum Viable Product](/assets/images/docs/mvp-minimum-viable-product-lean-startup.png)
+![Produit Minimum Viable](/assets/images/docs/mvp-minimum-viable-product-lean-startup.png)
 
-Drupal is powerful and you can get fast a complex content model and features on top of that.  
-So it can be tempting to quickly deliver the full product. Instead of that, try to iterate and follow [Agile principles](http://agilemanifesto.org/) (SCRUM, Lean, ...).
+Drupal est puissant et vous pouvez obtenir rapidement un modèle de contenu complexe et des fonctionnalités en plus de cela.  
+Cela peut donc être tentant de livrer rapidement le produit complet. À la place, essayez d'itérer et de suivre les [principes Agile](http://agilemanifesto.org/) (SCRUM, Lean, ...).
 
-## Make a good plan
+## Faites un bon plan
 
-Creating content types, vocabularies and relations on the fly will lead to a cluttered user interface and unmaintainable data structure.
+La création de types de contenu, de vocabulaires et de relations à la volée mènera à une interface utilisateur encombrée et à une structure de données non maintenable.
 
-Here is a really simple methodology that can apply in most projects:
+Voici une méthodologie vraiment simple qui peut s'appliquer à la plupart des projets :
 
-1.  Discuss the business rules with the product owner
-2.  Discuss with the persons that will use Drupal as content editors
-3.  Use what fits well to represent the content model: [mind map](https://en.wikipedia.org/wiki/Mind_map), [UML diagrams](https://en.wikipedia.org/wiki/Unified_Modeling_Language) (**use case** and **sequence** diagram for features and **class diagram** for the entities are more than enough, no need to use more here).
-4.  Validate your model with real content
-5.  Iterate, test and improve
+1.  Discutez des règles métier avec le product owner
+2.  Discutez avec les personnes qui utiliseront Drupal comme éditeurs de contenu
+3.  Utilisez ce qui convient bien pour représenter le modèle de contenu : [carte mentale](https://fr.wikipedia.org/wiki/Carte_heuristique), [diagrammes UML](https://fr.wikipedia.org/wiki/Langage_de_modélisation_unifié) (**cas d'utilisation** et **diagramme de séquence** pour les fonctionnalités et **diagramme de classe** pour les entités sont plus que suffisants, pas besoin d'utiliser plus ici).
+4.  Validez votre modèle avec du contenu réel
+5.  Itérez, testez et améliorez
 
-## Avoid to define too many content types
+## Évitez de définir trop de types de contenu
 
-Be honest with the reality of the content editors, if the goal is to publish a few news and jobs a year, do not create two separate content types, the default Article content type with a reference to a vocabulary Article type with jobs and news terms should be ok in most situations.
+Soyez honnête avec la réalité des éditeurs de contenu, si l'objectif est de publier quelques nouvelles et emplois par an, ne créez pas deux types de contenu distincts, le type de contenu Article par défaut avec une référence à un vocabulaire Article type avec des termes d'emploi et de nouvelles devrait être suffisant dans la plupart des situations.
 
-## Get an overview of the translation system configuration
+## Obtenez un aperçu de la configuration du système de traduction
 
-It can be a daunting task to review translation status per content type.
-Fortunately, a complete overview of the configuration of fields per entity type is available here : **/admin/config/regional/content-language**
+Il peut être une tâche ardue de revoir le statut de traduction par type de contenu.
+Heureusement, un aperçu complet de la configuration des champs par type d'entité est disponible ici : **/admin/config/regional/content-language**
 
-## Entity reference translation
+## Traduction de référence d'entité
 
-Entity references are defined via fields.  
-_Example: an Article content type can reference an Article Type taxonomy term. Or an Article can reference an Organization content type._  
+Les références d'entités sont définies via des champs.  
+_Exemple : un type de contenu Article peut faire référence à un terme de taxonomie de Type d'Article. Ou un Article peut faire référence à un type de contenu Organisation._  
   
-Most of the time, you will not need to translate references, the only reason is to define different values per language.
+La plupart du temps, vous n'aurez pas besoin de traduire les références, la seule raison est de définir des valeurs différentes par langue.
 
-## Direction in Entity Relationships
+## Direction dans les relations d'entités
 
-Let's take a current use case: you want make a reference between two content types: _Article_ and an _Organization,_ to denote that the organization is the original author of the publication.
+Prenons un cas d'utilisation courant : vous voulez faire une référence entre deux types de contenu : _Article_ et une _Organisation,_ pour indiquer que l'organisation est l'auteur original de la publication.
 
-Basically, you have two options
+En gros, vous avez deux options
 
-1.  Define an Organization field in the Article content type
-2.  Define an Article entity reference field in the Organization content type
+1.  Définir un champ Organisation dans le type de contenu Article
+2.  Définir un champ de référence d'entité Article dans le type de contenu Organisation
 
-**First solution**  
-Pros: Easy rendering and filtering. You will probably have less Organizations than Articles so you can expose your field via ...  
-Cons: Ordering should be defined by weight.
+**Première solution**  
+Avantages : Rendu et filtrage faciles. Vous aurez probablement moins d'Organisations que d'Articles donc vous pouvez exposer votre champ via ...  
+Inconvénients : L'ordre doit être défini par le poids.
 
-**Second solution**  
-Pros: Ordering can be done via drag and drop.  
-Cons: You will probably have more Articles than Organizations, so you will need to expose the field via autocomplete.
+**Deuxième solution**  
+Avantages : L'ordre peut être effectué par glisser-déposer.  
+Inconvénients : Vous aurez probablement plus d'Articles que d'Organisations, donc vous devrez exposer le champ via l'autocomplétion.
 
-## Changing the multiplicity of a field
+## Changer la multiplicité d'un champ
 
-Event if you have this warning, you can still change the multiplicity when data are defined for the field.
+Même si vous avez cet avertissement, vous pouvez toujours changer la multiplicité lorsque des données sont définies pour le champ.
 
-![Change field number of values](/assets/images/docs/drupal-change-field-multiplicity.png)
+![Changer le nombre de valeurs d'un champ](/assets/images/docs/drupal-change-field-multiplicity.png)
 
-Be aware that **multiplicity is shared among field instances.**  
+Sachez que **la multiplicité est partagée entre les instances de champ.**  
   
-_**Example:** you have a Tags field (field\_tags) that is defined on the Article content type with a multiplicity (number of values) of unlimited.  
-You define a new content type Event and share this field\_tags. Then you define the multiplicity to 1 value. The side effect is that the Tags field has now one single possible value as well._
+_**Exemple :** vous avez un champ Tags (field_tags) qui est défini sur le type de contenu Article avec une multiplicité (nombre de valeurs) illimitée.  
+Vous définissez un nouveau type de contenu Event et partagez ce champ field_tags. Ensuite, vous définissez la multiplicité à 1 valeur. L'effet secondaire est que le champ Tags n'a maintenant qu'une seule valeur possible._
 
-Note that **other settings** are not shared among field instances.
+Notez que **les autres paramètres** ne sont pas partagés entre les instances de champ.
 
-_**Example**: for an image field, you can define different files directory for the storage._
+_**Exemple** : pour un champ image, vous pouvez définir des répertoires de fichiers différents pour le stockage._
 
-_This section needs to be completed_
+_Cette section doit être complétée_
 
-*   _Content translation_
-*   _Field dynamic values_
-*   _Multiplicity and compound fields_
+*   _Traduction de contenu_
+*   _Valeurs dynamiques de champ_
+*   _Multiplicité et champs composés_
