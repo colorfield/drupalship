@@ -1,114 +1,114 @@
-# Concepts Drupal
+# Drupal concepts
 
-## La vue d'ensemble
+## The big picture
 
-**De code et d'hommes**
+**Of code and (wo)mens**
 
-Drupal est basé sur un **[core](https://www.drupal.org/project/drupal)** qui fournit le noyau ainsi que ses propres modules et thèmes.
-Le noyau est maintenu par une équipe dédiée. Il offre un point de départ qui peut être étendu par d'autres projets maintenus par la communauté, 
-**projets contribués :** [modules, thèmes, ou distributions](/build/modules-themes-distributions).
+Drupal is based on a **[core](https://www.drupal.org/project/drupal)** that provides the kernel and its own modules and themes.
+The core is maintained by a dedicated crew. It provides a starting point that can be extended by other projects maintained by the community, 
+**contributed projects:** [modules, themes, or distributions](/build/modules-themes-distributions).
 
-## Concepts de construction de sites Drupal
+## Drupal site building concepts
 
-Une documentation complète est disponible dans le [Guide de l'utilisateur Drupal](https://www.drupal.org/docs/user_guide/en/index.html).  
-Voici un résumé des concepts pour les constructeurs de sites.
+Full documentation is available on the [Drupal User Guide](https://www.drupal.org/docs/user_guide/en/index.html).  
+Here is a summary of the concepts for site builders.
 
-### Stockage et types d'entités
+### Storage and entity types
 
-Le stockage (persistance) est la responsabilité des entités qui peuvent être :
+Storage (persistence) is the responsibility of entities that can be
 
-*   **Entité de contenu** : stockée dans la base de données, utilisée par n'importe quel utilisateur de Drupal.
-*   **Entité de configuration** : stockée dans les fichiers de configuration, principalement utilisée par le développeur et le constructeur de site.
+*   **Content entity** : stored on the database, used by any Drupal user.
+*   **Configuration entity** : stored on configuration files, mostly used by the developer and the site builder.
 
-### Type de contenu et noeud
+### Content type and node
 
-**\[/admin/structure/types\]** et **\[/admin/content\]**
+**\[/admin/structure/types\]** and **\[/admin/content\]**
 
-*   Un noeud est l'élément de base du contenu
-*   Les noeuds peuvent être de plusieurs types (connus sous le nom de "types de contenu"), décrivant le modèle d'affaires : _Article_, _Page Basique_ sont fournis par défaut, _Evénement_, _Session_, _Formation_, _Organisation_, ... sont personnalisés.
-*   Les noeuds peuvent être créés, modifiés et traduits avec le rôle de contributeur.
+*   A node is the basic piece of content
+*   Nodes can be from several types (known as “content types”), describing the business model: _Article_, _Basic Page_ are coming out of the box, _Event_, _Session_, _Training_, _Organization_,  … are customized.
+*   Nodes can be created, edited and translated with the contributor role.
 
-### Vocabulaire de la taxonomie et terme
+### Taxonomy vocabulary and term
 
 **\[/admin/structure/taxonomy\]**
 
-*   Les vocabulaires de taxonomie sont utilisés pour la catégorisation du contenu (noeud, utilisateur, ...)
-*   Chaque vocabulaire est composé de termes
-*   Les termes peuvent avoir une hiérarchie et plusieurs parents
+*   Taxonomy vocabularies are used for content (node, user, ...) categorization
+*   Each vocabulary is composed of terms
+*   Terms can have an hierarchy and multiple parents
 
-### Utilisateur et rôles
+### User and roles
 
-**\[/admin/people\]** et **\[/admin/people/roles\]**
+**\[/admin/people\]** and **\[/admin/people/roles\]**
 
-*   Les utilisateurs peuvent accéder au backend de Drupal, s'ils ont la permission de le faire
-*   Les utilisateurs sont regroupés par rôles
-*   Les rôles peuvent être cumulés
-*   Chaque rôle a un ensemble de permissions  
+*   Users are can access the Drupal backend, if they have the permission to do so
+*   Users are grouped by roles
+*   Roles can be cumulated
+*   Each role has a set of permissions  
 
-### Blocs
+### Blocks
 
 **\[/admin/structure/block\]**
 
-*   Les blocs sont utilisés pour gérer les exceptions d'affichage de page
-*   Ils peuvent apparaître sur des régions, définies par des thèmes
-*   Leur affichage peut être basé sur des conditions (par inclusion ou exclusion de chemin, par rôle, …)
+*   Blocks are used to handle page display exceptions
+*   They can appear on regions, defined by themes
+*   Their display can be based on conditions (by path inclusion or exclusion, by role, …)
 
-### Champ
+### Field
 
-*   Les champs peuvent spécialiser les types de contenu, les vocabulaires de taxonomie, les utilisateurs et les blocs.
-*   Les champs peuvent être partagés entre le même type d'entité (vous pouvez partager le champ Image avec Page Basique et Article), permet une seule instance sur le même type de contenu (vous ne pouvez pas créer deux champs image avec le même nom de machine sur le même type de contenu, mais vous pouvez créer un champ_image et un champ_logo).
-*   Les champs ne sont pas partagés entre différents types d'entités, donc ils peuvent adopter le même nom de machine : vous pouvez créer un champ_image pour les vocabulaires, même s'il existe déjà pour les types de contenu.
-*   Certains sont simples / scalaires (texte, texte long, flottant) tandis que d'autres peuvent être composites (adresse)
-*   Les champs ont une cardinalité (de une à plusieurs valeurs)
-*   Les champs peuvent être utilisés pour référencer une autre entité (le type de contenu _Article_ peut référencer un vocabulaire de _Type d'Article_).
-*   Les champs peuvent être définis comme sous-structure avec certains modules (par exemple, _Field Collection_ ou _Paragraphs_) qui peuvent aussi avoir une cardinalité. Notez que Field Collection est probablement en train d'être déprécié.
-*   Les champs peuvent être synchronisés parmi les traductions de contenu ou être définis comme traduisibles
+*   Fields can specialize content types, taxonomy vocabularies, users and blocks.
+*   Fields can be shared among the same entity type (you can share the field Image with Basic Page and Article), allows one single instance on the same content type (you cannot create two image fields with the same machine name on the same content type, but you can create a field\_image and a field\_logo).
+*   Fields are not shared among  different entity types, so they can adopt the same machine name: you can create a field\_image for vocabularies, even if it already exists for content types.
+*   Some are simple / scalar (text, long text, float) while other can be composite (address)
+*   Fields have cardinality (one to many values)
+*   Fields can be used to reference any another entity (the _Article_ content type can reference a _Article Type_ vocabulary).
+*   Fields can be defined as sub structure with some modules (e.g. _Field Collection_ or _Paragraphs_) that can also have cardinality. Note that Field Collection is probably on its way to be deprecated.
+*   Fields can be synced among content translation or be defined as translatable
 
-### Vues
+### Views
 
 **\[/admin/structure/views\]**
 
-Les vues sont des constructeurs de requêtes SQL qui se concentrent principalement sur un type d'entité.  
-Ils peuvent utiliser des filtres qui sont implicites ou exposés à l'utilisateur, des relations et bien plus encore...
+Views are SQL query builders that are primarily focusing on one entity type.  
+They can use filters that are implicit or exposed to the user, relationships and much more...
 
 ### Menu
 
 **\[/admin/structure/menu\]**
 
-Les menus sont utilisés pour la navigation en frontend ou en backend (par exemple, _A propos_ dans le pied de page, _Navigation principale_, _Menu du compte utilisateur, ..._).
+Menus are being used for frontend or backend navigation (e.g. _About_ in the footer, _Main navigation_, _User account menu, ..._).
 
-### Traduction
+### Translation
 
-La traduction se produit à plusieurs niveaux
+Translation occurs at several levels
 
-*   Traduction des entités de contenu
-*   Traduction des entités de configuration
-*   Traduction de l'interface utilisateur : globale du système, comme les libellés des boutons ou la pagination
+*   Content entity translation
+*   Configuration entity translation
+*   User interface translation : system global, like button labels or pagination
 
-[Plus d'informations sur la traduction](/build/common-site-building-tasks#translate)
+[More information about translation](/build/common-site-building-tasks#translate)
 
-## Une note sur les conventions de nommage
+## A note about naming conventions
 
-Historiquement, selon le contexte (interface utilisateur, code, ...) on peut trouver plusieurs synonymes pour les structures de données Drupal.
+Historically, depending on the context (user interface, code, ...) we can find several synonyms for Drupal data structures.
 
-### Types de contenu
+### Content types
 
-Un type de contenu peut avoir plusieurs "bundles" (exemple : Page, Article) qui produisent des noeuds.
+Content type can have several "bundles" (example: Page, Article) that are producing nodes.
 
-On devrait parler de Type d'Entité de Noeud pour un Type de Contenu et de Type de Noeud pour un bundle.  
-C'est le cas dans le code.
+We should talk about Entity type of Node for a Content type and Node type for a bundle.  
+This is the case in the code.
 
-### Vocabulaires
+### Vocabularies
 
-La taxonomie peut avoir plusieurs vocabulaires qui produisent des Termes de Taxonomie.  
-On devrait parler de Type d'Entité de Terme et de Type de Terme.
+Taxonomy can have several vocabularies that are producing Taxonomy terms.  
+We should talk about Entity type of Term and Term type.
 
-### Modes d'affichage et de vue
+### Display and view modes
 
-Les entités peuvent avoir plusieurs Modes d'affichage (Teaser, ...). Dans certaines situations, ils sont appelés Modes de vue.  
-Ne pas confondre avec les Vues qui sont des constructeurs de requêtes SQL.
+Entities can have several Display modes (Teaser, ...). In some situations they are called View modes.  
+Do not get confused with the Views that are SQL query builders.
 
-### Titre et nom
+### Title and name
 
-Les entités Noeud ont un titre tandis que les Termes de Taxonomie ont un nom.
-Dans le code, vous pouvez généralement y faire référence sous le nom de label.
+Node entities have title while Taxonomy Term have name.
+In the code, you usually can refer to it as label.
