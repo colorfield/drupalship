@@ -1,95 +1,93 @@
-# Installation of Drupal core and contributed projects
+# Installation du noyau Drupal et des projets contributifs
 
-> Section en cours de traduction 🇫🇷
+Installez et exécutez Drupal localement en un rien de temps.
 
-Install and run Drupal locally in no time.
+## Installation locale rapide
 
-## Fast local installation
+C'est parfait pour évaluer et développer localement avec Drupal.
+Une installation qui ne prend pas plus de 5 minutes. Vous devriez avoir PHP 8.1 et Composer déjà installés.
 
-This is perfect to evaluate and develop with Drupal locally.
-A 5 minutes tops installation. You should have PHP 8.1 and Composer installed.
-
-### Require the Drupal project
+### Requérir le projet Drupal
 
 ```bash
 composer create-project drupal/recommended-project my-site
 ```
 
-### Install Drupal
+### Installer Drupal
 
 ```bash
 cd my-site
 ```
 
-There are 2 scripts: `install` and `quick-start`.
+Il y a 2 scripts : `install` et `quick-start`.
 
-`quick-start` is a wrapper around `install` with some default shortcuts like running a local PHP server, opening the browser and logging you in as an admin.
-We will show both options here, as it's good to know what's happening under the hood.
+`quick-start` est une enveloppe autour de `install` avec quelques raccourcis par défaut comme l'exécution d'un serveur PHP local, l'ouverture du navigateur et la connexion en tant qu'administrateur.
+Nous montrerons ici les deux options, car il est bon de savoir ce qui se passe sous le capot.
 
-#### Standard installation
+#### Installation standard
 
-Installation with SQLite database and the standard profile.
-This is perfect to test a vanilla Drupal installation and install a few modules to review.
-Also this setup is the ideal candidate to debug a Drupal project issue in isolation and contribute.
+Installation avec une base de données SQLite et le profil standard.
+C'est parfait pour tester une installation Drupal vierge et installer quelques modules pour évaluation.
+De plus, cette configuration est le candidat idéal pour déboguer un problème de projet Drupal en isolation et contribuer.
 
 ```bash
 php web/core/scripts/drupal install standard
 ```
 
-#### Installation with translated demo content
+#### Installation avec du contenu de démonstration traduit
 
-Installation with the the Demo Umami profile.
-It comes with some demo content, translations and a few other modules enabled. Use this if you want to evaluate a more complete set of Drupal features.
+Installation avec le profil Demo Umami.
+Il est livré avec du contenu de démonstration, des traductions et quelques autres modules activés. Utilisez cela si vous voulez évaluer un ensemble de fonctionnalités Drupal plus complet.
 
 ```bash
 php web/core/scripts/drupal quick-start demo_umami
 ```
 
-### Run it with the PHP built-in server
+### Exécutez-le avec le serveur intégré PHP
 
-You can skip this if you used the `quick-start` script.
+Vous pouvez ignorer cela si vous avez utilisé le script `quick-start`.
 
 ```bash
 cd web
 php -S 127.0.0.1:8888
 ```
 
-* More details about requiring a specific version, using Drush and development modules
-[A minimal Drupal local development environment (part 1)](https://colorfield.dev/blog/minimal-drupal-9-local-development-environment)
-* Install another database than SQLite, multiple PHP versions, Solr, a mail catcher and review common pitfalls
-[A minimal Drupal local development environment (part 2)](https://colorfield.dev/blog/minimal-and-fast-drupal-environment-part-2)
+* Plus de détails sur la demande d'une version spécifique, l'utilisation de Drush et des modules de développement
+[Un environnement de développement local Drupal minimal (partie 1)](https://colorfield.dev/blog/minimal-drupal-9-local-development-environment)
+* Installer une autre base de données que SQLite, plusieurs versions de PHP, Solr, un intercepteur de courrier et examiner les écueils courants
+[Un environnement de développement local Drupal minimal (partie 2)](https://colorfield.dev/blog/minimal-and-fast-drupal-environment-part-2)
 
-### Install contributed projects
+### Installez des projets contributifs
 
 ```bash
-composer require drupal/[project_name]
+composer require drupal/[nom_du_projet]
 ```
-Then enable the project with [Drush](/develop/toolkit-for-drupal-developers#drush-cli) or the UI.
+Puis activez le projet avec [Drush](/develop/toolkit-for-drupal-developers#drush-cli) ou l'UI.
 
-#### Enable a project with the UI
+#### Activer un projet avec l'UI
 
 - Modules /admin/modules
-- Themes /admin/appearance
+- Thèmes /admin/appearance
 
-#### Enable a project with Drush
+#### Activer un projet avec Drush
 
 ```bash
-drush en [project_name]
+drush en [nom_du_projet]
 ```
 
-## Installation with DDEV and Lando
+## Installation avec DDEV et Lando
 
-To get the same setup as production.
+Pour obtenir la même configuration qu'en production.
 
-- [Lando Drupal plugin](https://docs.lando.dev/drupal/)
-- [DDEV quickstart with Drupal](https://ddev.readthedocs.io/en/latest/users/quickstart/#drupal)
+- [Plugin Drupal Lando](https://docs.lando.dev/drupal/)
+- [Démarrage rapide DDEV avec Drupal](https://ddev.readthedocs.io/en/latest/users/quickstart/#drupal)
 
-[Use DDEV for local environments](https://architecture.lullabot.com/adr/20211207-ddev-locals/) - Lullabot
+[Utiliser DDEV pour les environnements locaux](https://architecture.lullabot.com/adr/20211207-ddev-locals/) - Lullabot
 
-### A note about Docker on macOS
+### Une note sur Docker pour macOS
 
-Docker for Mac is a great tool to run containers on your Mac. 
-However, it is slow. Make sure to read this article:
-[Docker on MacOS is slow and how to fix it](https://www.paolomainardi.com/posts/docker-performance-macos/)
+Docker pour Mac est un excellent outil pour exécuter des conteneurs sur votre Mac.
+Cependant, il est lent. Assurez-vous de lire cet article :
+[Docker sur MacOS est lent et comment le résoudre](https://www.paolomainardi.com/posts/docker-performance-macos/)
 
-Or try this alternative: [OrbStack](https://orbstack.dev/)
+Ou essayez cette alternative : [OrbStack](https://orbstack.dev/)
