@@ -53,9 +53,12 @@ const config: DocsThemeConfig = {
       <>
         <ul>
           <li><a href="/about">About</a></li>
-          <li><a href="https://twitter.com/drupalship" target="_blank" rel="noreferrer">Contact ↗</a></li>
+          <li><a href="/roadmap">Roadmap</a></li>
+          <li><a href="/credits">Credits</a></li>
+          <li><a href="https://drupal.community/@drupalship" target="_blank" rel="me">Mastodon ↗</a></li>
+          <li><a href="https://twitter.com/drupalship" target="_blank" rel="noreferrer">Twitter ↗</a></li>
         </ul>
-      </> 
+      </>
     ), 
   },
   search: {
