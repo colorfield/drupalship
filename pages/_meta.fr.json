@@ -10,6 +10,12 @@
   "about": {
     "display": "hidden"
   },
+  "roadmap": {
+    "display": "hidden"
+  },
+  "credits": {
+    "display": "hidden"
+  },
   "build": {
     "title": "Construire",
     "type": "menu",
