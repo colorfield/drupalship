@@ -1,3 +1,218 @@
 # Production Checklist
 
-> Section currently under construction
+This checklist is also available with the [Production Checklist](https://www.drupal.org/project/production_checklist) module.
+
+You might also want to review [Production check & Production monitor](https://www.drupal.org/project/prod_check).
+
+## System wide status and reports
+
+- **Review status report**  
+Contains general system information
+- **Site information**  
+Make sure the email address and site name are correct. Check the homepage title.
+- **Review recent logs**  
+Monitor your site or debug site problems.
+- **Disable error display**  
+Disable any errors to be displayed on the frontend.
+- **Core search**  
+Disable core search if not relevant or if a replacement search is used (Search API, ...).
+- **Enable Syslog** core module and optionally disable Database Logging for performance.  
+Logs and records system events to syslog.
+
+## Projects review
+
+Core, modules and themes.
+
+- **Uninstall development modules** like Devel (Devel, Devel generate, Kint, Webprofiler).
+- **Unused modules**  
+Uninstall and remove unused modules.
+- **Unused themes**  
+Uninstall and remove unused themes.
+
+## Vendors, custom code and libraries
+----------------------------------
+
+- **Remove development vendors like PHPUnit, Behat.**  
+Run `composer install --no-dev --optimize-autoloader` - 
+[Composer install documentation](https://getcomposer.org/doc/03-cli.md#install)
+- **Remove unused libraries.**  
+Check the /libraries directory
+- **Node modules**  
+Check if Node modules dedicated to SASS build, ... are not in the codebase.
+- **PHP Mess Detector**  
+Run PHP Mess Detector on custom code.  
+[PHP Mess Detector](https://phpmd.org/)
+- **PHPCS**  
+Run the phpcs command on custom code.  
+[PHP Coding Standards](https://www.drupal.org/docs/develop/standards/coding-standards)
+
+## Spam related configuration and modules
+
+- **Review user registration**  
+Depending on the use case, new account creations can be limited to administrators.
+- **Check permissions for content creation**  
+Node related permissions.
+- **Check permissions for comment creation**  
+Comment related permissions.
+- **Check contact form and webform configuration**  
+Are the main contact form and personal contact form enabled? Is Webform installed?
+- **Are the forms protected with Honeypot and Captcha** (and optionally reCaptcha)?
+- **Email obfuscation**  
+Are the email addresses protected against bots harvesting? In fields, WYSIWYG, Twig.
+
+## Security and access control
+
+This topic can be extended with [Site Audit](https://www.drupal.org/docs/develop/standards/coding-standards) and [Security Review](https://www.drupal.org/project/security_review). Basically, test simultaneous and consequent anonymous access scenarios and behavior when every cache is enabled.
+
+- **Drupal and other projects update**  
+Are all the security updates applied?
+- **Review the permissions**  
+This should be done for each role.
+- **Input format**  
+Make sure that input formats are correctly configured. Full HTML should be avoided for untrusted users.
+- **Admin user name**  
+The user 1 name (or other users that have the administrator role) should not be defined as 'admin' so it will be harder to guess for attackers.
+- **Check passwords**  
+Passwords should be hard to guess, especially for author and admin roles. Use a module like Password Policy.
+- **Review access denied errors**  
+If needed block IP addresses with the core Ban module. This process can be completed with the recent log messages.
+- **Changelog**  
+Do not publish CHANGELOG.txt and other .txt files at the root of the code base.
+- **Staging and dev environments**  
+Make sure that your staging and dev environments does not contain sensitive data and are protected with Shield if accessible from the outside.  
+[Securing Non-Production Environments](https://dev.acquia.com/blog/securing-nonproduction-environments/09/03/2018/19251)
+
+## Content model review and proofreading
+-------------------------------------
+
+- **Review content model**  
+Remove unused content types, vocabularies, roles, fields, ...
+- **Remove dummy content**  
+Content, terms, users, ... dedicated to site building (e.g. devel generated) should not be there.
+- **Proofreading**  
+Content proofreading.
+- **Remove forms tests**  
+Webform provides a test deletion tab for each webform.
+- **Files sub directories**  
+Configure file and media fields for storing files in sub directories instead of the sites/default/files root.
+- **Content translation**  
+Are all the necessary content translated?
+- **Entity and field translation**  
+Are all the entities and fields configured properly?
+- **Localization**  
+Is the localization up to date?
+
+## Frontend basic checks
+
+- **Provide a maintenance page**  
+Check the maintenance page layout.
+- **Provide a good 404 page**  
+Check the 404 page layout. Optionally provide a dedicated design and improve it (smart 404, search engine, ...).
+- **Provide a good 403 page**  
+Check the 403 page layout. Provide options to login and redirect to the accessed route.
+- **Favicon**  
+Provide favicons in several formats.
+
+## Database and configuration
+
+- **Check database update**  
+Run /update.php, get a backup first.
+- **Export current configuration**  
+Run _drush cex_.
+
+## Performance and caching configuration
+
+To go deeper, consider using [Varnish Purge](https://drupal.org/project/varnish_purge), [Memcache](https://drupal.org/project/memcache), [Advagg](https://drupal.org/project/advagg).  
+  
+- **Caching**  
+Are page caching and CSS/JS aggregation enabled?
+- **BigPipe**  
+Consider enabling the BigPipe module.
+- **Views**  
+Checks views caching (on a View edit: Advanced > Other > Caching).
+- **Custom code**  
+Check cache tags and invalidation, make use of Drupal cache for heavy tasks.
+- **Audit performances**  
+Use tools like Google PageSpeed Insight or Acquia Insight.  
+[Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) | [Acquia Insight](https://www.acquia.com/resources/collateral/acquia-insight-data-sheet)
+- **Profilers**  
+Use profilers like XHProf or Blackfire.  
+[XHProf Drupal.org documentation](https://www.drupal.org/docs/develop/development-tools/xhprof-code-profiler) | [Blackfire.io](https://blackfire.io/)
+
+## Various test coverages
+
+- **Manual test**  
+Test the website for each role, anonymous included. Test with caches enabled. Use [Masquerade](https://drupal.org/project/masquerade) to substitute as other users.  
+- **Run PHPUnit tests**  
+Use them before a deployment: Functional, Kernel, Javascript, ...  
+- **Continuous Integration system**  
+Use tools that fits your needs like Travis CI, CircleCI, Jenkins.  
+[Travis CI](https://travis-ci.org/) | [CircleCI](https://circleci.com/) | [Jenkins](https://jenkins.io/)
+
+## Analytics
+
+- **Google Tag Manager**  
+Is the [Google Tag Manager](https://drupal.org/project/google_tag) module installed and configured?
+- **Google webmaster tools**  
+Are Google webmaster tools configured?
+
+You may consider alternatives like [Matomo](https://www.drupal.org/project/matomo) or [Plausible](https://plausible.io/).
+
+## Server configuration and backups
+
+- **Backups**  
+Make sure that you have database and files backups enabled. Use a module like [Backup Migrate](https://drupal.org/project/backup_migrate) with [NodeSquirrel](https://www.nodesquirrel.com/).
+- **Mails**  
+Have mails being tested for each form (e.g. password reset). Is a third party needed, like Mandrill or Sendgrid? Are SPF and PTR ok?
+- **SSL certificate**  
+Free SSL certificates are available from [Let's Encrypt](https://letsencrypt.org/).
+- **Maximum file upload size**  
+This should be set in your per vhost php.ini configuration if available. Set _post\_max\_size_ and _upload\_max\_filesize_ according to your needs.
+- **Maximum memory and execution time**  
+This should be set in your per vhost php.ini configuration if available. Set _memory\_limit_ and _max\_execution\_time_ according to your needs.
+- **Check files / directories permissions and ownership**  
+Usually one owner and group per virtual host, files at 644 and directories at 755.
+- **Check cron jobs**  
+Modules like Scheduler should work properly. If you have custom cron jobs, check if your system cron is executed on startup and configured properly for your user.
+- **Monitor your server and check the server load**  
+Configure your monitoring, optionally use a service like New Relic. Will your server support peaks?  
+[New Relic](https://newrelic.com/)
+- **Reverse proxy**  
+If your production server uses a proxy or load balancer, configure it in your settings.php.
+
+## Basic SEO
+
+For an extended list, use [SEO Checklist](https://www.drupal.org/project/seo_checklist).
+
+- **URL rewriting**  
+Is URL rewriting enabled and [Pathauto](https://www.drupal.org/project/pathauto) configured?
+- **Review 404 errors and redirect 301 legacy URL's**  
+Consider using the [Redirect](https://drupal.org/project/redirect) module.
+- **Review your .htaccess** if you use Apache (or your nginx configuration). 
+There should be a single accessible URL for your site, redirect non www prefix to www (or the opposite) and http to https.
+- **Review your robots.txt**  
+Especially if some paths should be excluded.
+- **Sitemap**  
+Configure your sitemap.xml with a modules like Simple Sitemap.  
+[Simple Sitemap module](https://www.drupal.org/project/simple_sitemap)
+- **Submit the URL**  
+For new sites only.  
+[Submit URL to Google](https://www.google.com/webmasters/tools/submit-url)
+
+## Legal aspects
+
+- **Cookie compliance with regulations**  
+Install a cookie validation module and provide explanation about cookie usage.  
+[Cookie control module](https://www.drupal.org/project/cookiecontrol)
+- **Privacy policy and general conditions**  
+Provide also extra legal information (delivery, cancellation, ...) for commerce use cases.
+- **GDPR**  
+Check compliance with the General Data Protection Regulation.  
+[GDPR module](https://drupal.org/project/gdpr)
+
+## Documentation related to the persona
+
+- **Author documentation**  
+Leave Drupal and custom use cases documentation to the authors, accessible from the Help section.
+- **Developer onboarding**  
+Create a developer onboarding documentation at the root of your repo (README), provide wiki and UML diagrams.
