@@ -1,3 +1,5 @@
 {
-  "drupal-hosting-for-evaluation-and-production": "Hébergement Drupal pour l'évaluation et la production"
+  "drupal-hosting-for-evaluation-and-production": "Hébergement Drupal pour l'évaluation et la production",
+  "production-checklist": "Checklist de mise en production",
+  "continuous-integration-and-delivery": "Livraison et déploiement continu (CI/CD)"
 }

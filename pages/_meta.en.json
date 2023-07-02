@@ -55,6 +55,18 @@
         "href": "/develop/toolkit-for-drupal-developers"
       },
       {
+        "title": "Development concepts",
+        "href": "/develop/drupal-development-concepts"
+      },
+      {
+        "title": "Create a module",
+        "href": "/develop/create-a-drupal-module"
+      },
+      {
+        "title": "Create a theme",
+        "href": "/develop/create-a-drupal-theme"
+      },
+      {
         "title": "Apply a patch",
         "href": "/develop/patch-a-drupal-project"
       }
@@ -94,9 +106,21 @@
   },
   "deploy": {
     "title": "Deploy",
-    "type": "page",
-    "href": "/deploy/drupal-hosting-for-evaluation-and-production",
-    "layout": "full"
+    "type": "menu",
+    "items": [
+      {
+        "title": "Hosting",
+        "href": "/deploy/drupal-hosting-for-evaluation-and-production"
+      },
+      {
+        "title": "Production Checklist",
+        "href": "/deploy/production-checklist"
+      },
+      {
+        "title": "CI/CD",
+        "href": "/deploy/continuous-integration-and-delivery"
+      }
+    ]
   },
   "drupal-core-updates": {
     "title": "✨",

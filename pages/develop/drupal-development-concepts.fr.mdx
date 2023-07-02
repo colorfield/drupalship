@@ -1,0 +1,232 @@
+# Drupal development concepts
+
+> Section currently under construction and translation
+
+What can Drupal custom code do?
+
+- Alter existing or add a new functionality
+- Integrate with third party systems
+- Provide new ways to manage, display or interact with content or users
+- ...
+
+Let's see which Drupal concepts are used to achieve this.
+
+## There is a module for that! ™
+
+Drupal is a modular system. It means that it is built from small pieces of code that can be enabled or disabled. 
+These pieces of code are called modules.
+
+One of the newcomer mistake is [programming too much](https://books.google.be/books?id=JrW9CgAAQBAJ&pg=PA73&lpg=PA73#v=onepage&q&f=false).
+If you need to implement a rather common feature, chances are that [there is a module for that](/build/modules-themes-distributions), so you don't have to reinvent the wheel.
+
+Here is a short list of the [most used modules](/build/modules-themes-distributions#modules). 
+
+Drupal is also pretty well integrated with the PHP ecosystem ([Symfony](https://symfony.com/), [Composer](https://getcomposer.org/) / [Packagist](https://packagist.org/), [PSR's](http://www.php-fig.org/psr/)) since version 8, so you can still find documentation outside of the Drupal scope.
+
+OK, now it's really time to see what Drupal provides to build custom code.
+
+
+## Hooks and events: react to changes
+
+### Hooks
+
+Hooks are functions that are called at a specific moment of the execution.
+Modules are able to implement these hooks to alter the behavior of Drupal core or other contributed modules.
+
+They are defined in the module's `.module` file.
+For themes, they are defined in the `.theme` file.
+
+#### How can I find which hooks are available?
+
+For the core, hooks are defined in the [API documentation](https://api.drupal.org/api/drupal/core!core.api.php/group/hooks/).
+
+A module can also define its own hooks. They are usually discoverable through the modules `.api.php` file.
+
+A simple way to find hooks is to search for `hook_` in the codebase or just let PHPStorm autocomplete the function name for you when [Drupal is configured](https://www.jetbrains.com/help/phpstorm/drupal-support.html).
+Then type your module name and PHPStorm will provide you with a list of available hooks.
+
+#### Examples of hooks
+
+##### `hook_form_alter`
+
+This hook is called when a form is built. It allows to alter the form rendering and its state.
+Has this hook has a pretty large scope, it is preferred to use more specific hooks when possible, like `hook_form_FORM_ID_alter` or `hook_form_BASE_FORM_ID_alter`.
+
+##### `hook_entity_type_alter`
+
+This hook is called when an entity type is defined. It allows to alter the entity type definition, for example to add a new field to all nodes.
+
+##### `hook_entity_insert`
+
+This hook is called when an entity is inserted in the database. It allows to react to the creation of an entity.
+There are various other hooks like this one, for example `hook_entity_update` or `hook_entity_delete`.
+Like `hook_form_alter`, it is preferred to use more specific hooks when possible, like `hook_ENTITY_TYPE_insert` or `hook_ENTITY_TYPE_update`.
+
+### Events
+
+Events are objects that are dispatched at a specific moment of the execution.
+They are roughly similar to hooks, they are just implemented in a different way, that follows object oriented principles.
+Hooks are still used in Drupal, because there is a lot of legacy code that uses them, but events are the recommended way to alter the behavior of Drupal Core
+if it is possible to use them.
+
+### Subscribers
+
+React to events, like Symfony `RequestEvent`
+
+### Dispatchers
+
+Dispatch events, with `EventDispatcher`
+
+## Services: provide reusable code
+
+#### How can I find which services are available?
+
+Here is a [List of core services](https://api.drupal.org/api/drupal/services/10)
+
+Similar to hooks, PHPStorm shines here, especially with the Symfony plugin installed.
+
+Drush can also do that: `drupal debug:container` then pipe it to `grep` to find a specific service.
+
+## Routes: define URLs
+
+### Structure of routes
+
+Most of the time, the only thing that you need to do is to define a route in your module via a [.routing.yml](/develop/create-a-drupal-module#module-files) file.
+
+Here is a very minimal example from the core Book module, that defines the route for a Controller method.
+
+```yaml
+book.render:
+  # The path always starts with a leading forward-slash.
+  path: '/book'
+  # Defines the default properties of a route.
+  defaults:
+    # For page callbacks that return a render array use _controller.
+    _controller: '\Drupal\book\Controller\BookController::bookRender'
+  # Require a permission to access this route.
+  requirements:
+    _permission: 'access content'
+```
+
+Same goes for a form:
+
+```yaml
+my_module.route_machine_name:
+  path: '/my_module/personal-info'
+  defaults:
+    _form: 'Drupal\my_module\Form\InfoForm'
+    _title: 'Personal information'
+  requirements:    
+    _permission : 'custom_module_permission'
+```  
+
+[Read more](https://www.drupal.org/docs/drupal-apis/routing-system/structure-of-routes) - Drupal.org
+
+### How can I discover existing routes?
+
+With Drush `drush route` or the [Devel](https://www.drupal.org/project/devel) module.
+
+*And how can I find the current route used by the frontend.*
+
+There are several ways to do that:
+
+- Without any dependency (Drush, Devel, ...): implement a rather global hook like `hook_preprocess_page` and dump `\Drupal::routeMatch()->getRouteName()`;
+- `drush route --path=/the-path`
+
+[Read more about Drush route](https://www.drush.org/12.x/commands/core_route/)
+
+### Alter existing routes
+
+Useful e.g. to add a new access control or to change the controller method that is called.
+
+This is rather straigthforward, you just need to implement a `RouteSubscriberInterface` and implement the `alterRoutes` method.
+
+[Read more](https://www.drupal.org/docs/drupal-apis/routing-system/altering-existing-routes-and-adding-new-routes-based-on-dynamic-ones)
+
+### Dynamic routes
+
+[Read more](https://www.drupal.org/docs/drupal-apis/routing-system/providing-dynamic-routes) - Drupal.org
+
+## Controllers and response types: return content
+
+- Render array
+- Response / cacheable response
+- JSON response / JSON cacheable response
+- Binary file response
+
+## Content entities: manage content
+
+### Core entity types
+
+- Node: `node_types` are providing `node` content
+- Taxonomy term: `vocabulary` are providing `taxonomy_term` content
+- User
+
+### Custom content entities
+
+### Extend content entities
+
+
+
+## Configuration entities: manage configuration
+
+### Core configuration entities 
+
+We already discovered some of them: node_types and vocabularies.
+
+- `user_role` contains a set of [`permission`](#permission-system) configuration
+
+### Custom configuration entities
+
+### Extend configuration entities: third pary settings
+
+
+
+## Forms: provide user interaction
+
+
+## APIs: integrate with third party systems
+
+### Consume APIs
+
+### Serve APIs
+
+
+
+## Migration: import data from other systems
+
+This can be used to import data from a legacy system or to migrate from another CMS once.
+
+But it can also be used to import data from a third party system on a regular basis.
+
+### Import from another CMS or Drupal 7 site
+
+Drupal 7 sites have their [own migration system](...), as version 8 introduced many breaking changes
+in the model.
+
+
+
+## Plugin: provide extensibility and extend existing systems
+
+Plugin manager, plugin types, plugin discovery
+
+### Field plugins
+
+
+## Mailing: send emails
+
+
+
+## Decorators: alter existing code
+
+
+
+## Permission: define access to content and functionality
+
+- Access handlers
+
+
+# Caching: cache data
+
+
+## Validation: validate data with contraints
