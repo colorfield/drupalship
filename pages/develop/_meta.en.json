@@ -1,7 +1,7 @@
 {
   "toolkit-for-drupal-developers": "Drupal tools for developers",
-  "patch-a-drupal-project": "Patch a Drupal project",
   "drupal-development-concepts": "Drupal development concepts",
   "create-a-drupal-module": "Create a Drupal module",
-  "create-a-drupal-theme": "Create a Drupal theme"
+  "create-a-drupal-theme": "Create a Drupal theme",
+  "patch-a-drupal-project": "Patch a Drupal project"
 }
