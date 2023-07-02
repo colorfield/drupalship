@@ -1,26 +1,24 @@
-# Patch a Drupal project
+# Patch d'un projet Drupal
 
-> Section en cours de traduction 🇫🇷
+Les correctifs peuvent être fournis par ou à la communauté pour apporter une correction ou une nouvelle fonctionnalité à un projet Drupal.
+Il peut s'agir d'un correctif pour un projet du core ou un projet contribué.
 
-Patches can be provided by or to the community to deliver a fix or a new feature to a Drupal project.
-The scope can be a core or contributed project patch.
+Pour une issue problème Drupal.org, il y a 2 façons d'obtenir un correctif
+1. Via un fichier de patch, attaché à l'issue
+2. Via une branche git / Merge Request sur GitLab
 
-On a Drupal.org issue, there are 2 ways to get a patch
-1. Via a patch file, attached to the issue
-2. Via a git branch / Merge request on GitLab
+Dans le premier cas, vous pouvez simplement référencer le fichier patch, localement ou sur Drupal.org via une url absolue.
 
-On the first case, you can just reference the patch file, locally or on Drupal.org via an absolute url.
+Dans le second cas, vous devriez toujours le télécharger car le code n'est pas figé.
+Pour le télécharger localement, il suffit d'ajouter l'extension `.patch` à l'url. de la Merge Request.
 
-For the second case, you should always download it as the Merge Request might evolve, so the codebase change is not set 
-in stone. To download it locally, just append the .patch extension to the Merge Request url.
+Exemple : 
 
-Example: 
+Pour [cette issue] (https://www.drupal.org/project/drupal/issues/3086883), nous avons
+- Un fichier patch dans les premiers commentaires, pour démontrer une preuve de concept, il pourrait être référencé directement dans votre section composer.json https://www.drupal.org/files/issues/2023-03-12/3086883-13.patch.
+- Une Merge Request, vous pouvez télécharger le correctif à partir de cette URL https://git.drupalcode.org/project/drupal/-/merge_requests/3642.patch.
 
-For [this issue](https://www.drupal.org/project/drupal/issues/3086883) we have
-- A patch file in the first comments, to demonstrate a POC, it could be referenced straight in your composer.json section https://www.drupal.org/files/issues/2023-03-12/3086883-13.patch.
-- A Merge request, you can download the patch from this URL https://git.drupalcode.org/project/drupal/-/merge_requests/3642.patch
+## En savoir plus
 
-## Read more
-
-- [Working with patches](https://www.drupal.org/docs/develop/git/using-git-to-contribute-to-drupal/working-with-patches) - Drupal.org
-- [Patch a Drupal project](https://colorfield.dev/blog/patch-drupal-project) - Colorfield
+- [Travailler avec des patchs](https://www.drupal.org/docs/develop/git/using-git-to-contribute-to-drupal/working-with-patches) - Drupal.org
+- [Patch d'un projet Drupal](https://colorfield.dev/blog/patch-drupal-project) - Colorfield
