@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@socialgouv/matomo-next": "^1.6.1",
-    "@vercel/analytics": "^1.0.1",
     "clsx": "^1.2.1",
     "framer-motion": "^9.1.7",
     "next": "^13.4.7",
+    "next-plausible": "^3.8.0",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "react": "^18.2.0",

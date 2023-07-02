@@ -1,5 +1,4 @@
 import Document, { DocumentContext, DocumentInitialProps, Html, Main, Head, NextScript } from 'next/document'
-import { Analytics } from '@vercel/analytics/react'
 import { JSX } from 'react'
  
 class DrupalshipDocument extends Document {
@@ -17,7 +16,6 @@ class DrupalshipDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <Analytics />
         </body>  
       </Html>
     )
