@@ -24,6 +24,60 @@ It is free and has a lot of plugins, that still need to be configured to get a s
 
 [Configuring Visual Studio Code for Drupal](https://www.drupal.org/docs/develop/development-tools/editors-and-ides/configuring-visual-studio-code)
 
+## Configure your development environment
+
+### Caching
+
+Drupal comes with great caching for production, but before you start development tasks, there is some configuration to prevent caching.
+
+[Disable Drupal caching during development](https://www.drupal.org/node/2598914)
+
+### Twig debug
+
+Displaying the Twig templates used by regions, blocks, nodes, ...
+
+```yaml filename="development.services.yml"
+parameters:
+  twig.config:
+    debug: true
+```
+
+Then cache rebuild
+`drush cr`
+
+This will become even simpler with Drupal 10.1.0
+[Simplifying the frontend developer experience in Drupal with a click of the button](https://mglaman.dev/blog/simplifying-frontend-developer-experience-drupal-click-button)
+
+Other Twig techniques are available on the following links from Drupal.org.
+
+*   [Debugging Twig templates](https://www.drupal.org/docs/8/theming/twig/debugging-twig-templates)
+*   [Discovering and Inspecting Variables in Twig Templates](https://www.drupal.org/docs/8/theming/twig/discovering-and-inspecting-variables-in-twig-templates)
+*   [Using attributes in templates](https://www.drupal.org/docs/8/theming-drupal-8/using-attributes-in-templates)
+
+## Debugging
+
+### Var dumper
+
+Symfony dumper is available out of the box via
+
+```php
+dump($myVar);
+```
+
+Use [Devel](https://www.drupal.org/project/devel) that provides var dumper improvements with [Kint](https://github.com/kint-php/kint).
+
+```
+composer require --dev drupal/devel
+composer require --dev kint-php/kint
+drush en devel
+```
+
+then configure it in /admin/config/development/devel and use in code `kint($myVar)` or `ksm($myVar)`.
+
+### Step debugger
+
+Install [XDebug](https://www.drupal.org/docs/develop/development-tools/xdebug-debugger)
+
 ## Drush CLI
 
 Drush is a command line shell interface for Drupal. To require it in your project, use Composer.
@@ -93,60 +147,6 @@ Here is a short list of most used Drush commands.
 - Filter the logs interactively `drush watchdog:list`
 
 [More Drush 11 commands](https://www.drush.org/11.x/commands/all/)
-
-## Configure your development environment
-
-### Caching
-
-Drupal comes with great caching for production, but before you start development tasks, there is some configuration to prevent caching.
-
-[Disable Drupal caching during development](https://www.drupal.org/node/2598914)
-
-### Twig debug
-
-Displaying the Twig templates used by regions, blocks, nodes, ...
-
-```yaml filename="development.services.yml"
-parameters:
-  twig.config:
-    debug: true
-```
-
-Then cache rebuild
-`drush cr`
-
-This will become even simpler with Drupal 10.1.0
-[Simplifying the frontend developer experience in Drupal with a click of the button](https://mglaman.dev/blog/simplifying-frontend-developer-experience-drupal-click-button)
-
-Other Twig techniques are available on the following links from Drupal.org.
-
-*   [Debugging Twig templates](https://www.drupal.org/docs/8/theming/twig/debugging-twig-templates)
-*   [Discovering and Inspecting Variables in Twig Templates](https://www.drupal.org/docs/8/theming/twig/discovering-and-inspecting-variables-in-twig-templates)
-*   [Using attributes in templates](https://www.drupal.org/docs/8/theming-drupal-8/using-attributes-in-templates)
-
-## Debugging
-
-### Var dumper
-
-Symfony dumper is available out of the box via
-
-```php
-dump($myVar);
-```
-
-Use [Devel](https://www.drupal.org/project/devel) that provides var dumper improvements with [Kint](https://github.com/kint-php/kint).
-
-```
-composer require --dev drupal/devel
-composer require --dev kint-php/kint
-drush en devel
-```
-
-then configure it in /admin/config/development/devel and use in code `kint($myVar)` or `ksm($myVar)`.
-
-### Step debugger
-
-Install [XDebug](https://www.drupal.org/docs/develop/development-tools/xdebug-debugger)
 
 ## Testing
 
