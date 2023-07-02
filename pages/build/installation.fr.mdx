@@ -1,3 +1,5 @@
+import { Steps } from 'nextra-theme-docs'
+
 # Installation du noyau Drupal et des projets contribués
 
 Installez et exécutez Drupal localement en un rien de temps.
@@ -6,6 +8,8 @@ Installez et exécutez Drupal localement en un rien de temps.
 
 C'est parfait pour évaluer et développer localement avec Drupal.
 Une installation qui ne prend pas plus de 5 minutes. Vous devriez avoir PHP 8.1 et Composer déjà installés.
+
+<Steps>
 
 ### Requérir le projet Drupal
 
@@ -51,18 +55,21 @@ Vous pouvez ignorer cela si vous avez utilisé le script `quick-start`.
 cd web
 php -S 127.0.0.1:8888
 ```
+</Steps>
 
 * Plus de détails sur la demande d'une version spécifique, l'utilisation de Drush et des modules de développement
 [Un environnement de développement local Drupal minimal (partie 1)](https://colorfield.dev/blog/minimal-drupal-9-local-development-environment)
 * Installer une autre base de données que SQLite, plusieurs versions de PHP, Solr, un intercepteur de courrier et examiner les écueils courants
 [Un environnement de développement local Drupal minimal (partie 2)](https://colorfield.dev/blog/minimal-and-fast-drupal-environment-part-2)
 
-### Installez des projets contributifs
+## Installez des projets contribués
+
+Dès que vous avez trouvé un [module ou thème](/build/modules-themes-distributions) à installer, Composer peut être utilisé pour le faire.
 
 ```bash
 composer require drupal/[nom_du_projet]
 ```
-Puis activez le projet avec [Drush](/develop/toolkit-for-drupal-developers#drush-cli) ou l'UI.
+Puis activez le projet avec l'interface graphque (UI) ou [Drush](/develop/toolkit-for-drupal-developers#drush-cli).
 
 #### Activer un projet avec l'UI
 
@@ -75,7 +82,7 @@ Puis activez le projet avec [Drush](/develop/toolkit-for-drupal-developers#drush
 drush en [nom_du_projet]
 ```
 
-## Installation avec DDEV et Lando
+## Exécuter Drupal avec DDEV ou Lando
 
 Pour obtenir la même configuration qu'en production.
 

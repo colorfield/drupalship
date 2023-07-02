@@ -1,3 +1,5 @@
+import { Steps } from 'nextra-theme-docs'
+
 # Installation of Drupal core and contributed projects
 
 Install and run Drupal locally in no time.
@@ -6,6 +8,8 @@ Install and run Drupal locally in no time.
 
 This is perfect to evaluate and develop with Drupal locally.
 A 5 minutes tops installation. You should have PHP 8.1 and Composer installed.
+
+<Steps>
 
 ### Require the Drupal project
 
@@ -52,17 +56,21 @@ cd web
 php -S 127.0.0.1:8888
 ```
 
+</Steps>
+
 * More details about requiring a specific version, using Drush and development modules
 [A minimal Drupal local development environment (part 1)](https://colorfield.dev/blog/minimal-drupal-9-local-development-environment)
 * Install another database than SQLite, multiple PHP versions, Solr, a mail catcher and review common pitfalls
 [A minimal Drupal local development environment (part 2)](https://colorfield.dev/blog/minimal-and-fast-drupal-environment-part-2)
 
-### Install contributed projects
+## Install contributed projects
+
+Once you found a [module or theme](/build/modules-themes-distributions) to install, you can use Composer.
 
 ```bash
 composer require drupal/[project_name]
 ```
-Then enable the project with [Drush](/develop/toolkit-for-drupal-developers#drush-cli) or the UI.
+Then enable the project with the UI or [Drush](/develop/toolkit-for-drupal-developers#drush-cli).
 
 #### Enable a project with the UI
 
@@ -75,7 +83,7 @@ Then enable the project with [Drush](/develop/toolkit-for-drupal-developers#drus
 drush en [project_name]
 ```
 
-## Installation with DDEV and Lando
+## Run Drupal with DDEV or Lando
 
 To get the same setup as production.
 
