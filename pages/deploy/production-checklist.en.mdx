@@ -37,7 +37,7 @@ Run `composer install --no-dev --optimize-autoloader` -
 - **Remove unused libraries.**  
 Check the /libraries directory
 - **Node modules**  
-Check if Node modules dedicated to SASS build, ... are not in the codebase.
+Check if Node modules dedicated to SASS build, ... are not in the deployed codebase.
 - **PHP Mess Detector**  
 Run PHP Mess Detector on custom code.  
 [PHP Mess Detector](https://phpmd.org/)
@@ -50,14 +50,14 @@ Run the phpcs command on custom code.
 - **Review user registration**  
 Depending on the use case, new account creations can be limited to administrators.
 - **Check permissions for content creation**  
-Node related permissions.
+Node, terms, media, ... related permissions.
 - **Check permissions for comment creation**  
 Comment related permissions.
 - **Check contact form and webform configuration**  
 Are the main contact form and personal contact form enabled? Is Webform installed?
-- **Are the forms protected with Honeypot and Captcha** (and optionally reCaptcha)?
+- **Are the forms protected with Honeypot and Captcha** (and optionally reCaptcha) ou Antibot?
 - **Email obfuscation**  
-Are the email addresses protected against bots harvesting? In fields, WYSIWYG, Twig.
+Are the email addresses protected against bots harvesting? In fields, via the WYSIWYG, Twig templates, ...
 
 ## Security and access control
 
@@ -78,7 +78,7 @@ If needed block IP addresses with the core Ban module. This process can be compl
 - **Changelog**  
 Do not publish CHANGELOG.txt and other .txt files at the root of the code base.
 - **Staging and dev environments**  
-Make sure that your staging and dev environments does not contain sensitive data and are protected with Shield if accessible from the outside.  
+Make sure that your staging and dev environments does not contain sensitive data and are non indexable (headers) and/or protected with Shield (basic auth) if accessible from the outside.  
 [Securing Non-Production Environments](https://dev.acquia.com/blog/securing-nonproduction-environments/09/03/2018/19251)
 
 ## Content model review and proofreading
@@ -129,7 +129,7 @@ Consider enabling the BigPipe module.
 - **Views**  
 Checks views caching (on a View edit: Advanced > Other > Caching).
 - **Custom code**  
-Check cache tags and invalidation, make use of Drupal cache for heavy tasks.
+Check cache tags and invalidation.
 - **Audit performances**  
 Use tools like Google PageSpeed Insight or Acquia Insight.  
 [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) | [Acquia Insight](https://www.acquia.com/resources/collateral/acquia-insight-data-sheet)
@@ -159,15 +159,15 @@ You may consider alternatives like [Matomo](https://www.drupal.org/project/matom
 ## Server configuration and backups
 
 - **Backups**  
-Make sure that you have database and files backups enabled. Use a module like [Backup Migrate](https://drupal.org/project/backup_migrate) with [NodeSquirrel](https://www.nodesquirrel.com/).
+Make sure that you have database and files backups enabled. Use a module like [Backup Migrate](https://drupal.org/project/backup_migrate).
 - **Mails**  
-Have mails being tested for each form (e.g. password reset). Is a third party needed, like Mandrill or Sendgrid? Are SPF and PTR ok?
+Have mails being tested for each form (e.g. password reset). Is a third party needed, like Mandrill or Sendgrid? Are SPF, DKIM and PTR ok?
 - **SSL certificate**  
 Free SSL certificates are available from [Let's Encrypt](https://letsencrypt.org/).
 - **Maximum file upload size**  
-This should be set in your per vhost php.ini configuration if available. Set _post\_max\_size_ and _upload\_max\_filesize_ according to your needs.
+This should be set in your per vhost php.ini configuration if available. Set `post_max_size` and `upload_max_filesize` (Apache)  according to your needs.
 - **Maximum memory and execution time**  
-This should be set in your per vhost php.ini configuration if available. Set _memory\_limit_ and _max\_execution\_time_ according to your needs.
+This should be set in your per vhost php.ini configuration if available. Set `memory_limit` et `max_execution_time` (Apache) according to your needs.
 - **Check files / directories permissions and ownership**  
 Usually one owner and group per virtual host, files at 644 and directories at 755.
 - **Check cron jobs**  
@@ -210,7 +210,7 @@ Check compliance with the General Data Protection Regulation.
 
 ## Documentation related to the persona
 
-- **Author documentation**  
+- **Editor documentation**  
 Leave Drupal and custom use cases documentation to the authors, accessible from the Help section.
 - **Developer onboarding**  
-Create a developer onboarding documentation at the root of your repo (README), provide wiki and UML diagrams.
+Create a developer onboarding documentation at the root of your repo (README), provide wiki, the project setup guide, ...
