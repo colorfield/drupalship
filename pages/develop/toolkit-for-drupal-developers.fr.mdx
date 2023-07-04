@@ -1,42 +1,40 @@
-# Drupal tools for developers
-
-> Section en cours de traduction 🇫🇷
+# Outils Drupal pour les développeurs
 
 ## IDE
 
-Let's start with your most used tool!
+Commençons par votre outil le plus utilisé !
 
-Two references here:
+Deux références ici :
 
 ### PHPStorm
 
-Nothing beats [PHPStorm](https://www.jetbrains.com/phpstorm/) for a Drupal job.
-Composer, Git, Docker, Xdebug, Drupal coding standards, web services support, Drupal indentation style
-and perfect autocompletion with inline documentation. 
+Rien ne surpasse [PHPStorm](https://www.jetbrains.com/phpstorm/) pour travailler avec Drupal.
+Composer, Git, Docker, Xdebug, standards de codage Drupal, support des services web, style d'indentation Drupal
+et autocomplétion parfaite avec documentation intégrée.
 
-Also, it has support for many plugins Twig, Symfony, Laravel, Blade, Gitignore, Markdown, ...
-It's not free, but you can get a free license if you are a [student](https://www.jetbrains.com/community/education/#students) or an [open source contributor](https://www.jetbrains.com/community/opensource/#support).
+Cette IDE propose également de nombreux plugins : Twig, Symfony, Laravel, Blade, Gitignore, Markdown, ...
+Elle n'est pas gratuite, mais vous pouvez obtenir une licence gratuite si vous êtes [aux études](https://www.jetbrains.com/community/education/#students) ou [contributez](https://www.jetbrains.com/community/opensource/#support).
 
-- Drupal development using PHPStorm [Drupal.org](https://www.drupal.org/docs/develop/development-tools/configuring-phpstorm) - [JetBrains](https://www.jetbrains.com/help/phpstorm/drupal-support.html)
-- [Keyboard shortcuts for PHPStorm](https://www.jetbrains.com/help/phpstorm/mastering-keyboard-shortcuts.html)
+- Développement Drupal avec PHPStorm [Drupal.org](https://www.drupal.org/docs/develop/development-tools/configuring-phpstorm) - [JetBrains](https://www.jetbrains.com/help/phpstorm/drupal-support.html)
+- [Raccourcis clavier pour PHPStorm](https://www.jetbrains.com/help/phpstorm/mastering-keyboard-shortcuts.html)
 
 ### VSCode
 
-It is free and has a lot of plugins, that still need to be configured to get a similar level of integration as PHPStorm.
+Est gratuit et dispose de nombreux plugins, qui doivent encore être configurés pour atteindre un niveau d'intégration similaire à PHPStorm.
 
-[Configuring Visual Studio Code for Drupal](https://www.drupal.org/docs/develop/development-tools/editors-and-ides/configuring-visual-studio-code)
+[Configurer Visual Studio Code pour Drupal](https://www.drupal.org/docs/develop/development-tools/editors-and-ides/configuring-visual-studio-code)
 
-## Configure your development environment
+## Configurez votre environnement de développement
 
-### Caching
+### Mise en cache
 
-Drupal comes with great caching for production, but before you start development tasks, there is some configuration to prevent caching.
+Drupal offre une excellente mise en cache pour la production, mais avant de commencer les tâches de développement, une certaine configuration est nécessaire pour prévenir la mise en cache.
 
-[Disable Drupal caching during development](https://www.drupal.org/node/2598914)
+[Désactiver la mise en cache Drupal pendant le développement](https://www.drupal.org/node/2598914)
 
-### Twig debug
+### Débogage Twig
 
-Displaying the Twig templates used by regions, blocks, nodes, ...
+Affichage des templates Twig utilisés par les régions, blocs, nœuds, ...
 
 ```yaml filename="development.services.yml"
 parameters:
@@ -44,29 +42,29 @@ parameters:
     debug: true
 ```
 
-Then cache rebuild
+Ensuite, reconstruire le cache
 `drush cr`
 
-This will become even simpler with Drupal 10.1.0
-[Simplifying the frontend developer experience in Drupal with a click of the button](https://mglaman.dev/blog/simplifying-frontend-developer-experience-drupal-click-button)
+C'est devenu encore plus simple avec Drupal 10.1.0
+[Simplifier l'expérience du développeur front-end dans Drupal en un clic - EN](https://mglaman.dev/blog/simplifying-frontend-developer-experience-drupal-click-button)
 
-Other Twig techniques are available on the following links from Drupal.org.
+D'autres techniques Twig sont disponibles sur les liens suivants de Drupal.org:
 
-*   [Debugging Twig templates](https://www.drupal.org/docs/8/theming/twig/debugging-twig-templates)
-*   [Discovering and Inspecting Variables in Twig Templates](https://www.drupal.org/docs/8/theming/twig/discovering-and-inspecting-variables-in-twig-templates)
-*   [Using attributes in templates](https://www.drupal.org/docs/8/theming-drupal-8/using-attributes-in-templates)
+*   [Débogage des templates Twig](https://www.drupal.org/docs/8/theming/twig/debugging-twig-templates)
+*   [Découvrir et inspecter les variables dans les templates Twig](https://www.drupal.org/docs/8/theming/twig/discovering-and-inspecting-variables-in-twig-templates)
+*   [Utilisation des attributs dans les templates](https://www.drupal.org/docs/8/theming-drupal-8/using-attributes-in-templates)
 
-## Debugging
+## Débogage
 
 ### Var dumper
 
-Symfony dumper is available out of the box via
+Le dumper Symfony est disponible dès la sortie de la boîte via
 
 ```php
 dump($myVar);
 ```
 
-Use [Devel](https://www.drupal.org/project/devel) that provides var dumper improvements with [Kint](https://github.com/kint-php/kint).
+Utilisez [Devel](https://www.drupal.org/project/devel) qui fournit des améliorations du var dumper avec [Kint](https://github.com/kint-php/kint).
 
 ```
 composer require --dev drupal/devel
@@ -74,134 +72,133 @@ composer require --dev kint-php/kint
 drush en devel
 ```
 
-then configure it in /admin/config/development/devel and use in code `kint($myVar)` or `ksm($myVar)`.
+puis configurez-le dans /admin/config/development/devel et utilisez dans le code `kint($myVar)` ou `ksm($myVar)`.
 
 ### Step debugger
 
-Install [XDebug](https://www.drupal.org/docs/develop/development-tools/xdebug-debugger)
+Installer [XDebug](https://www.drupal.org/docs/develop/development-tools/xdebug-debugger)
 
 ## Drush CLI
 
-Drush is a command line shell interface for Drupal. To require it in your project, use Composer.
-It is advised to require it per project and not globally, so you can use different versions of Drush for different projects.
+Drush est une interface de ligne de commande pour Drupal. Pour l'exiger dans votre projet, utilisez Composer.
+Il est conseillé de le demander par projet et non globalement, afin que vous puissiez utiliser différentes versions de Drush pour différents projets.
 
 ```bash
 composer require drush/drush
 ```
 
-Then you can use it with `vendor/bin/drush` or `vendor/bin/drush cr` for example.
+Ensuite, vous pouvez l'utiliser avec `vendor/bin/drush`.
 
+Pour trouver votre chemin dans la liste des commandes, utilisez grep. P.ex. : `drupal list | grep service`
+Drush peut être étendu avec vos propres commandes, les modules contribués fournissent donc souvent des commandes spécifiques.
 
-To dig your way out of the list of commands, use grep: `drupal list | grep service`
-Drush can be extended with your own commands, so contributed modules are often providing specific commands.
+Voici une courte liste des commandes Drush les plus utilisées.
 
-Here is a short list of most used Drush commands.
-
-### Site installation from configuration
+### Installation du site à partir de la configuration
 
 `drush si -y standard --sites-subdir default --account-name admin --account-pass admin --existing-config `
 
 ### Cache
 
-- Cache rebuild `drush cr`
-- Cache clear `drush cc` then select which one
-- Cache get `drush cg [cid] [bin]` or set `drush cs [cid] [bin]`
+- Reconstitution du cache `drush cr`
+- Effacer le cache `drush cc` puis sélectionnez lequel
+- Obtenir le cache `drush cg [cid] [bin]` ou définir `drush cs [cid] [bin]`
 
-### User login
+### Connexion utilisateur
 
-- as user 1 `drush uli` (user-login)
-- as another user `drush uli --uid 2` or `drush uli [name]`
+- en tant qu'utilisateur 1 `drush uli` (user-login)
+- en tant qu'un autre utilisateur `drush uli --uid 2` ou `drush uli [name]`
 
 ### Configuration
 
-- export `drush cex`
-- import `drush cim`
-- partially import `drush cim --partial --source=/path/to/module/config/install`
+- exporter `drush cex`
+- importer `drush cim`
+- importation partielle `drush cim --partial --source=/path/to/module/config/install`
 
-### Database
+### Base de données
 
-- Open SQL CLI `drush sql:cli`
-- SQL Query `drush sql:query ["SELECT * FROM users"]`
-- Sanitize (remove or obfuscate user data) `drush sql:sanitize`
-- Database update `drush updb`
-- SQL dump `drush sql:dump --result-file=auto --gzip`
+- Ouvrir SQL CLI `drush sql:cli`
+- Requête SQL `drush sql:query ["SELECT * FROM users"]`
+- Sanitiser (supprimer ou masquer les données utilisateur) `drush sql:sanitize`
+- Mise à jour de la base de données `drush updb`
+- Dump SQL `drush sql:dump --result-file=auto --gzip`
 
-### Delete entities
+### Supprimer les entités
 
-- Delete all article nodes `drush entity:delete node --bundle=article` 
+- Supprimer tous les noeuds d'articles `drush entity:delete node --bundle=article` 
 
-### Sync environments
+### Synchroniser les environnements
 
-- Sync DB, skip tables `drush sql:sync @self.prod @self --skip-tables-list=redirect_404,cache_*`
+- Synchroniser DB, sauter les tables `drush sql:sync @self.prod @self --skip-tables-list=redirect_404,cache_*`
 - rsync files, exclude files `drush rsync @self.prod:%files/ @self:%files/ --exclude-paths=css:js:php/twig`
 
-### Evaluate PHP code
+### Évaluer le code PHP
 
 - `drush php-eval "echo drupal_get_installed_schema_version('my_module');"`
 
-### Queue
+### File d'attente
 
-- List queues `drush queue:list`
-- Run a queue `drush queue:run [name]`
+- Lister les files d'attente `drush queue:list`
+- Exécuter une file d'attente `drush queue:run [name]`
 
-### Logs
+### Journaux
 
-- Filter the logs interactively `drush watchdog:list`
+- Filtrer les journaux de manière interactive `drush watchdog:list`
 
-[More Drush 11 commands](https://www.drush.org/11.x/commands/all/)
+[Plus de commandes Drush 11](https://www.drush.org/11.x/commands/all/)
 
-## Testing
+## Tests
 
-> The ultimate guide to write tests for Drupal 8 modules, themes and profiles. It aims to provide sample code and methods to write different types of testings available in core.
+> Le guide ultime pour écrire des tests pour les modules, thèmes et profils Drupal 8. Il vise à fournir des exemples de code et des méthodes pour écrire différents types de tests disponibles dans le noyau.
 
 [https://drupadocs.gitbooks.io/testing/](https://drupadocs.gitbooks.io/testing/)
 
 ### PHPUnit
 
-[PHPUnit in Drupal](https://www.drupal.org/docs/automated-testing/phpunit-in-drupal)
+[PHPUnit dans Drupal](https://www.drupal.org/docs/automated-testing/phpunit-in-drupal)
 
-### Pest for Drupal
+### Pest pour Drupal
 
 [YouTube](https://www.youtube.com/watch?v=2uJTOPE0Udg) - [GitHub](https://github.com/mglaman/pest-plugin-drupal)
 
-## Profiling and monitoring
+## Profilage et surveillance
 
 - [Blackfire.io](https://blackfire.io/)
 - [New Relic](https://newrelic.com/)
 - [Grafana](https://grafana.com/)
 
-## Report fixes and deprecations for Drupal upgrade
+## Signaler des corrections et des dépréciations pour la mise à niveau de Drupal
 
 - [Upgrade Rector](https://www.drupal.org/project/upgrade_rector)
 - [Upgrade Status](https://www.drupal.org/project/upgrade_status)
 
-## Code quality
+## Qualité du code
 
-### Static analyzer
+### Analyseur statique
 
-[PHPStan for Drupal](https://github.com/mglaman/phpstan-drupal)
+[PHPStan pour Drupal](https://github.com/mglaman/phpstan-drupal)
 
-### Coding standards
+### Normes de codage
 
-[PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a library that tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.
+[PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) est une bibliothèque qui tokenise les fichiers PHP, JavaScript et CSS et détecte les violations d'un ensemble défini de normes de codage.
 
-#### Check Drupal coding standards
+#### Vérifier les normes de codage Drupal
 
 `phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md /file/to/drupal/example_module`
 
-#### Automatically fix coding standards
+#### Corriger automatiquement les normes de codage
 
 `phpcbf --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md /file/to/drupal/example_module`
 
-* [Drupal coding standards](https://www.drupal.org/docs/develop/standards)
-* [Install PHP Code Sniffer](https://www.drupal.org/node/1419988) and [Command line usage](https://www.drupal.org/node/1587138)
-* [Configure Code Sniffer under PHPStorm](https://confluence.jetbrains.com/display/PhpStorm/Drupal+Development+using+PhpStorm#DrupalDevelopmentusingPhpStorm-CoderandPHPCodeSnifferIntegration)
+* [Normes de codage Drupal](https://www.drupal.org/docs/develop/standards)
+* [Installer PHP Code Sniffer](https://www.drupal.org/node/1419988) et [Utilisation en ligne de commande](https://www.drupal.org/node/1587138)
+* [Configurer Code Sniffer sous PHPStorm](https://confluence.jetbrains.com/display/PhpStorm/Drupal+Development+using+PhpStorm#DrupalDevelopmentusingPhpStorm-CoderandPHPCodeSnifferIntegration)
 
-## Modules for developers
+## Modules pour les développeurs
 
-Review the [Developer Experience](/build/modules-themes-distributions#developer-experience) projects section.
+Consultez la section des projets [Expérience Développeur](/build/modules-themes-distributions#developer-experience).
 
-## Read more
+## En savoir plus
 
-- [2023 Drupal Local Development Survey Results](https://www.ironstar.io/devsurvey23/) - Ironstar
-- A complete list of [Development tools overview](https://www.drupal.org/docs/develop/development-tools/development-tools-overview) (Drupal.org).
+- [Résultats de l'enquête 2023 sur le développement local de Drupal](https://www.ironstar.io/devsurvey23/) - Ironstar
+- Une liste complète des [Outils de développement](https://www.drupal.org/docs/develop/development-tools/development-tools-overview) (Drupal.org).
