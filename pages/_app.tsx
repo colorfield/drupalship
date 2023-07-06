@@ -14,7 +14,7 @@ function DrupalshipApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <PlausibleProvider domain="drupalship.org">
+    <PlausibleProvider domain='drupalship.org' customDomain='https://plausible.colorfield.dev'>
       <Component {...pageProps} />
     </PlausibleProvider>
   )
