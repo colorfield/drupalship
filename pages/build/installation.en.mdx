@@ -1,4 +1,4 @@
-import { Steps } from 'nextra-theme-docs'
+import { Steps, Tab, Tabs } from 'nextra-theme-docs'
 
 # Installation of Drupal core and contributed projects
 
@@ -26,7 +26,6 @@ cd my-site
 There are 2 scripts: `install` and `quick-start`.
 
 `quick-start` is a wrapper around `install` with some default shortcuts like running a local PHP server, opening the browser and logging you in as an admin.
-We will show both options here, as it's good to know what's happening under the hood.
 
 #### Standard installation
 
@@ -34,18 +33,37 @@ Installation with SQLite database and the standard profile.
 This is perfect to test a vanilla Drupal installation and install a few modules to review.
 Also this setup is the ideal candidate to debug a Drupal project issue in isolation and contribute.
 
-```bash
-php web/core/scripts/drupal install standard
-```
+<Tabs items={['install', 'quick-start']}>
+  <Tab>
+    ```bash
+    php web/core/scripts/drupal install standard
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    php web/core/scripts/drupal quick-start standard
+    ```
+  </Tab>
+</Tabs>  
+
 
 #### Installation with translated demo content
 
 Installation with the the Demo Umami profile.
 It comes with some demo content, translations and a few other modules enabled. Use this if you want to evaluate a more complete set of Drupal features.
 
-```bash
-php web/core/scripts/drupal quick-start demo_umami
-```
+<Tabs items={['install', 'quick-start']}>
+  <Tab>
+    ```bash
+    php web/core/scripts/drupal install demo_umami
+    ```
+  </Tab>
+  <Tab>    
+    ```bash
+    php web/core/scripts/drupal quick-start demo_umami
+    ```
+  </Tab>
+</Tabs>  
 
 ### Run it with the PHP built-in server
 

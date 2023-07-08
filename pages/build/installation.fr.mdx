@@ -1,4 +1,4 @@
-import { Steps } from 'nextra-theme-docs'
+import { Steps, Tab, Tabs } from 'nextra-theme-docs'
 
 # Installation du noyau Drupal et des projets contribués
 
@@ -26,30 +26,47 @@ cd my-site
 Il y a 2 scripts : `install` et `quick-start`.
 
 `quick-start` est une enveloppe autour de `install` avec quelques raccourcis par défaut comme l'exécution d'un serveur PHP local, l'ouverture du navigateur et la connexion en tant qu'administrateur.
-Nous montrerons ici les deux options, car il est bon de savoir ce qui se passe sous le capot.
 
 #### Installation standard
 
 Installation avec une base de données SQLite et le profil standard.
 C'est parfait pour tester une installation Drupal vierge et installer quelques modules pour évaluation.
-De plus, cette configuration est le candidat idéal pour déboguer un problème de projet Drupal en isolation et contribuer.
+De plus, cette configuration est idéale pour déboguer un problème en isolation et contribuer.
 
-```bash
-php web/core/scripts/drupal install standard
-```
+<Tabs items={['install', 'quick-start']}>
+  <Tab>
+    ```bash
+    php web/core/scripts/drupal install standard
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    php web/core/scripts/drupal quick-start standard
+    ```
+  </Tab>
+</Tabs>  
 
 #### Installation avec du contenu de démonstration traduit
 
 Installation avec le profil Demo Umami.
 Il est livré avec du contenu de démonstration, des traductions et quelques autres modules activés. Utilisez cela si vous voulez évaluer un ensemble de fonctionnalités Drupal plus complet.
 
-```bash
-php web/core/scripts/drupal quick-start demo_umami
-```
+<Tabs items={['install', 'quick-start']}>
+  <Tab>
+    ```bash
+    php web/core/scripts/drupal install demo_umami
+    ```
+  </Tab>
+  <Tab>    
+    ```bash
+    php web/core/scripts/drupal quick-start demo_umami
+    ```
+  </Tab>
+</Tabs>
 
-### Exécutez-le avec le serveur intégré PHP
+### Exécuter avec le serveur PHP intégré
 
-Vous pouvez ignorer cela si vous avez utilisé le script `quick-start`.
+Vous pouvez ignorer ceci si vous avez utilisé le script `quick-start`.
 
 ```bash
 cd web
