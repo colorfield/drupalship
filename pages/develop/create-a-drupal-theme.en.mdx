@@ -1,9 +1,56 @@
 import { Callout } from 'nextra-theme-docs'
 
-# Create a Drupal module
+# Create a Drupal theme
 
 <Callout type="warning">Section under construction.</Callout>
 
-## Starter Kit
+We will not focus on details here, but see just have an overview of the two main methods to create a Drupal theme.
 
-## Extend from a base theme
+## Starterkit
+
+You can use a default Starterkit or your very own, to be reused between projects.
+The idea here is to not extend but just make a copy to start from so there is no need to worry if the source changes.
+It's still possible to track source changes.
+
+### Use the default Starterkit
+
+Create it in the `themes/custom/my_theme` directory
+
+```bash
+php core/scripts/drupal generate-theme my_theme --path themes/custom
+```
+
+### Use a contributed or custom Starterkit
+
+Replace `source_theme_name`
+
+```bash
+php core/scripts/drupal generate-theme --starterkit source_theme_name my_theme
+```
+
+[Starterkit theme](https://www.drupal.org/docs/core-modules-and-themes/core-themes/starterkit-theme) - Drupal.org
+
+## Extend a base theme
+
+You take most of the base theme and add your own customizations.
+Sub-themes inherit all the features of the base theme, the base can also inherit from another base theme.
+
+In your `my_theme.info.yml` file, use the following line and replace the `base_theme_name`
+
+```yaml
+base theme: base_theme_name
+```
+
+[Creating sub-themes](https://www.drupal.org/docs/theming-drupal/creating-sub-themes) - Drupal.org
+
+### Libraries override
+
+### Libraries extension
+
+## Setup for local development
+
+See [Configure your development environment](/develop/toolkit-for-drupal-developers#configure-your-development-environment)
+
+## Read more
+
+[Theming Drupal](https://www.drupal.org/docs/develop/theming-drupal) - Drupal.org
