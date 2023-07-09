@@ -4,7 +4,7 @@ import { Callout } from 'nextra-theme-docs'
 
 <Callout type="warning">Section under construction.</Callout>
 
-We will not focus on details here, but see just have an overview of the two main methods to create a Drupal theme.
+We will not focus on details here, but just have an overview of the two main methods to create a Drupal theme.
 
 ## Starterkit
 
@@ -37,15 +37,23 @@ Sub-themes inherit all the features of the base theme, the base can also inherit
 
 In your `my_theme.info.yml` file, use the following line and replace the `base_theme_name`
 
-```yaml
+```yaml filename="my_theme.info.yml"
 base theme: base_theme_name
 ```
 
 [Creating sub-themes](https://www.drupal.org/docs/theming-drupal/creating-sub-themes) - Drupal.org
 
-### Libraries override
+## Add libraries: CSS and JS
 
-### Libraries extension
+[Adding assets (CSS, JS) to a Drupal theme via *.libraries.yml](https://www.drupal.org/docs/develop/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml) - Drupal.org
+
+## Libraries override and extension
+
+You can fully override (replace with your own), remove (not load) or extend (add some files) to an existing library.
+
+Pitfall: this needs to be done in `my_theme.info.yml` and not in `my_theme.libraries.yml`.
+
+[Overriding and extending libraries](https://www.drupal.org/docs/develop/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml#override-extend) - Drupal.org
 
 ## Setup for local development
 
