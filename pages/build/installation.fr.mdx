@@ -86,6 +86,7 @@ Dès que vous avez trouvé un [module ou thème](/build/modules-themes-distribut
 ```bash
 composer require drupal/[nom_du_projet]
 ```
+
 Puis activez le projet avec l'interface graphque (UI) ou [Drush](/develop/toolkit-for-drupal-developers#drush-cli).
 
 #### Activer un projet avec l'UI
@@ -95,8 +96,16 @@ Puis activez le projet avec l'interface graphque (UI) ou [Drush](/develop/toolki
 
 #### Activer un projet avec Drush
 
+Module
+
 ```bash
-drush en [nom_du_projet]
+drush en [module_name]
+```
+
+Thème
+
+```bash
+drush then [theme_name]
 ```
 
 ## Exécuter Drupal avec DDEV ou Lando
