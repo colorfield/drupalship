@@ -37,7 +37,7 @@ const config: DocsThemeConfig = {
     const { asPath } = useRouter()
     if (asPath === '/') {
       return {
-        titleTemplate: "Drupalship | The Hitchhiker's Guide to the Drupal Planet",
+        titleTemplate: "Drupalship | The Hitchhiker’s Guide to the Planet Drupal",
       }
     }
     return {
