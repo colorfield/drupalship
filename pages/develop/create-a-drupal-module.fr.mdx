@@ -1,15 +1,18 @@
 import { Callout } from 'nextra-theme-docs'
 
-# Create a Drupal module
+# Créer un module Drupal
 
-<Callout type="warning">Documentation en cours traduction.</Callout>
+<Callout type="warning">Documentation en cours de révision.</Callout>
 
-## The minimal requirements 
+## Un module minimal
 
-- A directory with the name of the module (e.g. `my_module`)
-- Usually created in modules/custom
-- A `.info.yml` file with the name of the module (e.g. `my_module.info.yml`)
-- The `.module` file is optional, but usually present to implement [hooks](/develop/drupal-development-concepts#hooks) and other global functions (e.g. `my_module.module`)
+- Un répertoire avec le nom du module (par exemple, `my_module`)
+- Habituellement créé dans modules/custom
+- Un fichier `.info.yml` avec le nom du module (par exemple, `my_module.info.yml`)
+- Le fichier `.module` est optionnel, mais généralement présent pour implémenter les [crochets](/develop/drupal-development-concepts#hooks) et autres fonctions globales (par exemple, `my_module.module`)
+
+Maintenant, couvrons comment un module peut être structuré.
+Nous ne couvrirons pas toutes les possibilités, juste les plus courantes.
 
 ### .info.yml structure
 
@@ -25,52 +28,49 @@ dependencies:
   - other_module:other_module
 ```
 
-Now let's cover how a module can be structured.
-We won't cover all the possibilities, just the most common ones.
+## Principaux fichiers
 
-## Module files
-
-We just met these two files:
+Nous venons de rencontrer ces deux fichiers :
 
 - `my_module.info.yml`
 - `my_module.module`
 
-Other files that can be present:
+Autres fichiers qui peuvent être présents :
 
-- `my_module.routing.yml` - Routes definitions
-- `my_module.services.yml` - Service, event subscribers, etc. definitions
-- `my_module.libraries.yml` - Define libraries (css, js)
-- `my_module.install` - Install, update and uninstall hooks (create, update, delete tables or configuration)
-- `my_module.post_update.php` - Post update hooks
-- `my_module.api.php` - Define hooks to be used by other modules
-- `my_module.permissions.yml` - Define permissions
-- `my_module.links.menu.yml` - Define menu links, e.g. in the admin menu
-- `my_module.links.task.yml` - Define task links, e.g. a tab on the node edit form
-- `my_module.links.action.yml` - Define action links, e.g. a link to delete a node
-- `my_module.links.contextual.yml` - Define contextual links, e.g. a link to edit a node from the teaser
+- `my_module.routing.yml` - Définitions des routes
+- `my_module.services.yml` - Définitions de services, abonnés aux événements, etc.
+- `my_module.libraries.yml` - Définir les bibliothèques (css, js)
+- `my_module.install` - Crochets d'installation, de mise à jour et de désinstallation (création, mise à jour, suppression de tables ou de configuration)
+- `my_module.post_update.php` - Crochets de mise à jour post
+- `my_module.api.php` - Définit les crochets à utiliser par d'autres modules
+- `my_module.permissions.yml` - Définir les permissions
+- `my_module.links.menu.yml` - Définir les liens de menu, par exemple, dans le menu d'administration
+- `my_module.links.task.yml` - Définir les liens de tâches, par exemple, un onglet sur le formulaire de modification de nœud
+- `my_module.links.action.yml` - Définir les liens d'action, par exemple, un lien pour supprimer un nœud
+- `my_module.links.contextual.yml` - Définir les liens contextuels, par exemple, un lien pour éditer un nœud à partir du teaser
 
-## Module directories
+## Répertoires de modules
 
-`src` directory is used for PSR-4 autoloading, so we can store classes there.
+Le répertoire `src` est utilisé pour le chargement automatique PSR-4, nous pouvons donc y stocker des classes.
 
-- `my_module/src` - PHP classes, like services or plugins
-- `my_module/src/Controller` - Controllers defined in the `.routing.yml` file
-- `my_module/src/Form` - Forms defined in the `.routing.yml` file
-- `my_module/src/Entity` - Custom entity classes
-- `my_module/src/EventSubscriber` - Event subscribers defined in the `.services.yml` file
+- `my_module/src` - Classes PHP, comme des services ou des plugins
+- `my_module/src/Controller` - Contrôleurs définis dans le fichier `.routing.yml`
+- `my_module/src/Form` - Formulaires définis dans le fichier `.routing.yml`
+- `my_module/src/Entity` - Classes d'entité personnalisées
+- `my_module/src/EventSubscriber` - Abonnés aux événements définis dans le fichier `.services.yml`
 - `my_module/src/Plugin` - Plugins
 
-Other directories
+Autres répertoires
 
-- `my_module/templates` - Twig templates
-- `my_module/config/install` - Configuration files to be installed
-- `my_module/config/schema` - Schema files to define configuration
-- `my_module/tests` - Unit, Kernel and Functional tests, test modules
+- `my_module/templates` - Modèles Twig
+- `my_module/config/install` - Fichiers de configuration à installer
+- `my_module/config/schema` - Fichiers de schéma pour définir la configuration
+- `my_module/tests` - Tests unitaires, Kernel et fonctionnels, modules de test
 
-## Add libraries: CSS and JS
+## Ajouter des bibliothèques : CSS et JS
 
-[Adding assets (CSS, JS) to a Drupal module via *.libraries.yml](https://www.drupal.org/node/2274843) - Drupal.org
+[Ajout d'actifs (CSS, JS) à un module Drupal via *.libraries.yml](https://www.drupal.org/node/2274843) - Drupal.org
 
-## Read more
+## Pour en savoir plus
 
-[Creating modules](https://www.drupal.org/docs/develop/creating-modules) - Drupal.org
+[Création de modules](https://www.drupal.org/docs/develop/creating-modules) - Drupal.org
