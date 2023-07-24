@@ -54,6 +54,7 @@ const config: DocsThemeConfig = {
         <a href="/about" className='mb-6'>About</a>&nbsp;|&nbsp; 
         <a href="/roadmap">Roadmap</a>&nbsp;|&nbsp; 
         <a href="/credits">Credits</a>&nbsp;|&nbsp; 
+        <a href="https://drupal.slack.com/archives/C05K39E58JU" target="_blank" rel="me">Slack ↗</a>&nbsp;|&nbsp; 
         <a href="https://drupal.community/@drupalship" target="_blank" rel="me">Mastodon ↗</a>&nbsp;|&nbsp; 
         <a href="https://twitter.com/drupalship" target="_blank" rel="noreferrer">Twitter ↗</a>
       </>
