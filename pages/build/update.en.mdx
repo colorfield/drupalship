@@ -1,0 +1,100 @@
+# Update Drupal core and contributed projects
+
+## Composer
+
+### List outdated packages
+
+```bash
+composer outdated "drupal/*"
+```
+
+### Update Drupal core
+
+For recent Drupal setups, based on `drupal/core-recommended`
+
+```bash
+composer update "drupal/core-*" --with-all-dependencies
+```
+
+For other cases, [read more on Drupal.org](https://www.drupal.org/docs/updating-drupal/updating-drupal-core-via-composer).
+
+This is valid for non major version updates. A new section will be added for major version upgrade specifics (example Drupal 9 to 10).
+You can also find [documentation on Drupal.org](https://www.drupal.org/docs/upgrading-drupal/upgrading-from-drupal-8-or-later/upgrading-from-drupal-9-to-drupal-10/overview).
+
+### Contributed projects
+
+Update with
+
+```bash
+composer update drupal/<project_name> --with-all-dependencies
+```
+
+### Troubleshoot
+
+Some common issues.
+
+#### Memory limit
+
+Run Composer with an environment variable to increase the memory limit. Example for no limitation:
+
+```bash
+COMPOSER_MEMORY_LIMIT=-1 composer update drupal/<project_name> --with-all-dependencies
+```
+
+#### Packages conflict
+
+Check why a particular version is not installed
+
+```bash
+composer why-not <vendor>/<package> <version>
+```
+
+#### Project not compatible with a major Drupal version
+
+There can be patches to apply, check also the [Drupal's Lenient Composer Endpoint](https://www.drupal.org/docs/develop/using-composer/using-drupals-lenient-composer-endpoint) for more info.
+
+### Patches
+
+If you have patches, depending on the codebase change, they might not apply anymore.
+You should check the issue the patch was created for and see if 
+- It is still needed: the patch was committed to a release or the dev branch. The issue is closed in this case. If it's on the dev branch, you have 2 options: require the dev version or still apply the patch until it makes it to the release.
+- There is a new patch available, usually a "re-roll" to comply latest codebase.
+- It still needs a re-roll, then you can [contribute it](https://www.drupal.org/docs/develop/git/using-git-to-contribute-to-drupal/working-with-patches/making-a-patch).
+
+Tip: to quickly find the issue, it is usually nice to have it in your composer.json file, like this:
+
+```json
+"extra": {
+    "patches": {
+        "drupal/core": {
+            "#Issue number - Issue title": "https://www.drupal.org/files/issues/issue-1.patch"
+        }
+    }
+}
+```
+
+More info about [applying a patch](/develop/patch-a-drupal-project).
+
+## Update the database and the configuration
+
+When doing codebase update with Composer, chances are that there could be schema updates,
+so it's a good idea to run the database update and clear the cache.
+
+```bash
+drush updatedb
+drush cache:rebuild
+```
+
+Some configuration changes can also be applied, run then
+
+```bash
+drush config:export --diff
+```
+
+and commit it in your repository, it will be used for the deployment.
+The `--diff` is optional but helps to review the changes.
+
+To deploy, if you are unsure about the sequence of the commands to run, have a look at the 
+[Drush deploy command](https://www.drush.org/12.x/deploycommand/).
+
+More info about deployments to be provided in [Continuous Integration and Delivery (CI/CD)](/deploy/continuous-integration-and-delivery).

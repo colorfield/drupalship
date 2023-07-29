@@ -1,6 +1,7 @@
 {
   "when-to-use-drupal": "When to use Drupal?",
-  "installation": "Installation of Drupal core and contributed projects",
+  "installation": "Install Drupal core and contributed projects",
+  "update": "Update Drupal core and contributed projects",
   "concepts": "Drupal concepts",
   "modules-themes-distributions": "Modules, themes and distributions",
   "site-building": "Common site building tasks",

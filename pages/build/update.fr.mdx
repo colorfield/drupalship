@@ -1,0 +1,100 @@
+# Mise à jour du core Drupal et des projets contribués
+
+## Composer
+
+### Liste des paquets obsolètes
+
+```bash
+composer outdated "drupal/*"
+```
+
+### Mettre à jour le noyau de Drupal
+
+Pour les installations récentes de Drupal, basées sur `drupal/core-recommended`
+
+```bash
+composer update "drupal/core-*" --with-all-dependencies
+```
+
+Pour les autres cas: [en savoir plus sur Drupal.org](https://www.drupal.org/docs/updating-drupal/updating-drupal-core-via-composer).
+
+Ceci est valable pour les mises à jour de versions non majeures. Une nouvelle section sera ajoutée pour les spécificités des mises à jour de versions majeures (exemple Drupal 9 à 10).
+Vous pouvez également trouver de la [documentation sur Drupal.org](https://www.drupal.org/docs/upgrading-drupal/upgrading-from-drupal-8-or-later/upgrading-from-drupal-9-to-drupal-10/overview).
+
+### Projets contribués
+
+Mise à jour avec
+
+```bash
+composer update drupal/<nom_du_projet> --with-all-dependencies
+```
+
+### Résolution des problèmes
+
+Quelques problèmes courants.
+
+#### Limite de mémoire
+
+Exécutez Composer avec une variable d'environnement pour augmenter la limite de mémoire. Exemple sans limitation :
+
+```bash
+COMPOSER_MEMORY_LIMIT=-1 composer update drupal/<nom_du_projet> --with-all-dependencies
+```
+
+#### Conflit de paquets
+
+Vérifier pourquoi une version particulière n'est pas installée
+
+```bash
+composer why-not <fournisseur>/<paquet> <version>
+```
+
+#### Projet non compatible avec une version majeure de Drupal
+
+Il peut y avoir des correctifs à appliquer, consultez également le [Drupal's Lenient Composer Endpoint](https://www.drupal.org/docs/develop/using-composer/using-drupals-lenient-composer-endpoint) pour plus d'informations.
+
+### Patches
+
+Si vous avez des correctifs (patches), il se peut qu'ils ne s'appliquent plus en fonction des changements apportés à la base de code.
+Vous pouvez vérifier le problème pour lequel le correctif a été créé et voir si 
+- Il est toujours nécessaire : le correctif a été déployé via une release ou la branche de développement. Dans ce cas, la issue est close. S'il se trouve sur la branche de développement, vous avez deux options : inclure la version de développement ou continuer à appliquer le correctif jusqu'à ce qu'il fasse partie d'une release.
+- Il y a un nouveau patch disponible, généralement un "re-roll" pour se conformer à la dernière base de code.
+- S'il a encore besoin d'un reroll, vous pouvez alors [y contribuer](https://www.drupal.org/docs/develop/git/using-git-to-contribute-to-drupal/working-with-patches/making-a-patch).
+
+Astuce : pour trouver rapidement la issue relative au patch, il est généralement intéressant de l'avoir dans votre fichier composer.json, comme ceci :
+
+```json
+"extra" : {
+    "patches" : {
+        "drupal/core" : {
+            "#Issue number - Issue title" : "https://www.drupal.org/files/issues/issue-1.patch"
+        }
+    }
+}
+```
+
+Plus d'informations sur [l'application d'un patch](/develop/patch-a-drupal-project).
+
+## Mettre à jour la base de données et la configuration
+
+Lorsque l'on fait une mise à jour de la base de code avec Composer, il y a de fortes chances qu'il y ait des mises à jour du schéma,
+c'est donc une bonne idée de lancer la mise à jour de la base de données et de vider le cache.
+
+```bash
+drush updatedb
+drush cache:rebuild
+```
+
+Certains changements de configuration peuvent également être appliqués, exécutez alors
+
+```bash
+drush config:export --diff
+```
+
+et faites un commit dans votre repository, il sera utilisé pour le déploiement.
+Le `--diff` est optionnel mais aide à revoir les changements.
+
+Pour le déploiement, si vous n'êtes pas sûr de la séquence des commandes à exécuter, jetez un coup d'œil à la page suivante 
+[Commande de déploiement Drush](https://www.drush.org/12.x/deploycommand/).
+
+Plus d'informations pour le déploiement seront fournies dans [Continuous Integration and Delivery (CI/CD)](/deploy/continuous-integration-and-delivery).
