@@ -21,7 +21,6 @@
     "./style.css": "./style.css"
   },
   "dependencies": {
-    "@socialgouv/matomo-next": "^1.6.1",
     "clsx": "^1.2.1",
     "framer-motion": "^9.1.7",
     "next": "^13.4.7",
